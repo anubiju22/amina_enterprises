@@ -1,4 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
@@ -58,6 +59,12 @@ class BottomWidget extends StatelessWidget {
             ),
             LoginTextField(
               hintText: 'Enter your Phone Number',
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(15),
+                child: svgWidget(
+                  'assets/svg/Call.svg',
+                ),
+              ),
               // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
             ),
             SizedBox(

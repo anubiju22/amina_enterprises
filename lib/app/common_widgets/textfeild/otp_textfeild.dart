@@ -20,40 +20,36 @@ class OtpTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: PinCodeTextField(
-        autoFocus: true,
-        appContext: context,
-        length: 4,
-        animationType: AnimationType.fade,
-        textStyle:
-            TextStyle(color: Get.isDarkMode ? Colors.white : Colors.black),
-        pinTheme: PinTheme(
-          shape: PinCodeFieldShape.underline,
-          borderRadius: BorderRadius.circular(10),
-          fieldHeight: 60,
-          fieldWidth: 70,
-          borderWidth: 2,
-          activeColor: const Color(0xFFCACACA),
-          selectedColor: const Color(0xFFCACACA),
-          activeFillColor: const Color(0xFFCACACA),
-          disabledColor: const Color(0xFFCACACA),
-          errorBorderColor: const Color(0xFFCACACA),
-          inactiveColor: const Color(0xFFCACACA),
-          inactiveFillColor: const Color(0xFFCACACA),
-          selectedFillColor: const Color(0xFFCACACA),
-        ),
-        animationDuration: const Duration(milliseconds: 300),
-        keyboardType: TextInputType.number,
-        cursorColor: Get.isDarkMode ? Colors.white : Colors.black,
-        onCompleted: oncomplete,
-        onChanged: onchange,
-        beforeTextPaste: (text) {
-          //print("Allowing to paste $text");
-          return true;
-        },
+    return PinCodeTextField(
+      autoFocus: true,
+      appContext: context,
+      length: 4,
+      animationType: AnimationType.fade,
+      textStyle: TextStyle(color: Get.isDarkMode ? Colors.white : Colors.black),
+      pinTheme: PinTheme(
+        shape: PinCodeFieldShape.box,
+        borderRadius: BorderRadius.circular(16),
+        fieldHeight: 50,
+        fieldWidth: 50,
+        borderWidth: 0,
+        activeColor: const Color(0xFFFFFFFF),
+        selectedColor: const Color(0xFFFFFFFF),
+        activeFillColor: const Color(0xFFFFFFFF),
+        disabledColor: const Color(0xFFFFFFFF),
+        errorBorderColor: const Color(0xFFFFFFFF),
+        inactiveColor: const Color(0xFFFFFFFF),
+        inactiveFillColor: const Color(0xFFFFFFFF),
+        selectedFillColor: const Color(0xFFFFFFFF),
       ),
+      animationDuration: const Duration(milliseconds: 300),
+      keyboardType: TextInputType.number,
+      cursorColor: Get.isDarkMode ? Colors.white : Colors.black,
+      onCompleted: oncomplete,
+      onChanged: onchange,
+      beforeTextPaste: (text) {
+        //print("Allowing to paste $text");
+        return true;
+      },
     );
   }
 }

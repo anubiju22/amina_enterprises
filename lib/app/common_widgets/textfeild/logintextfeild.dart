@@ -7,7 +7,7 @@ class LoginTextField extends StatelessWidget {
   final FormFieldValidator? validator;
   // final IconData? prefixIcon;
 
-  final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final TextInputType? textInputType;
   final bool obscureText;
   final Function? suffixIconClick;
@@ -19,7 +19,7 @@ class LoginTextField extends StatelessWidget {
       this.textInputType,
       this.suffixIconClick,
       // this.prefixIcon,
-      this.suffixIcon,
+      this.prefixIcon,
       required this.hintText,
       this.obscureText = false,
       this.textEditingController,
@@ -47,27 +47,35 @@ class LoginTextField extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white,
           // contentPadding: EdgeInsets.symmetric(horizontal: 15),
-          hintStyle: const TextStyle(fontSize: 16, color: Color(0xFF808080)),
+          hintStyle: const TextStyle(
+            color: Color(0xff7b7b7b),
+            fontSize: 16,
+            fontFamily: "Manrope",
+            fontWeight: FontWeight.w500,
+          ),
           filled: true,
           isDense: true,
-
+          // border: OutlineInputBorder(
+          //   borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+          //   borderRadius: BorderRadius.circular(16.0),
+          // ),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFFCACACA)),
+            borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
             borderRadius: BorderRadius.circular(12.0),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFFCACACA)),
+            borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
             borderRadius: BorderRadius.circular(12.0),
           ),
           disabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFFCACACA)),
+            borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
             borderRadius: BorderRadius.circular(12.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFFCACACA)),
+            borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
             borderRadius: BorderRadius.circular(12.0),
           ),
-          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
           // border: const OutlineInputBorder(
           //   borderRadius: BorderRadius.all(
           //     Radius.circular(10),

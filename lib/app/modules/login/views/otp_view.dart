@@ -2,7 +2,11 @@ import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/otp_textfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../routes/app_pages.dart';
 
 class OtpView extends StatelessWidget {
   const OtpView({super.key});
@@ -72,7 +76,10 @@ class BottomWidget extends StatelessWidget {
                       "Didn’t receive OTP?",
                       style: TextStyle(color: Color(0xFF818181)),
                     ),
-                    Text("Resend"),
+                    Text(
+                      "Resend",
+                      style: TextStyle(color: primaryColor),
+                    )
                   ],
                 )),
             SizedBox(
@@ -81,7 +88,7 @@ class BottomWidget extends StatelessWidget {
             CommonButtonWidget(
               label: "VERIFY OTP",
               onClick: () {
-                // Get.toNamed(Routes.OTP);
+                //  Get.toNamed(Routes.);
               },
             )
 
