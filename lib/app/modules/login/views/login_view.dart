@@ -1,4 +1,7 @@
+import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
+import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 
@@ -9,15 +12,42 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LoginView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'LoginView is working',
-          style: TextStyle(fontSize: 20),
+        backgroundColor: Color(0xFF033EB2),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [Image.asset("assets/logo/logo.png"), BottomWidget()],
+        ));
+  }
+}
+
+class BottomWidget extends StatelessWidget {
+  const BottomWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 428,
+      height: 381,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(32),
+          topRight: Radius.circular(32),
+          bottomLeft: Radius.circular(0),
+          bottomRight: Radius.circular(0),
         ),
+        color: Color(0xfff3f3f3),
+      ),
+      child: Column(
+        children: [
+          LoginText(
+            text: "Employee Login",
+          ),
+          LoginTextField(
+              hintText: 'Enter your Phone Number',
+              suffixIcon: SvgPicture.asset(''))
+        ],
       ),
     );
   }
