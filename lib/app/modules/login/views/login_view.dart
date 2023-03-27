@@ -41,12 +41,15 @@ class BottomWidget extends StatelessWidget {
       ),
       child: Column(
         children: [
-          LoginText(
-            text: "Employee Login",
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: LoginText(
+              text: "Employee Login",
+            ),
           ),
           LoginTextField(
               hintText: 'Enter your Phone Number',
-              suffixIcon: SvgPicture.asset(''))
+              suffixIcon: SvgPicture.asset('assets/svg/call.svg'))
         ],
       ),
     );
