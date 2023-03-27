@@ -1,15 +1,12 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
+import 'package:amina_enterprises/app/common_widgets/textfeild/otp_textfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
-import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
+class OtpView extends StatelessWidget {
+  const OtpView({super.key});
 
-import '../controllers/login_controller.dart';
-
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,22 +48,40 @@ class BottomWidget extends StatelessWidget {
               height: 20,
             ),
             LoginText(
-              text: "Employee Login",
+              text: "Enter OTP",
             ),
             SizedBox(
               height: 20,
             ),
-            LoginTextField(
-              hintText: 'Enter your Phone Number',
-              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+            OtpTextfield(
+              oncomplete: (pin) {
+                return null;
+              },
+              onchange: (pin) {
+                // controller.otp = pin;
+                return null;
+                // return null;
+              },
             ),
+            TextButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Didn’t receive OTP?",
+                      style: TextStyle(color: Color(0xFF818181)),
+                    ),
+                    Text("Resend"),
+                  ],
+                )),
             SizedBox(
               height: 20,
             ),
             CommonButtonWidget(
-              label: "GET OTP",
+              label: "VERIFY OTP",
               onClick: () {
-                Get.toNamed(Routes.OTP);
+                // Get.toNamed(Routes.OTP);
               },
             )
 
