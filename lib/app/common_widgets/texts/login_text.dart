@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class LoginText extends StatelessWidget {
@@ -12,7 +13,7 @@ class LoginText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: Color(0xff033eb2),
+        color: primaryColor,
         fontSize: 24,
         fontFamily: "Manrope",
         fontWeight: FontWeight.w700,

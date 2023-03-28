@@ -15,14 +15,23 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomWidget(),
         backgroundColor: Color(0xFF033EB2),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(child: Image.asset("assets/logo/logo.png")),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
+                child: Image.asset("assets/logo/logo.png"),
+              ),
+              // SizedBox(
+              //   height: 200,
+              // ),
+              BottomWidget(),
+            ],
+          ),
         ));
   }
 }
@@ -36,7 +45,7 @@ class BottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.40,
+      height: MediaQuery.of(context).size.height * 0.44,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
@@ -50,13 +59,13 @@ class BottomWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             LoginText(
               text: "Employee Login",
             ),
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             LoginTextField(
               hintText: 'Enter your Phone Number',

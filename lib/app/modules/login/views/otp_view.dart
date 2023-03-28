@@ -14,14 +14,19 @@ class OtpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomWidget(),
         backgroundColor: Color(0xFF033EB2),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Center(child: Image.asset("assets/logo/logo.png")),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
+                  child: Image.asset("assets/logo/logo.png")),
+              BottomWidget(),
+            ],
+          ),
         ));
   }
 }
@@ -35,7 +40,7 @@ class BottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.40,
+      height: MediaQuery.of(context).size.height * 0.44,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
@@ -45,55 +50,57 @@ class BottomWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            LoginText(
-              text: "Enter OTP",
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            OtpTextfield(
-              oncomplete: (pin) {
-                return null;
-              },
-              onchange: (pin) {
-                // controller.otp = pin;
-                return null;
-                // return null;
-              },
-            ),
-            TextButton(
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Didn’t receive OTP?",
-                      style: TextStyle(color: Color(0xFF818181)),
-                    ),
-                    Text(
-                      "Resend",
-                      style: TextStyle(color: primaryColor),
-                    )
-                  ],
-                )),
-            SizedBox(
-              height: 20,
-            ),
-            CommonButtonWidget(
-              label: "VERIFY OTP",
-              onClick: () {
-                Get.toNamed(Routes.MYROUTE);
-              },
-            )
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              LoginText(
+                text: "Enter OTP",
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              OtpTextfield(
+                oncomplete: (pin) {
+                  return null;
+                },
+                onchange: (pin) {
+                  // controller.otp = pin;
+                  return null;
+                  // return null;
+                },
+              ),
+              TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Didn’t receive OTP?",
+                        style: TextStyle(color: Color(0xFF818181)),
+                      ),
+                      Text(
+                        "Resend",
+                        style: TextStyle(color: primaryColor),
+                      )
+                    ],
+                  )),
+              SizedBox(
+                height: 20,
+              ),
+              CommonButtonWidget(
+                label: "VERIFY OTP",
+                onClick: () {
+                  Get.toNamed(Routes.MYROUTE);
+                },
+              )
 
-            // )
-          ],
+              // )
+            ],
+          ),
         ),
       ),
     );

@@ -25,6 +25,9 @@ class MyRouteCard extends StatelessWidget {
           BlackText(
             text: shopname,
           ),
+          SizedBox(
+            height: 5,
+          ),
           Row(
             children: [
               svgWidget('assets/svg/location.svg'),
@@ -35,6 +38,9 @@ class MyRouteCard extends StatelessWidget {
                 text: location,
               )
             ],
+          ),
+          SizedBox(
+            height: 5,
           ),
           Row(
             children: [
@@ -49,9 +55,12 @@ class MyRouteCard extends StatelessWidget {
                 width: 40,
               ),
               svgWidget('assets/svg/pin_drop.svg',
-                  size: 15,
+                  size: 20,
                   color: ColorFilter.mode(primaryColor, BlendMode.srcIn)),
               TextButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all(EdgeInsets.zero),
+                  ),
                   onPressed: () {},
                   child: Text(
                     "Google Map",
