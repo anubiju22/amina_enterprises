@@ -88,7 +88,7 @@ class BottomWidget extends StatelessWidget {
             CommonButtonWidget(
               label: "VERIFY OTP",
               onClick: () {
-                Get.toNamed(Routes.SHOPS);
+                Get.toNamed(Routes.MYVISIT);
               },
             )
 

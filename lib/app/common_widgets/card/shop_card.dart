@@ -26,7 +26,7 @@ class ShopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
         height: 115,
         decoration: BoxDecoration(
@@ -79,7 +79,7 @@ class ShopCard extends StatelessWidget {
                       text: time.toString(),
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 50,
                     ),
                     svgWidget('assets/svg/timer.svg', size: 15),
                     SizedBox(

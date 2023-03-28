@@ -14,7 +14,7 @@ class ShopsView extends GetView<ShopsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: homeMenuColor,
+        backgroundColor: scaffoldBgColor,
         appBar: CommonAppBar(label: 'Shops'),
         body: ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: 15),

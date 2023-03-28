@@ -12,7 +12,7 @@ class MyvisitView extends GetView<MyvisitController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: homeMenuColor,
+        backgroundColor: scaffoldBgColor,
         appBar: CommonAppBar(label: 'My Visit'),
         body: ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: 15),
