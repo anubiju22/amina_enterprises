@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../constraints/app_colors.dart';
 import '../svg_icons/svg_widget.dart';
 
-class CommonAppBar extends StatelessWidget {
+class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String label;
   const CommonAppBar({super.key, required this.label});
 
@@ -22,4 +22,7 @@ class CommonAppBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
 }
