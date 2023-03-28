@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/footwears/bindings/footwears_binding.dart';
+import '../modules/footwears/views/footwears_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/dashboard.dart';
 import '../modules/home/views/home_view.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.MYROUTE,
       page: () => const MyrouteView(),
       binding: MyrouteBinding(),
+    ),
+    GetPage(
+      name: _Paths.FOOTWEARS,
+      page: () => const FootwearsView(),
+      binding: FootwearsBinding(),
     ),
   ];
 }

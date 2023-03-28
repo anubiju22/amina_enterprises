@@ -7,29 +7,37 @@ import 'package:flutter_svg/flutter_svg.dart';
 class HomeCardItem extends StatelessWidget {
   final String path;
   final String label;
-  const HomeCardItem({super.key, required this.path, required this.label});
+  final Function? ontap;
+  const HomeCardItem(
+      {super.key, required this.path, required this.label, this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Card(
-          elevation: 4,
-          color: homeMenuColor,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 14),
-            child: svgWidget(path),
+    return InkWell(
+      onTap: () {
+        ontap!();
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Card(
+            elevation: 4,
+            color: homeMenuColor,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 14),
+              child: svgWidget(path),
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Center(child: Text(label, style: const TextStyle(fontSize: 14)))
-      ],
+          const SizedBox(
+            height: 8,
+          ),
+          Center(child: Text(label, style: const TextStyle(fontSize: 14)))
+        ],
+      ),
     );
   }
 }

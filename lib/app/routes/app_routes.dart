@@ -10,6 +10,7 @@ abstract class Routes {
   static const SHOPS = _Paths.SHOPS;
   static const MYVISIT = _Paths.MYVISIT;
   static const MYROUTE = _Paths.MYROUTE;
+  static const FOOTWEARS = _Paths.FOOTWEARS;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const SHOPS = '/shops';
   static const MYVISIT = '/myvisit';
   static const MYROUTE = '/myroute';
+  static const FOOTWEARS = '/footwears';
 }
