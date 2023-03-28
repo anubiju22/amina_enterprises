@@ -27,7 +27,7 @@ class CommonButtonWidget extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               // color: color ?? AppColors().primaryColor
-              color: Color(0xFF033EB2)),
+              color: const Color(0xFF033EB2)),
           child: isLoading == true
               ? const Center(
                   child: CircularProgressIndicator(
@@ -40,7 +40,7 @@ class CommonButtonWidget extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: fontSize,
                       fontFamily: "Manrope",
                       fontWeight: FontWeight.w700,
                     ),

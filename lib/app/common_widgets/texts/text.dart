@@ -52,3 +52,15 @@ Text greyText(String label, double fontSize,
         fontWeight: fontWeight),
   );
 }
+
+Text blackText(String label, double fontSize,
+    {FontWeight? fontWeight = FontWeight.w400}) {
+  return Text(
+    label,
+    style: TextStyle(
+        fontFamily: "Manrope",
+        color: Colors.black,
+        fontSize: fontSize,
+        fontWeight: fontWeight),
+  );
+}
