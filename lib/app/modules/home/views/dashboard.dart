@@ -12,7 +12,9 @@ class DashboardView extends GetView<DashboardController> {
       body: Obx(() => Center(
           child: controller.widgetOptions
               .elementAt(controller.selectedIndex.value))),
-      bottomNavigationBar: BottomNavigationBar(items: [
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: controller.selectedIndex.value,
+        items: [
         BottomNavigationBarItem(
             icon: svgWidget('assets/svg/bottom_home.svg'), label: 'HOME'),
         BottomNavigationBarItem(
