@@ -11,7 +11,7 @@ class BlackText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.black,
         fontSize: 16,
         fontFamily: "Manrope",
@@ -32,10 +32,23 @@ class GreyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         color: Color(0xff6c6c6c),
         fontSize: 12,
       ),
     );
   }
+}
+
+Text greyText(String label, double fontSize,
+    {TextAlign? textAlign = TextAlign.center,
+    FontWeight? fontWeight = FontWeight.w400}) {
+  return Text(
+    label,
+    textAlign: textAlign,
+    style: TextStyle(
+        color: const Color(0xFF7B7B7B),
+        fontSize: fontSize,
+        fontWeight: fontWeight),
+  );
 }
