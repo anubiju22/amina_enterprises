@@ -58,18 +58,20 @@ class MyRouteCard extends StatelessWidget {
                   size: 20,
                   color: ColorFilter.mode(primaryColor, BlendMode.srcIn)),
               TextButton(
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all(EdgeInsets.zero),
+                  style: TextButton.styleFrom(
+                    minimumSize: Size.zero,
+                    padding: EdgeInsets.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
                   onPressed: () {},
                   child: Text(
                     "Google Map",
-                    style: TextStyle(color: primaryColor),
+                    style: TextStyle(color: primaryColor, fontSize: 12),
                   )),
               SizedBox(
-                width: 40,
+                width: 50,
               ),
-              StatusCard()
+              orderButtonFunction('Pending')
             ],
           ),
         ],

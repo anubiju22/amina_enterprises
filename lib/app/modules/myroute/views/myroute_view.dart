@@ -16,47 +16,76 @@ class MyrouteView extends GetView<MyrouteController> {
     return Scaffold(
         appBar: CommonAppBar(label: "My Route"),
         backgroundColor: scaffoldBgColor,
-        body: Column(
-          children: [
-            Row(
-              children: [
-                Text("March 2023"),
-              ],
-            ),
-            Row(
-              children: [
-                svgWidget('assets/svg/location.svg'),
-                SizedBox(
-                  width: 5,
-                ),
-                GreyText(
-                  text: "Palayam, Kozhikode",
-                )
-              ],
-            ),
-            ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemCount: 3,
-                itemBuilder: (BuildContext, context) {
-                  return Column(
-                    children: [
-                      Divider(
-                        thickness: 2,
-                      ),
-                      MyRouteCard(
-                        shopname: "PRINCE FOOTWEAR BANDBAHAL",
-                        location:
-                            "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
-                        number: "9856254147",
-                      ),
-                    ],
-                  );
-                }),
-            Divider(
-              thickness: 2,
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  greyText(
+                    fontWeight: FontWeight.w500,
+                    "March 2023",
+                    20,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.expand_more,
+                    color: Colors.grey,
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: 100,
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 5,
+                  ),
+                  svgWidget('assets/svg/location.svg'),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  greyText(
+                    fontWeight: FontWeight.w500,
+                    "Palayam, Kozhikode",
+                    18,
+                  )
+                ],
+              ),
+              ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  itemBuilder: (BuildContext, context) {
+                    return Column(
+                      children: [
+                        Divider(
+                          thickness: 2,
+                        ),
+                        MyRouteCard(
+                          shopname: "PRINCE FOOTWEAR BANDBAHAL",
+                          location:
+                              "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
+                          number: "9856254147",
+                        ),
+                      ],
+                    );
+                  }),
+              Divider(
+                thickness: 2,
+              ),
+            ],
+          ),
         ));
   }
 }

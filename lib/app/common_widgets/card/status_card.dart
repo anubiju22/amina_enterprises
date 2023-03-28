@@ -1,12 +1,57 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class StatusCard extends StatelessWidget {
-  const StatusCard({
-    super.key,
-  });
+Widget orderButtonFunction(String type) {
+  switch (type) {
+    case "visited":
+      return statusButtonWidget(type, const Color(0xFFCFFFC7), Colors.green);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
+    case "Pending":
+      return statusButtonWidget(type, const Color(0xFFFFD5B6).withOpacity(0.1),
+          const Color(0xFFED893E));
+
+    case "Viewed":
+      return statusButtonWidget(
+          type, const Color(0xFFFFECAA), const Color(0xFFAB8D23));
+
+    case "Processed":
+      return statusButtonWidget(
+          type, const Color(0xFFE9EAFF), const Color(0xFF3F46EF));
+
+    case "Completed":
+      return statusButtonWidget(type, const Color(0xFF00C700).withOpacity(0.1),
+          const Color(0xFF00C700));
+    case "Partially Completed":
+      return statusButtonWidget(
+          type, const Color(0xFFE5F9FF), const Color(0xFF4C7785));
+    case "Cancelled":
+      return statusButtonWidget(
+          type, const Color(0xFFFFE1E2), const Color(0xFFE75860));
+
+    case "Processing":
+      return statusButtonWidget(
+          type, const Color(0xFF3585DB).withOpacity(0.1), primaryColor);
+
+    default:
+      return const SizedBox();
   }
+}
+
+Container statusButtonWidget(
+  String type,
+  Color color,
+  Color textColor,
+) {
+  return Container(
+    padding: const EdgeInsets.symmetric(vertical: 4.5, horizontal: 20),
+    decoration:
+        BoxDecoration(color: color, borderRadius: BorderRadius.circular(31)),
+    child: Center(
+      child: Text(
+        type,
+        style: TextStyle(
+            color: textColor, fontWeight: FontWeight.w500, fontSize: 14),
+      ),
+    ),
+  );
 }
