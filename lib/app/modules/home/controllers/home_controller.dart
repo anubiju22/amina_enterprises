@@ -1,7 +1,9 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  List items = [
+  List<String> items = [
     'Attendance',
     'My Route',
     'Shops',
@@ -10,7 +12,7 @@ class HomeController extends GetxController {
     'Profile',
     'Support'
   ];
-  List images = [
+  List<String> images = [
     'assets/svg/home_user.svg',
     'assets/svg/route.svg',
     'assets/svg/home_shop.svg',
@@ -19,6 +21,13 @@ class HomeController extends GetxController {
     'assets/svg/home_profile.svg',
     'assets/svg/call_center.svg'
   ];
+  List<String> catImage = [
+    'assets/svg/home_footwear.svg',
+    'assets/svg/home_bag.svg',
+    'assets/svg/home_jacket.svg'
+  ];
+  List<String> catTexts = ['Footwears', 'Bag', 'Apparels'];
+  List<Color> catColors = [homeFootColor, homeBagColor, homeAppColor];
 
   @override
   void onInit() {

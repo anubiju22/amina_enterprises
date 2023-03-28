@@ -13,10 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Amina Enterprises',
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
-      defaultTransition: Transition.noTransition,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
