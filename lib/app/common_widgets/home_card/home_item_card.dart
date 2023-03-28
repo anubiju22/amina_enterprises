@@ -13,31 +13,25 @@ class HomeCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        ontap!();
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Card(
-            elevation: 4,
-            color: homeMenuColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 14),
-              child: svgWidget(path),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Card(
+          elevation: 4,
+          color: homeMenuColor,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 14),
+            child: svgWidget(path),
           ),
-          const SizedBox(
-            height: 8,
-          ),
-          Center(child: Text(label, style: const TextStyle(fontSize: 14)))
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Center(child: Text(label, style: const TextStyle(fontSize: 14)))
+      ],
     );
   }
 }

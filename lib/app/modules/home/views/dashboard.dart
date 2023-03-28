@@ -15,19 +15,30 @@ class DashboardView extends GetView<DashboardController> {
               .elementAt(controller.selectedIndex.value))),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.selectedIndex.value,
+          elevation: 0,
           onTap: (int index) async {
             controller.selectedIndex.value = index;
           },
           items: [
             BottomNavigationBarItem(
-                icon: svgWidget('assets/svg/bottom_home.svg'), label: 'HOME'),
+                icon: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: svgWidget('assets/svg/bottom_home.svg'),
+                ),
+                label: 'HOME'),
             BottomNavigationBarItem(
-                icon: svgWidget('assets/svg/search.svg',
-                    color:
-                        const ColorFilter.mode(primaryColor, BlendMode.srcIn)),
+                icon: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: svgWidget('assets/svg/search.svg',
+                      color: const ColorFilter.mode(
+                          primaryColor, BlendMode.srcIn)),
+                ),
                 label: 'SEARCH'),
             BottomNavigationBarItem(
-                icon: svgWidget('assets/svg/home_profile.svg'),
+                icon: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: svgWidget('assets/svg/home_profile.svg'),
+                ),
                 label: 'PROFILE')
           ]),
     );

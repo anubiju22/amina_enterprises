@@ -6,7 +6,11 @@ import 'package:get/get.dart';
 
 class HomeAppBar extends GetView<DashboardController>
     implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
+  final Function onClick;
+
+  const HomeAppBar(this.onClick, {super.key});
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,9 @@ class HomeAppBar extends GetView<DashboardController>
       elevation: 0.0,
       backgroundColor: primaryColor,
       leading: InkWell(
-        onTap: () {},
+        onTap: () {
+          onClick();
+        },
         child: svgWidget('assets/svg/menu.svg'),
       ),
       centerTitle: true,

@@ -1,8 +1,8 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
-import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,14 @@ class HomeView extends GetView<HomeController> {
       height: 12,
     );
     return Scaffold(
-        appBar: const HomeAppBar(),
+        key: controller.dashBoardController.dashboardScaffoldkey,
+        drawer: const DrawerView(),
+        appBar: HomeAppBar(
+          () {
+            controller.dashBoardController.dashboardScaffoldkey.currentState
+                ?.openDrawer();
+          },
+        ),
         backgroundColor: scaffoldBgColor,
         body: SingleChildScrollView(
           child: Padding(
@@ -55,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                         ],
                       ),
                       CircleAvatar(
-                        radius: 35,
+                        radius: 38,
                         backgroundColor: const Color(0xFFE7E7E7),
                         child: Align(
                             alignment: Alignment.bottomCenter,
@@ -72,15 +79,14 @@ class HomeView extends GetView<HomeController> {
               blackText('Menu', 22, fontWeight: FontWeight.w500),
               sizedBox,
               GridView.builder(
+                  padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
+                      crossAxisCount: 4, mainAxisSpacing: 20.0
 
-                    mainAxisSpacing: 20,
-
-                    // number of columns in the grid
-                  ),
+                      // number of columns in the grid
+                      ),
                   itemCount: controller.items.length,
                   itemBuilder: (context, index) {
                     return HomeCardItem(
@@ -88,7 +94,7 @@ class HomeView extends GetView<HomeController> {
                         label: controller.items[index]);
                   }),
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               blackText('Categories', 22, fontWeight: FontWeight.w500),
               const SizedBox(
