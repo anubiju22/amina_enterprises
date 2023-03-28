@@ -1,11 +1,13 @@
-import 'package:amina_enterprises/app/modules/home/views/dashboard.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/dashboard.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/login/views/otp_view.dart';
+import '../modules/myroute/bindings/myroute_binding.dart';
+import '../modules/myroute/views/myroute_view.dart';
 import '../modules/myvisit/bindings/myvisit_binding.dart';
 import '../modules/myvisit/views/myvisit_view.dart';
 import '../modules/shops/bindings/shops_binding.dart';
@@ -18,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.LOGIN;
 
   static final routes = [
     GetPage(
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.MYVISIT,
       page: () => const MyvisitView(),
       binding: MyvisitBinding(),
+    ),
+    GetPage(
+      name: _Paths.MYROUTE,
+      page: () => const MyrouteView(),
+      binding: MyrouteBinding(),
     ),
   ];
 }

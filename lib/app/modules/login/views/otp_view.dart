@@ -41,7 +41,7 @@ class BottomWidget extends StatelessWidget {
           topLeft: Radius.circular(32),
           topRight: Radius.circular(32),
         ),
-        color: Color(0xfff3f3f3),
+        color: scaffoldBgColor,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -88,7 +88,7 @@ class BottomWidget extends StatelessWidget {
             CommonButtonWidget(
               label: "VERIFY OTP",
               onClick: () {
-                Get.toNamed(Routes.MYVISIT);
+                Get.toNamed(Routes.MYROUTE);
               },
             )
 

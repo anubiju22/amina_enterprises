@@ -3,6 +3,7 @@ import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -41,7 +42,7 @@ class BottomWidget extends StatelessWidget {
           topLeft: Radius.circular(32),
           topRight: Radius.circular(32),
         ),
-        color: Color(0xfff3f3f3),
+        color: scaffoldBgColor,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

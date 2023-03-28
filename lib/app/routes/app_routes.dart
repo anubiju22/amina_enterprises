@@ -9,6 +9,7 @@ abstract class Routes {
   static const OTP = _Paths.OTP;
   static const SHOPS = _Paths.SHOPS;
   static const MYVISIT = _Paths.MYVISIT;
+  static const MYROUTE = _Paths.MYROUTE;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const OTP = '/otp';
   static const SHOPS = '/shops';
   static const MYVISIT = '/myvisit';
+  static const MYROUTE = '/myroute';
 }
