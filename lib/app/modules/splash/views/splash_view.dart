@@ -8,6 +8,7 @@ class SplashView extends GetView<SplashController> {
   const SplashView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.put(SplashController());
     return Scaffold(
         body: Image.asset(
       'assets/image/splash_image.png',

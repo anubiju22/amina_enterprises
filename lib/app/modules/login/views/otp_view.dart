@@ -14,7 +14,7 @@ class OtpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF033EB2),
+        backgroundColor: const Color(0xFF033EB2),
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -24,7 +24,7 @@ class OtpView extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
                   child: Image.asset("assets/logo/logo.png")),
-              BottomWidget(),
+              const BottomWidget(),
             ],
           ),
         ));
@@ -41,7 +41,7 @@ class BottomWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.44,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
           topRight: Radius.circular(32),
@@ -54,13 +54,13 @@ class BottomWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              LoginText(
+              const LoginText(
                 text: "Enter OTP",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               OtpTextfield(
@@ -78,23 +78,23 @@ class BottomWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Didn’t receive OTP?",
                         style: TextStyle(color: Color(0xFF818181)),
                       ),
-                      Text(
+                      const Text(
                         "Resend",
                         style: TextStyle(color: primaryColor),
                       )
                     ],
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CommonButtonWidget(
                 label: "VERIFY OTP",
                 onClick: () {
-                  Get.toNamed(Routes.MYROUTE);
+                  Get.toNamed(Routes.HOME);
                 },
               )
 
