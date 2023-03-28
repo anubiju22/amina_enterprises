@@ -11,6 +11,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0.0,
+      backgroundColor: primaryColor,
+      centerTitle: false,
       leading: InkWell(
           onTap: () {
             Get.back();
@@ -20,6 +23,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         label,
         style: const TextStyle(fontSize: 20, color: primaryColor),
       ),
+      actions: [
+        IconButton(onPressed: () {}, icon: svgWidget('assets/svg/search.svg'))
+      ],
     );
   }
 

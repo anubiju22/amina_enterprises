@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/modules/home/views/dashboard.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
@@ -29,6 +30,11 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME,
+      page: () => const DashboardView(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.OTP,

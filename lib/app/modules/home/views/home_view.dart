@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -8,12 +9,9 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomeView'),
-        centerTitle: true,
-      ),
-      body: const Center(
+    return const Scaffold(
+      appBar: HomeAppBar(),
+      body: Center(
         child: Text(
           'HomeView is working',
           style: TextStyle(fontSize: 20),
