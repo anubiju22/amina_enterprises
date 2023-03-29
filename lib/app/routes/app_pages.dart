@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/attendance_report/bindings/attendance_report_binding.dart';
+import '../modules/attendance_report/views/attendance_report_view.dart';
 import '../modules/footwears/bindings/footwears_binding.dart';
 import '../modules/footwears/views/footwears_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -63,6 +65,11 @@ class AppPages {
       name: _Paths.FOOTWEARS,
       page: () => const FootwearsView(),
       binding: FootwearsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ATTENDANCE_REPORT,
+      page: () => const AttendanceReportView(),
+      binding: AttendanceReportBinding(),
     ),
   ];
 }

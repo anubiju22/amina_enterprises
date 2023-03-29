@@ -21,6 +21,7 @@ dependencies:
   get: ^4.6.5
   flutter_svg: ^2.0.4
   pin_code_fields: ^7.4.0
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
