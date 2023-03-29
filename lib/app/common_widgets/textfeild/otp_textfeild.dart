@@ -44,7 +44,7 @@ class OtpTextfield extends StatelessWidget {
         disabledColor: const Color(0xFFFFFFFF),
         errorBorderColor: const Color(0xFFFFFFFF),
         inactiveColor: const Color(0xFFFFFFFF),
-        inactiveFillColor: const Color(0xFFFFFFFF),
+        inactiveFillColor: const Color(0xFF000000),
         selectedFillColor: const Color(0xFFFFFFFF),
       ),
       animationDuration: const Duration(milliseconds: 300),

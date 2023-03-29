@@ -78,21 +78,80 @@ class HomeView extends GetView<HomeController> {
               ),
               blackText('Menu', 22, fontWeight: FontWeight.w500),
               sizedBox,
-              GridView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4, mainAxisSpacing: 20.0
-
-                      // number of columns in the grid
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  HomeCardItem(
+                    path: 'assets/svg/home_user.svg',
+                    label: 'Attendance',
+                    ontap: () {
+                      Get.toNamed(Routes.ATTENDANCE_REPORT);
+                    },
+                  ),
+                  HomeCardItem(
+                    path: 'assets/svg/route.svg',
+                    label: 'My Route',
+                    ontap: () {
+                      Get.toNamed(Routes.MYROUTE);
+                    },
+                  ),
+                  HomeCardItem(
+                    path: 'assets/svg/home_shop.svg',
+                    label: 'Shops',
+                    ontap: () {
+                      Get.toNamed(Routes.SHOPS);
+                    },
+                  ),
+                  HomeCardItem(
+                    path: 'assets/svg/home_list.svg',
+                    label: 'My Visit',
+                    ontap: () {
+                      Get.toNamed(Routes.MYVISIT);
+                    },
+                  ),
+                ],
+              ),
+              sizedBox,
+              Row(
+                children: [
+                  Wrap(
+                    spacing: MediaQuery.of(context).size.width * 0.05,
+                    children: [
+                      HomeCardItem(
+                        path: 'assets/svg/home_checklist.svg',
+                        label: 'My Order',
+                        ontap: () {},
                       ),
-                  itemCount: controller.items.length,
-                  itemBuilder: (context, index) {
-                    return HomeCardItem(
-                        path: controller.images[index],
-                        label: controller.items[index]);
-                  }),
+                      HomeCardItem(
+                        path: 'assets/svg/home_profile.svg',
+                        label: 'Profile',
+                        ontap: () {},
+                      ),
+                      HomeCardItem(
+                        path: 'assets/svg/call_center.svg',
+                        label: 'Support',
+                        ontap: () {},
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              // GridView.builder(
+              //     padding: EdgeInsets.zero,
+              //     shrinkWrap: true,
+              //     scrollDirection: Axis.vertical,
+              //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //         crossAxisCount: 4, mainAxisSpacing: 20.0
+
+              //         // number of columns in the grid
+              //         ),
+              //     itemCount: controller.items.length,
+              //     itemBuilder: (context, index) {
+              //       return HomeCardItem(
+              //           path: controller.images[index],
+              //           label: controller.items[index],
+              //           ontap: ,);
+              //     }),
               const SizedBox(
                 height: 30,
               ),
@@ -100,16 +159,32 @@ class HomeView extends GetView<HomeController> {
               const SizedBox(
                 height: 20,
               ),
-              GridView.count(
-                  shrinkWrap: true,
-                  crossAxisCount: 3,
-                  children: List.generate(3, (index) {
-                    return HomeCategories(
-                      color: controller.catColors[index],
-                      label: controller.catTexts[index],
-                      path: controller.catImage[index],
-                    );
-                  }))
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  HomeCategories(
+                    path: 'assets/svg/home_footwear.svg',
+                    label: 'Footwears',
+                    color: homeFootColor,
+                    onClick: () {
+                      Get.toNamed(Routes.FOOTWEARS);
+                    },
+                  ),
+                  HomeCategories(
+                    path: 'assets/svg/home_bag.svg',
+                    label: 'Bag',
+                    color: homeBagColor,
+                    onClick: () {},
+                  ),
+                  HomeCategories(
+                    path: 'assets/svg/home_jacket.svg',
+                    label: 'Apparels',
+                    color: homeAppColor,
+                    onClick: () {},
+                  )
+                ],
+              )
             ]),
           ),
         ));
