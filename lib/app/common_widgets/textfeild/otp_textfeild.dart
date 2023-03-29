@@ -8,6 +8,7 @@
 ///    Modified by: vaisakh
 ///===========================================
 
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -21,17 +22,22 @@ class OtpTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
+      backgroundColor: scaffoldBgColor,
       autoFocus: true,
       appContext: context,
       length: 4,
       animationType: AnimationType.fade,
-      textStyle: TextStyle(color: Get.isDarkMode ? Colors.white : Colors.black),
+      textStyle: TextStyle(
+          color: Get.isDarkMode ? Colors.black : Colors.black,
+          backgroundColor: Colors.white,
+          decorationColor: Colors.white),
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(16),
-        fieldHeight: 50,
-        fieldWidth: 50,
-        borderWidth: 0,
+        fieldHeight: 60,
+        fieldWidth: 60,
+        // fieldOuterPadding: EdgeInsets.all(10),
+        borderWidth: 1,
         activeColor: const Color(0xFFFFFFFF),
         selectedColor: const Color(0xFFFFFFFF),
         activeFillColor: const Color(0xFFFFFFFF),
