@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/card/product_card.dart';
+import 'package:amina_enterprises/app/modules/footwears/views/staggered_grid_view.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class FootwearsView extends GetView<FootwearsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: scaffoldBgColor,
         appBar: CommonAppBar(label: "FootWears"),
         body: DefaultTabController(
           length: 3,
@@ -38,37 +40,14 @@ class FootwearsView extends GetView<FootwearsController> {
                 ],
               ),
               Expanded(
-                  child: TabBarView(
-                children: [
-                  ProductCard(
-                    artNo: 'GP4300',
-                    brandName: 'Gents Coverings',
-                    image: "",
-                    // "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
-                    mrp: '350',
-                    onTap: () {},
-                    productName: 'Gents Covering',
-                  ),
-                  ProductCard(
-                    artNo: 'GP4300',
-                    brandName: 'Gents Coverings',
-                    image: "",
-                    // "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
-                    mrp: '350',
-                    onTap: () {},
-                    productName: 'Gents Covering',
-                  ),
-                  ProductCard(
-                    artNo: 'GP4300',
-                    brandName: 'Gents Coverings',
-                    image: "",
-                    // "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
-                    mrp: '350',
-                    onTap: () {},
-                    productName: 'Gents Covering',
-                  ),
-                ],
-              ))
+                child: TabBarView(
+                  children: [
+                    ProductView(),
+                    ProductView(),
+                    ProductView(),
+                  ],
+                ),
+              )
             ],
           ),
         ));
