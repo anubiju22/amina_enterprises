@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../common_widgets/svg_icons/svg_widget.dart';
 import '../controllers/footwears_controller.dart';
 
 class FootwearsView extends GetView<FootwearsController> {
@@ -13,13 +14,15 @@ class FootwearsView extends GetView<FootwearsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: scaffoldBgColor,
-        appBar: CommonAppBar(label: "FootWears"),
-        body: DefaultTabController(
-          length: 3,
-          child: Column(
-            children: [
-              TabBar(
+      backgroundColor: scaffoldBgColor,
+      appBar: const CommonAppBar(label: "FootWears"),
+      body: DefaultTabController(
+        length: 3,
+        child: Column(
+          children: [
+            Container(
+              color: Colors.white,
+              child: TabBar(
                 labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                 labelColor: primaryColor,
                 indicatorColor: primaryColor,
@@ -39,17 +42,53 @@ class FootwearsView extends GetView<FootwearsController> {
                   ),
                 ],
               ),
-              Expanded(
-                child: TabBarView(
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  ProductView(),
+                  ProductView(),
+                  ProductView(),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          // currentIndex: controller.selectedIndex.value,
+          elevation: 0,
+          onTap: (int index) async {
+            // controller.selectedIndex.value = index;
+          },
+          items: [
+            BottomNavigationBarItem(
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ProductView(),
-                    ProductView(),
-                    ProductView(),
+                    svgWidget('assets/svg/filter.svg'),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    const Text('Sort')
                   ],
                 ),
-              )
-            ],
-          ),
-        ));
+                label: ''),
+            BottomNavigationBarItem(
+                icon: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    svgWidget(
+                      'assets/svg/filter.svg',
+                    ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    const Text('Filter')
+                  ],
+                ),
+                label: ''),
+          ]),
+    );
   }
 }
