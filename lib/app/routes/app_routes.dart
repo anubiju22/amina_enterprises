@@ -12,6 +12,7 @@ abstract class Routes {
   static const MYROUTE = _Paths.MYROUTE;
   static const FOOTWEARS = _Paths.FOOTWEARS;
   static const ATTENDANCE_REPORT = _Paths.ATTENDANCE_REPORT;
+  static const PRODUCTDETAILS = _Paths.PRODUCTDETAILS;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const MYROUTE = '/myroute';
   static const FOOTWEARS = '/footwears';
   static const ATTENDANCE_REPORT = '/attendance-report';
+  static const PRODUCTDETAILS = '/productdetails';
 }

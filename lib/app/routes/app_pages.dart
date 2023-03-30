@@ -13,6 +13,8 @@ import '../modules/myroute/bindings/myroute_binding.dart';
 import '../modules/myroute/views/myroute_view.dart';
 import '../modules/myvisit/bindings/myvisit_binding.dart';
 import '../modules/myvisit/views/myvisit_view.dart';
+import '../modules/productdetails/bindings/productdetails_binding.dart';
+import '../modules/productdetails/views/productdetails_view.dart';
 import '../modules/shops/bindings/shops_binding.dart';
 import '../modules/shops/views/shops_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -70,6 +72,11 @@ class AppPages {
       name: _Paths.ATTENDANCE_REPORT,
       page: () => const AttendanceReportView(),
       binding: AttendanceReportBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCTDETAILS,
+      page: () => const ProductdetailsView(),
+      binding: ProductdetailsBinding(),
     ),
   ];
 }

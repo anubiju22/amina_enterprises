@@ -1,4 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/footwears/views/stackcolor.dart';
 
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class ProductCard extends StatelessWidget {
   final Function onTap;
   final String brandName;
   final Function? act;
-  final List<String> colors;
+  final Color colors, color;
   const ProductCard({
     Key? key,
     required this.artNo,
@@ -20,6 +21,7 @@ class ProductCard extends StatelessWidget {
     required this.mrp,
     required this.brandName,
     this.act,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -78,9 +80,14 @@ class ProductCard extends StatelessWidget {
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GreyText(
                   text: brandName,
+                ),
+                overlapped(
+                  color,
+                  colors,
                 ),
                 //  StackedWidgets(
                 //     direction: TextDirection.rtl,
