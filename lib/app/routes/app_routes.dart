@@ -13,6 +13,7 @@ abstract class Routes {
   static const FOOTWEARS = _Paths.FOOTWEARS;
   static const ATTENDANCE_REPORT = _Paths.ATTENDANCE_REPORT;
   static const PRODUCTDETAILS = _Paths.PRODUCTDETAILS;
+  static const CAMERA_PICTURE = _Paths.CAMERA_PICTURE;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const FOOTWEARS = '/footwears';
   static const ATTENDANCE_REPORT = '/attendance-report';
   static const PRODUCTDETAILS = '/productdetails';
+  static const CAMERA_PICTURE = '/camera-picture';
 }

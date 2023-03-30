@@ -4,6 +4,7 @@ class CommonButtonWidget extends StatelessWidget {
   final String label;
   final Color? color;
   final double? fontSize;
+  final double? borderRadius;
   final VoidCallback onClick;
   final bool? isLoading;
 
@@ -13,6 +14,7 @@ class CommonButtonWidget extends StatelessWidget {
       required this.onClick,
       this.fontSize,
       this.isLoading,
+      this.borderRadius = 10,
       this.color});
 
   @override
@@ -25,7 +27,7 @@ class CommonButtonWidget extends StatelessWidget {
           width: double.maxFinite,
           height: MediaQuery.of(context).size.height * .07,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(borderRadius!),
               // color: color ?? AppColors().primaryColor
               color: const Color(0xFF033EB2)),
           child: isLoading == true

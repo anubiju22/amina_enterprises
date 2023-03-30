@@ -18,8 +18,8 @@ class DrawerView extends GetView<DashboardController> {
           Center(
               child: Image.asset(
             'assets/logo/drawer_logo.png',
-            fit: BoxFit.contain,
-          )).paddingOnly(top: 20),
+            height: size.height * 0.15,
+          )).paddingOnly(top: 30),
           ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -86,7 +86,7 @@ class DrawerCard extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width * 0.10,
-            height: MediaQuery.of(context).size.height * 0.10,
+            height: MediaQuery.of(context).size.height * 0.088,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle, color: homeMenuColor),
             child: Padding(

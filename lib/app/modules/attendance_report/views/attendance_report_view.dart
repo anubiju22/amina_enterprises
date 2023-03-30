@@ -81,7 +81,11 @@ class AttendanceReportView extends GetView<AttendanceReportController> {
   }
 
   SizedBox header(BuildContext context, String label) {
-    return SizedBox(child: Text(label));
+    return SizedBox(
+        child: Text(
+      label,
+      style: const TextStyle(color: primaryColor),
+    ));
   }
 
   SizedBox footer(BuildContext context, String label) {

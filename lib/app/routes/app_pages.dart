@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/attendance_report/bindings/attendance_report_binding.dart';
 import '../modules/attendance_report/views/attendance_report_view.dart';
+import '../modules/camera_picture/bindings/camera_picture_binding.dart';
+import '../modules/camera_picture/views/camera_picture_view.dart';
 import '../modules/footwears/bindings/footwears_binding.dart';
 import '../modules/footwears/views/footwears_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -77,6 +79,11 @@ class AppPages {
       name: _Paths.PRODUCTDETAILS,
       page: () => const ProductdetailsView(),
       binding: ProductdetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.CAMERA_PICTURE,
+      page: () => const CameraPictureView(),
+      binding: CameraPictureBinding(),
     ),
   ];
 }
