@@ -2,9 +2,11 @@ import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/home/views/camera_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -15,6 +17,7 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    int direction = 0;
     var sizedBox = const SizedBox(
       height: 12,
     );
@@ -55,15 +58,21 @@ class HomeView extends GetView<HomeController> {
                             height: MediaQuery.of(context).size.height * 0.04,
                             child: CommonButtonWidget(
                               label: 'LOGIN',
+                              borderRadius: 15,
                               fontSize: 12,
-                              onClick: () {},
+                              onClick: () {
+                                Navigator.push(context,MaterialPageRoute(
+                                    builder: (context) => CameraView(camera: controller.cameras[direction])));
+                              },
                             ),
                           )
                         ],
                       ),
-                      CircleAvatar(
-                        radius: 38,
-                        backgroundColor: const Color(0xFFE7E7E7),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.15,
+                        height: MediaQuery.of(context).size.height * 0.10,
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle, color: Color(0xFFE7E7E7)),
                         child: Align(
                             alignment: Alignment.bottomCenter,
                             child:

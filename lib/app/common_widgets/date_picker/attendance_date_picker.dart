@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AttendanceDatePicker extends StatelessWidget {
@@ -18,31 +19,37 @@ class AttendanceDatePicker extends StatelessWidget {
       padding: const EdgeInsets.all(0),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         IconButton(
-            onPressed: () {
-              increment();
-            },
-            icon: const Icon(Icons.arrow_back_ios)),
+          onPressed: () {
+            increment();
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+          color: dateArrowColor,
+        ),
         TextButton(
           onPressed: () {},
           child: Row(
             children: [
-              const Icon(Icons.calendar_today, size: 15, color: Colors.black),
+              const Icon(Icons.calendar_today, size: 17, color: primaryColor),
               const SizedBox(
                 width: 5,
               ),
               Text(
                 date,
                 style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.black),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black),
               ),
             ],
           ),
         ),
         IconButton(
-            onPressed: () {
-              decrement();
-            },
-            icon: const Icon(Icons.arrow_forward_ios))
+          onPressed: () {
+            decrement();
+          },
+          icon: const Icon(Icons.arrow_forward_ios),
+          color: dateArrowColor,
+        )
       ]),
     );
   }

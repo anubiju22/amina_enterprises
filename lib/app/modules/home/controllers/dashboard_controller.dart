@@ -18,7 +18,7 @@ class DashboardController extends GetxController {
     super.onInit();
 
     drawerItems.addAll([
-      DrawerItem('assets/svg/bottom_home.svg', 'HOME', () {
+      DrawerItem('assets/svg/bottom_home.svg', 'Home', () {
         Get.back();
       }),
       DrawerItem('assets/svg/home_user.svg', 'Attendance', () {

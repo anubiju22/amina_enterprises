@@ -1,8 +1,11 @@
 import 'package:amina_enterprises/app/routes/app_pages.dart';
+import 'package:amina_enterprises/constraints/applevel_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+Future<void> main() async {
+  await AppLevelServices().onInitApp();
+  
   runApp(const MyApp());
 }
 
