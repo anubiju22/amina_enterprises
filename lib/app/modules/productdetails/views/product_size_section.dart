@@ -23,7 +23,15 @@ class ProductSizeCategorySection extends StatelessWidget {
               TypeWidget(
                 selected: true,
                 onPressed: () {},
-                text: 'Cartoon',
+                text: 'CARTOON',
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              TypeWidget(
+                selected: false,
+                onPressed: () {},
+                text: 'CUT SIZE',
               ),
             ])
           ],
@@ -53,8 +61,8 @@ class TypeWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 20,
-            height: 20,
+            width: 16,
+            height: 16,
             decoration: BoxDecoration(
               border: Border.all(color: primaryColor),
               shape: BoxShape.circle,
@@ -62,8 +70,8 @@ class TypeWidget extends StatelessWidget {
             child: selected
                 ? Center(
                     child: Container(
-                      width: 15,
-                      height: 15,
+                      width: 10,
+                      height: 10,
                       decoration: const BoxDecoration(
                         color: primaryColor,
                         shape: BoxShape.circle,

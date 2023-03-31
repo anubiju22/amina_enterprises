@@ -37,6 +37,15 @@ class ProductColorSection extends StatelessWidget {
                 },
                 colorCode: "",
                 selected: true,
+              ),
+              ColorWidget(
+                color: "Blue",
+                onTap: () {
+                  // send to index
+                  // controller.changeSelectedAttribute(attribute);
+                },
+                colorCode: "",
+                selected: false,
               )
             ])
           ],
