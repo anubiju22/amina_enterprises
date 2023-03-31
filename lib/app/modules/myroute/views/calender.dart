@@ -8,7 +8,7 @@ class HorizontalCalendar extends StatelessWidget {
       height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 7,
+        itemCount: 6,
         itemBuilder: (BuildContext context, int index) {
           final DateTime date = DateTime.now().add(Duration(days: index));
           return _buildDay(date);
@@ -23,7 +23,7 @@ class HorizontalCalendar extends StatelessWidget {
 
     return Container(
       width: 50,
-      margin: EdgeInsets.all(8.0),
+      margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
         color: Colors.grey[300],
@@ -35,16 +35,20 @@ class HorizontalCalendar extends StatelessWidget {
           Text(
             dayOfWeek,
             style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              color: Color(0xff252525),
+              fontSize: 16,
+              fontFamily: "Manrope",
+              fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 5),
           Text(
             date.day.toString(),
             style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 32,
+              fontFamily: "Manrope",
+              fontWeight: FontWeight.w600,
             ),
           ),
         ],
