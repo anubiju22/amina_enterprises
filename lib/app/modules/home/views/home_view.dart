@@ -33,7 +33,7 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: scaffoldBgColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Card(
@@ -91,8 +91,8 @@ class HomeView extends GetView<HomeController> {
               ),
               blackText('Menu', 22, fontWeight: FontWeight.w500),
               sizedBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Wrap(
+                spacing: 5,
                 children: [
                   HomeCardItem(
                     path: 'assets/svg/home_user.svg',
@@ -122,32 +122,21 @@ class HomeView extends GetView<HomeController> {
                       Get.toNamed(Routes.MYVISIT);
                     },
                   ),
-                ],
-              ),
-              sizedBox,
-              Row(
-                children: [
                   HomeCardItem(
                     path: 'assets/svg/home_checklist.svg',
                     label: 'My Order',
                     ontap: () {},
-                  ),
-                  SizedBox(
-                    width: 10,
                   ),
                   HomeCardItem(
                     path: 'assets/svg/home_profile.svg',
                     label: 'Profile',
                     ontap: () {},
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
                   HomeCardItem(
                     path: 'assets/svg/call_center.svg',
                     label: 'Support',
                     ontap: () {},
-                  )
+                  ),
                 ],
               ),
               // GridView.builder(

@@ -52,7 +52,7 @@ class MyRouteCard extends StatelessWidget {
                 text: number,
               ),
               SizedBox(
-                width: 40,
+                width: 30,
               ),
               svgWidget('assets/svg/pin_drop.svg',
                   size: 20,
@@ -68,9 +68,7 @@ class MyRouteCard extends StatelessWidget {
                     "Google Map",
                     style: TextStyle(color: primaryColor, fontSize: 12),
                   )),
-              SizedBox(
-                width: 50,
-              ),
+              Spacer(),
               orderButtonFunction('Pending')
             ],
           ),
