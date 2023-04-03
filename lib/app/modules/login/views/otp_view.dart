@@ -55,7 +55,7 @@ class BottomWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 20,
+                height: 30,
               ),
               const LoginText(
                 text: "Enter OTP",

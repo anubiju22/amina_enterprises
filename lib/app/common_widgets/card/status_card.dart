@@ -7,8 +7,8 @@ Widget orderButtonFunction(String type) {
       return statusButtonWidget(type, const Color(0xFFCFFFC7), Colors.green);
 
     case "Pending":
-      return statusButtonWidget(type, const Color(0xFFFFD5B6).withOpacity(0.1),
-          const Color(0xFFED893E));
+      return statusButtonWidget(
+          type, const Color(0xFFFFD5B6), const Color(0xFFED893E));
 
     case "Viewed":
       return statusButtonWidget(

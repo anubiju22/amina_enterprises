@@ -88,6 +88,9 @@ class MyrouteView extends GetView<MyrouteController> {
                   )
                 ],
               ),
+              SizedBox(
+                height: 15,
+              ),
               ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,

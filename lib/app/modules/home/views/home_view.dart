@@ -61,8 +61,12 @@ class HomeView extends GetView<HomeController> {
                               borderRadius: 15,
                               fontSize: 12,
                               onClick: () {
-                                Navigator.push(context,MaterialPageRoute(
-                                    builder: (context) => CameraView(camera: controller.cameras[direction])));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CameraView(
+                                            camera: controller
+                                                .cameras[direction])));
                               },
                             ),
                           )
@@ -83,7 +87,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               const SizedBox(
-                height: 25,
+                height: 15,
               ),
               blackText('Menu', 22, fontWeight: FontWeight.w500),
               sizedBox,
@@ -123,25 +127,26 @@ class HomeView extends GetView<HomeController> {
               sizedBox,
               Row(
                 children: [
-                  Wrap(
-                    spacing: MediaQuery.of(context).size.width * 0.05,
-                    children: [
-                      HomeCardItem(
-                        path: 'assets/svg/home_checklist.svg',
-                        label: 'My Order',
-                        ontap: () {},
-                      ),
-                      HomeCardItem(
-                        path: 'assets/svg/home_profile.svg',
-                        label: 'Profile',
-                        ontap: () {},
-                      ),
-                      HomeCardItem(
-                        path: 'assets/svg/call_center.svg',
-                        label: 'Support',
-                        ontap: () {},
-                      ),
-                    ],
+                  HomeCardItem(
+                    path: 'assets/svg/home_checklist.svg',
+                    label: 'My Order',
+                    ontap: () {},
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  HomeCardItem(
+                    path: 'assets/svg/home_profile.svg',
+                    label: 'Profile',
+                    ontap: () {},
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  HomeCardItem(
+                    path: 'assets/svg/call_center.svg',
+                    label: 'Support',
+                    ontap: () {},
                   )
                 ],
               ),
@@ -162,7 +167,7 @@ class HomeView extends GetView<HomeController> {
               //           ontap: ,);
               //     }),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               blackText('Categories', 22, fontWeight: FontWeight.w500),
               const SizedBox(

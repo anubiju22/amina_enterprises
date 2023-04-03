@@ -50,7 +50,7 @@ class BottomWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 20,
+              height: 30,
             ),
             const LoginText(
               text: "Employee Login",

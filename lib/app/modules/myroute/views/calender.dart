@@ -35,7 +35,7 @@ class HorizontalCalendar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            dayOfWeek,
+            dayOfWeek.toUpperCase(),
             style: TextStyle(
               color: Color(0xff252525),
               fontSize: 16,
