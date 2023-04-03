@@ -10,8 +10,6 @@ class HomeAppBar extends GetView<DashboardController>
 
   const HomeAppBar(this.onClick, {super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -25,7 +23,7 @@ class HomeAppBar extends GetView<DashboardController>
       ),
       centerTitle: true,
       title: const Text(
-        'HOME',
+        'Home',
         style: TextStyle(
             color: Colors.white, fontWeight: FontWeight.w800, fontSize: 20),
       ),

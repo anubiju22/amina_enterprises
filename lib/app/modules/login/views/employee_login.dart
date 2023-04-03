@@ -10,8 +10,8 @@ import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+class EmployeeLoginView extends GetView<LoginController> {
+  const EmployeeLoginView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,30 +52,31 @@ class BottomWidget extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Center(
-              child: const LoginText(
-                text: "Choose Your Login",
+            const LoginText(
+              text: "Employee Login",
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            LoginTextField(
+              hintText: 'Enter your Phone Number',
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(15),
+                child: svgWidget(
+                  'assets/svg/Call.svg',
+                ),
               ),
+              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             CommonButtonWidget(
-              label: "Employee Login",
+              label: "GET OTP",
               onClick: () {
                 Get.toNamed(Routes.OTP);
               },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            CommonButtonWidget(
-              color: Color(0xFF5562D7),
-              label: "Retailer Login",
-              onClick: () {
-                Get.toNamed(Routes.OTP);
-              },
-            ),
+            )
 
             // )
           ],
