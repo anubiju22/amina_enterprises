@@ -27,18 +27,18 @@ class DashboardController extends GetxController {
       DrawerItem('assets/svg/route.svg', 'My Route', () {
         Get.back();
       }),
-      DrawerItem('assets/svg/home_shop.svg', 'Shops', () {
-        Get.back();
-      }),
-      DrawerItem('assets/svg/home_list.svg', 'My Visit', () {
-        Get.back();
-      }),
+      // DrawerItem('assets/svg/home_shop.svg', 'Shops', () {
+      //   Get.back();
+      // }),
+      // DrawerItem('assets/svg/home_list.svg', 'My Visit', () {
+      //   Get.back();
+      // }),
       DrawerItem('assets/svg/home_checklist.svg', 'My Order', () {
         Get.back();
       }),
-      DrawerItem('assets/svg/home_profile.svg', 'Profile', () {
-        Get.back();
-      }),
+      // DrawerItem('assets/svg/home_profile.svg', 'Profile', () {
+      //   Get.back();
+      // }),
       DrawerItem('assets/svg/call_center.svg', 'Support', () {
         Get.back();
       }),

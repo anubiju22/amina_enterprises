@@ -25,7 +25,7 @@ class DashboardView extends GetView<DashboardController> {
                   padding: const EdgeInsets.all(6.0),
                   child: svgWidget('assets/svg/bottom_home.svg'),
                 ),
-                label: 'HOME'),
+                label: 'Home'),
             BottomNavigationBarItem(
                 icon: Padding(
                   padding: const EdgeInsets.all(6.0),
@@ -33,13 +33,13 @@ class DashboardView extends GetView<DashboardController> {
                       color: const ColorFilter.mode(
                           primaryColor, BlendMode.srcIn)),
                 ),
-                label: 'SEARCH'),
+                label: 'Search'),
             BottomNavigationBarItem(
                 icon: Padding(
                   padding: const EdgeInsets.all(6.0),
                   child: svgWidget('assets/svg/home_profile.svg'),
                 ),
-                label: 'PROFILE')
+                label: 'Profile')
           ]),
     );
   }

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 Future<void> main() async {
   await AppLevelServices().onInitApp();
-  
+
   runApp(const MyApp());
 }
 
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Manrope',
       ),
     );
   }

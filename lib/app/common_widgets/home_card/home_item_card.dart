@@ -24,7 +24,7 @@ class HomeCardItem extends StatelessWidget {
             elevation: 4,
             color: homeMenuColor,
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
@@ -32,10 +32,14 @@ class HomeCardItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 8,
+            height: 6,
           ),
           Text(label,
-              textAlign: TextAlign.center, style: const TextStyle(fontSize: 14))
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 14,
+                  fontFamily: "Manrope",
+                  fontWeight: FontWeight.w500))
         ],
       ),
     );
@@ -73,7 +77,7 @@ class HomeCategories extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          blackText(label, 14, fontWeight: FontWeight.w400)
+          blackText(label, 14, fontWeight: FontWeight.w500)
         ],
       ),
     );

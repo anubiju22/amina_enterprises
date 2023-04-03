@@ -49,6 +49,7 @@ class DrawerView extends GetView<DashboardController> {
               Center(
                 child: Image.asset(
                   "assets/logo/git_logo.png",
+                  height: 50,
                 ),
               ),
             ],
@@ -85,19 +86,19 @@ class DrawerCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.10,
-            height: MediaQuery.of(context).size.height * 0.088,
+            width: MediaQuery.of(context).size.width * 0.12,
+            height: MediaQuery.of(context).size.height * 0.085,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle, color: homeMenuColor),
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(9.0),
               child: svgWidget(path),
             ),
           ),
           const SizedBox(
             width: 22,
           ),
-          blackText(label, 14, fontWeight: FontWeight.w400)
+          blackText(label, 14, fontWeight: FontWeight.w500)
         ],
       ),
     );

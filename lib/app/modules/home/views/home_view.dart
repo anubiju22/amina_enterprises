@@ -50,11 +50,15 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           greyText('Hi, Anshad', 14),
-                          sizedBox,
-                          blackText('Welcome', 20, fontWeight: FontWeight.w700),
-                          sizedBox,
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.20,
+                            height: 10,
+                          ),
+                          blackText('Welcome', 20, fontWeight: FontWeight.w700),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.23,
                             height: MediaQuery.of(context).size.height * 0.04,
                             child: CommonButtonWidget(
                               label: 'LOGIN',
@@ -89,10 +93,15 @@ class HomeView extends GetView<HomeController> {
               const SizedBox(
                 height: 15,
               ),
-              blackText('Menu', 22, fontWeight: FontWeight.w500),
+              blackText(
+                'Menu',
+                22,
+                fontWeight: FontWeight.w700,
+              ),
               sizedBox,
               Wrap(
                 spacing: 5,
+                runSpacing: 10,
                 children: [
                   HomeCardItem(
                     path: 'assets/svg/home_user.svg',
@@ -130,7 +139,9 @@ class HomeView extends GetView<HomeController> {
                   HomeCardItem(
                     path: 'assets/svg/home_profile.svg',
                     label: 'Profile',
-                    ontap: () {},
+                    ontap: () {
+                      // Get.toNamed(Routes.ProfileView);
+                    },
                   ),
                   HomeCardItem(
                     path: 'assets/svg/call_center.svg',
@@ -158,7 +169,7 @@ class HomeView extends GetView<HomeController> {
               const SizedBox(
                 height: 20,
               ),
-              blackText('Categories', 22, fontWeight: FontWeight.w500),
+              blackText('Categories', 22, fontWeight: FontWeight.w700),
               const SizedBox(
                 height: 20,
               ),
