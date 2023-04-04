@@ -6,7 +6,6 @@ import 'package:amina_enterprises/app/modules/home/views/camera_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

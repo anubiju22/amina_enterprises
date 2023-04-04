@@ -18,20 +18,18 @@ class MyRouteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           BlackText(
             text: shopname,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Row(
             children: [
               svgWidget('assets/svg/location.svg'),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               GreyText(
@@ -39,41 +37,38 @@ class MyRouteCard extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Row(
-            children: [
-              svgWidget('assets/svg/Call.svg', size: 15),
-              SizedBox(
-                width: 5,
-              ),
-              GreyText(
-                text: number,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              svgWidget('assets/svg/pin_drop.svg',
-                  size: 20,
-                  color: ColorFilter.mode(primaryColor, BlendMode.srcIn)),
-              TextButton(
-                  style: TextButton.styleFrom(
-                    minimumSize: Size.zero,
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Google Map",
-                    style: TextStyle(color: primaryColor, fontSize: 12),
-                  )),
-              Spacer(),
-              orderButtonFunction('Pending')
-            ],
-          ),
-        ],
-      ),
-    );
+          Row(children: [
+            svgWidget('assets/svg/Call.svg', size: 15),
+            const SizedBox(
+              width: 5,
+            ),
+            GreyText(
+              text: number,
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            svgWidget('assets/svg/pin_drop.svg',
+                size: 20,
+                color: const ColorFilter.mode(primaryColor, BlendMode.srcIn)),
+            TextButton(
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: EdgeInsets.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "Google Map",
+                  style: TextStyle(color: primaryColor, fontSize: 12),
+                )),
+            const SizedBox(
+              width: 50,
+            )
+          ]),
+        ]));
   }
 }
