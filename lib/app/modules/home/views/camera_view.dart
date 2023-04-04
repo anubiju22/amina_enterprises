@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -14,12 +17,11 @@ class CameraView extends StatefulWidget {
 class _CameraViewState extends State<CameraView> {
   late CameraController cameraController;
   late Future<void> initializeValue;
-  late String imagePath;
+  String imagePath = "";
 
   @override
   void initState() {
     super.initState();
-    imagePath = '';
 
     cameraController = CameraController(widget.camera, ResolutionPreset.high,
         enableAudio: false);
@@ -51,60 +53,93 @@ class _CameraViewState extends State<CameraView> {
   @override
   Widget build(BuildContext context) {
     if (cameraController.value.isInitialized) {
-      return AspectRatio(
-        aspectRatio: cameraController.value.aspectRatio,
-        child: Stack(children: [
-          FutureBuilder(
-            future: initializeValue,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return CameraPreview(cameraController);
-              }
-              return const SizedBox();
-            },
-          ),
-          GestureDetector(
-              onTap: () {
-                cameraController.takePicture().then(
-                  (value) {
-                    setState(() {
-                      imagePath = value.path;
-                    });
-                  },
-                );
-              },
-              child:
-                  camButton(Alignment.bottomCenter, Icons.camera_alt_outlined)),
-          if (imagePath != null)
-            Positioned.fill(
-              child: Image.file(
-                File(imagePath),
-                fit: BoxFit.cover,
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.78,
+              child: Stack(
+                  alignment: AlignmentDirectional.topCenter,
+                  fit: StackFit.loose,
+                  children: [
+                    SizedBox(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.75,
+                        child: CameraPreview(cameraController)),
+                    Positioned(
+                      top: MediaQuery.of(context).size.height * 0.71,
+                      child: GestureDetector(
+                          onTap: () {
+                            cameraController.takePicture().then(
+                              (value) {
+                                setState(() {
+                                  imagePath = value.path;
+                                });
+                              },
+                            );
+                          },
+                          child: camButton(Icons.camera_alt_outlined)),
+                    ),
+                    if (imagePath != "")
+                      SizedBox(
+                        width: double.infinity,
+                        height: MediaQuery.of(context).size.height * 0.75,
+                        child: Image.file(
+                          File(imagePath),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                  ]),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+              child: Row(
+                children: [
+                  svgWidget('assets/svg/location.svg',
+                      color: const ColorFilter.mode(
+                          Colors.black, BlendMode.srcIn)),
+                  const Text(
+                    'Feroke, Calicut, Kerala',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ],
               ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+              child: CommonButtonWidget(label: 'Submit', onClick: () {}),
             )
-        ]),
+          ],
+        ),
       );
     } else {
       return const SizedBox();
     }
   }
 
-  Widget camButton(Alignment alignment, IconData icon) {
-    return Align(
-      alignment: alignment,
-      child: Container(
-        margin: const EdgeInsets.only(left: 28, bottom: 28),
-        height: 50,
-        width: 50,
-        decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black26, offset: Offset(2, 2), blurRadius: 10)
-            ]),
-        child: Center(
-          child: Icon(icon),
+  Widget camButton(IconData icon) {
+    return Container(
+      margin: const EdgeInsets.only(left: 28, bottom: 28),
+      height: 60,
+      width: 60,
+      decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: primaryColor,
+          boxShadow: [
+            BoxShadow(color: Colors.white, offset: Offset(2, 2), blurRadius: 12)
+          ]),
+      child: Center(
+        child: Icon(
+          icon,
+          size: 30,
+          color: Colors.white,
         ),
       ),
     );

@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
     return InkWell(
         onTap: (() => onTap()),
         child: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           height: 200,
           width: 180,
           decoration: BoxDecoration(
@@ -71,7 +71,7 @@ class ProductCard extends StatelessWidget {
                 blackText(artNo, 18),
                 Text(
                   "₹ $mrp",
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontFamily: "Manrope",
                       color: primaryColor,
                       fontSize: 18,

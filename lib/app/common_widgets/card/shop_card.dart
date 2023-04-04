@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +43,7 @@ class ShopCard extends StatelessWidget {
               Row(
                 children: [
                   svgWidget('assets/svg/location.svg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   GreyText(
@@ -58,7 +56,7 @@ class ShopCard extends StatelessWidget {
                 child: Row(
                   children: [
                     svgWidget('assets/svg/Call.svg', size: 15),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     GreyText(
@@ -72,17 +70,17 @@ class ShopCard extends StatelessWidget {
                 child: Row(
                   children: [
                     svgWidget('assets/svg/time.svg', size: 15),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     GreyText(
                       text: time.toString(),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 50,
                     ),
                     svgWidget('assets/svg/timer.svg', size: 15),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     GreyText(
