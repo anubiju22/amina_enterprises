@@ -22,15 +22,16 @@ class OtpTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
-      backgroundColor: scaffoldBgColor,
+      // backgroundColor: Colors.white,
       autoFocus: true,
       appContext: context,
       length: 4,
       animationType: AnimationType.fade,
       textStyle: TextStyle(
-          color: Get.isDarkMode ? Colors.black : Colors.black,
-          backgroundColor: Colors.white,
-          decorationColor: Colors.white),
+        color: Get.isDarkMode ? Colors.black : Colors.black,
+        // backgroundColor: Colors.white,
+        // decorationColor: Colors.white
+      ),
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(16),
@@ -38,13 +39,14 @@ class OtpTextfield extends StatelessWidget {
         fieldWidth: 60,
         // fieldOuterPadding: EdgeInsets.all(10),
         borderWidth: 1,
+
         activeColor: const Color(0xFFFFFFFF),
         selectedColor: const Color(0xFFFFFFFF),
         activeFillColor: const Color(0xFFFFFFFF),
         disabledColor: const Color(0xFFFFFFFF),
         errorBorderColor: const Color(0xFFFFFFFF),
         inactiveColor: const Color(0xFFFFFFFF),
-        inactiveFillColor: const Color(0xFF000000),
+        inactiveFillColor: const Color(0xFFFFFFFF),
         selectedFillColor: const Color(0xFFFFFFFF),
       ),
       animationDuration: const Duration(milliseconds: 300),
