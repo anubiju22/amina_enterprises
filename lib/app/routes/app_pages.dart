@@ -20,6 +20,8 @@ import '../modules/shops/bindings/shops_binding.dart';
 import '../modules/shops/views/shops_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/support/bindings/support_binding.dart';
+import '../modules/support/views/support_view.dart';
 
 part 'app_routes.dart';
 
@@ -83,6 +85,11 @@ class AppPages {
       name: _Paths.EMPLOYEE_LOGIN,
       page: () => const EmployeeLoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUPPORT,
+      page: () => const SupportView(),
+      binding: SupportBinding(),
     ),
   ];
 }

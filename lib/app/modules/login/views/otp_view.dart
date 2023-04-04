@@ -77,12 +77,15 @@ class BottomWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         "Didn’t receive OTP?",
                         style: TextStyle(color: Color(0xFF818181)),
                       ),
-                      const Text(
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
                         "Resend",
                         style: TextStyle(color: primaryColor),
                       )
