@@ -1,7 +1,11 @@
+import 'package:amina_enterprises/app/common_widgets/button/login_type_container.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
+import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/login/views/employee_login.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +40,7 @@ class BottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.40,
+      height: MediaQuery.of(context).size.height * 0.45,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
@@ -45,7 +49,7 @@ class BottomWidget extends StatelessWidget {
         color: scaffoldBgColor,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 28),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -53,28 +57,30 @@ class BottomWidget extends StatelessWidget {
               height: 30,
             ),
             Center(
-              child: const LoginText(
-                text: "Choose Your Login",
-              ),
+              child: blackText("Choose Your Login", 24,
+                  fontWeight: FontWeight.w700),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            LoginTypeContainer(
+              icon: "assets/svg/employee_profile.svg",
+              label: "Employee",
+              buttonClick: () {
+                Get.toNamed(Routes.EMPLOYEE_LOGIN);
+              },
+              color: primaryColor,
             ),
             SizedBox(
               height: 20,
             ),
-            CommonButtonWidget(
-              label: "Employee Login",
-              onClick: () {
+            LoginTypeContainer(
+              icon: "assets/svg/home_profile.svg",
+              label: "Retailer Customer",
+              buttonClick: () {
                 Get.toNamed(Routes.OTP);
               },
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            CommonButtonWidget(
               color: Color(0xFF5562D7),
-              label: "Retailer Login",
-              onClick: () {
-                Get.toNamed(Routes.OTP);
-              },
             ),
 
             // )

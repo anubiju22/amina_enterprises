@@ -14,6 +14,7 @@ abstract class Routes {
   static const ATTENDANCE_REPORT = _Paths.ATTENDANCE_REPORT;
   static const PRODUCTDETAILS = _Paths.PRODUCTDETAILS;
   static const CAMERA_PICTURE = _Paths.CAMERA_PICTURE;
+  static const EMPLOYEE_LOGIN = _Paths.EMPLOYEE_LOGIN;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const ATTENDANCE_REPORT = '/attendance-report';
   static const PRODUCTDETAILS = '/productdetails';
   static const CAMERA_PICTURE = '/camera-picture';
+  static const EMPLOYEE_LOGIN = '/employee_login';
 }
