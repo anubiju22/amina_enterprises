@@ -49,11 +49,11 @@ class HomeView extends GetView<HomeController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           greyText('Hi, Anshad', 14),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           blackText('Welcome', 20, fontWeight: FontWeight.w700),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           SizedBox(
@@ -147,7 +147,9 @@ class HomeView extends GetView<HomeController> {
                     HomeCardItem(
                       path: 'assets/svg/call_center.svg',
                       label: 'Support',
-                      ontap: () {},
+                      ontap: () {
+                        Get.toNamed(Routes.SUPPORT);
+                      },
                     ),
                   ],
                 ),
