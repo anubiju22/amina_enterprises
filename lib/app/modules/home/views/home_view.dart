@@ -32,7 +32,7 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: scaffoldBgColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            padding: const EdgeInsets.all(20),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Card(
@@ -95,7 +95,7 @@ class HomeView extends GetView<HomeController> {
               blackText(
                 'Menu',
                 22,
-               // fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w700,
               ),
               sizedBox,
               // SizedBox(
@@ -182,7 +182,7 @@ class HomeView extends GetView<HomeController> {
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeCategories(
                     path: 'assets/svg/home_footwear.svg',
