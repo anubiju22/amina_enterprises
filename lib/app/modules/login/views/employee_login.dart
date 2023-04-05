@@ -15,15 +15,22 @@ class EmployeeLoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: const BottomWidget(),
-        backgroundColor: const Color(0xFF033EB2),
-        body: Column(
+      backgroundColor: const Color(0xFF033EB2),
+      body: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(child: Image.asset("assets/logo/logo.png")),
+            Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: MediaQuery.of(context).size.width * 0.30),
+                child: Image.asset("assets/logo/logo.png")),
+            BottomWidget(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
 
@@ -76,7 +83,10 @@ class BottomWidget extends StatelessWidget {
               onClick: () {
                 Get.toNamed(Routes.OTP);
               },
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
 
             // )
           ],
