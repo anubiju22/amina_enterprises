@@ -47,7 +47,9 @@ class HorizontalCalendar extends GetView<MyrouteController> {
         // scaffoldBgColor,
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          controller.toogle();
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +57,7 @@ class HorizontalCalendar extends GetView<MyrouteController> {
             Text(
               dayOfWeek.toUpperCase(),
               style: TextStyle(
-                color: controller.selectedDate.value.day == date.day
+                color: controller.isSelected == date.day
                     ? Colors.white
                     : Colors.black,
                 fontSize: 16,

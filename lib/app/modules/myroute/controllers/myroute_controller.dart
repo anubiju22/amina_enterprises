@@ -15,6 +15,7 @@ class MyrouteController extends GetxController {
   var selectedYear = DateTime.now().year;
 
   final isLoading = false.obs;
+  RxBool isSelected = false.obs;
   @override
   void onInit() {
     super.onInit();
@@ -32,5 +33,9 @@ class MyrouteController extends GetxController {
       selectedDate.value = pickedDate;
       isLoading(false);
     }
+  }
+
+  toogle() {
+    isSelected = isSelected;
   }
 }

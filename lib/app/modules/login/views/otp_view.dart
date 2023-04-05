@@ -25,7 +25,7 @@ class OtpView extends StatelessWidget {
                       horizontal: 20,
                       vertical: MediaQuery.of(context).size.width * 0.40),
                   child: Image.asset("assets/logo/logo.png")),
-              const BottomWidget(),
+              const BottomWidget()
             ],
           ),
         ));

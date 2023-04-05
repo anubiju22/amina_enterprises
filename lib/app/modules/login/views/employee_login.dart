@@ -26,7 +26,7 @@ class EmployeeLoginView extends GetView<LoginController> {
                     horizontal: 20,
                     vertical: MediaQuery.of(context).size.width * 0.30),
                 child: Image.asset("assets/logo/logo.png")),
-            BottomWidget(),
+            BottomWidget().paddingOnly(bottom: 0),
           ],
         ),
       ),
@@ -53,43 +53,45 @@ class BottomWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            const LoginText(
-              text: "Employee Login",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            LoginTextField(
-              hintText: 'Enter your Phone Number',
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(15),
-                child: svgWidget(
-                  'assets/svg/Call.svg',
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 30,
               ),
-              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CommonButtonWidget(
-              label: "GET OTP",
-              onClick: () {
-                Get.toNamed(Routes.OTP);
-              },
-            ),
-            const SizedBox(
-              height: 30,
-            ),
+              const LoginText(
+                text: "Employee Login",
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              LoginTextField(
+                hintText: 'Enter your Phone Number',
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: svgWidget(
+                    'assets/svg/Call.svg',
+                  ),
+                ),
+                // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              CommonButtonWidget(
+                label: "GET OTP",
+                onClick: () {
+                  Get.toNamed(Routes.OTP);
+                },
+              ),
+              const SizedBox(
+                height: 30,
+              ),
 
-            // )
-          ],
+              // )
+            ],
+          ),
         ),
       ),
     );
