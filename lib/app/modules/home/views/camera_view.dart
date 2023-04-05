@@ -58,7 +58,7 @@ class _CameraViewState extends State<CameraView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
-                alignment: AlignmentDirectional.topCenter,
+              //  alignment: AlignmentDirectional.topCenter,
                 fit: StackFit.loose,
                 children: [
                   SizedBox(
@@ -74,11 +74,13 @@ class _CameraViewState extends State<CameraView> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: const BoxDecoration(shape: BoxShape.circle),
-                    child: const Icon(Icons.close),
+                  Positioned(
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: const BoxDecoration(shape: BoxShape.circle),
+                      child: const Icon(Icons.close),
+                    ),
                   )
                 ]),
             const SizedBox(

@@ -99,7 +99,7 @@ class HomeView extends GetView<HomeController> {
               ),
               sizedBox,
               SizedBox(
-                width: Get.width * 0.9,
+                width: Get.width * 1.5,
                 child: Wrap(
                   spacing: 10,
                   runSpacing: 10,
@@ -186,21 +186,24 @@ class HomeView extends GetView<HomeController> {
                   HomeCategories(
                     path: 'assets/svg/home_footwear.svg',
                     label: 'Footwears',
-                    color: homeFootColor,
+                    color:
+                        const ColorFilter.mode(homeFootColor, BlendMode.srcIn),
                     onClick: () {
                       Get.toNamed(Routes.FOOTWEARS);
                     },
                   ),
                   HomeCategories(
                     path: 'assets/svg/home_bag.svg',
-                    label: 'Bag',
-                    color: homeBagColor,
+                    label: 'Bags',
+                    color:
+                        const ColorFilter.mode(homeBagColor, BlendMode.srcIn),
                     onClick: () {},
                   ),
                   HomeCategories(
                     path: 'assets/svg/home_jacket.svg',
                     label: 'Apparels',
-                    color: homeAppColor,
+                    color:
+                        const ColorFilter.mode(homeAppColor, BlendMode.srcIn),
                     onClick: () {},
                   )
                 ],
