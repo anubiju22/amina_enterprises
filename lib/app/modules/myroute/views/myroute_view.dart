@@ -28,16 +28,24 @@ class MyrouteView extends GetView<MyrouteController> {
                   ),
                   greyText(
                     fontWeight: FontWeight.w500,
-                    "March 2023",
+                    "${controller.selectedMonth},${controller.selectedYear}",
                     20,
                   ),
                   const SizedBox(
                     width: 10,
                   ),
-                  const Icon(
-                    Icons.expand_more,
-                    color: Colors.grey,
-                  )
+                  TextButton(
+                      onPressed: () {
+                        controller.chooseDate();
+                      },
+                      child: Icon(
+                        Icons.expand_more,
+                        color: Colors.grey,
+                      )),
+                  //  Icon(
+                  //   Icons.expand_more,
+                  //   color: Colors.grey,
+                  // )
                 ],
               ),
               Padding(

@@ -85,7 +85,7 @@ class BottomWidget extends StatelessWidget {
               },
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
 
             // )

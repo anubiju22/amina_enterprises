@@ -1,22 +1,31 @@
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class HorizontalCalendar extends StatelessWidget {
-  const HorizontalCalendar({super.key});
+import '../controllers/myroute_controller.dart';
+
+class HorizontalCalendar extends GetView<MyrouteController> {
+  HorizontalCalendar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 30,
-        itemBuilder: (BuildContext context, int index) {
-          final DateTime date = DateTime.now().add(Duration(days: index));
+      child: Obx(
+        () => controller.isLoading.value
+            ? CircularProgressIndicator()
+            : ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 30,
+                itemBuilder: (BuildContext context, int index) {
+                  final DateTime date =
+                      controller.selectedDate.value.add(Duration(days: index));
+                  // final DateTime date = DateTime.now().add(Duration(days: index));
 
-          return _buildDay(date);
-        },
+                  return _buildDay(date);
+                },
+              ),
       ),
     );
   }
@@ -32,36 +41,43 @@ class HorizontalCalendar extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: DateTime.now().day == date.day ? primaryColor : scaffoldBgColor,
+        color: controller.selectedDate.value.day == date.day
+            ? primaryColor
+            : scaffoldBgColor,
         // scaffoldBgColor,
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            dayOfWeek.toUpperCase(),
-            style: TextStyle(
-              color:
-                  DateTime.now().day == date.day ? Colors.white : Colors.black,
-              fontSize: 16,
-              fontFamily: "Manrope",
-              fontWeight: FontWeight.w500,
+      child: InkWell(
+        onTap: () {},
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              dayOfWeek.toUpperCase(),
+              style: TextStyle(
+                color: controller.selectedDate.value.day == date.day
+                    ? Colors.white
+                    : Colors.black,
+                fontSize: 16,
+                fontFamily: "Manrope",
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            date.day.toString(),
-            style: TextStyle(
-              color:
-                  DateTime.now().day == date.day ? Colors.white : Colors.black,
-              // Colors.black,
-              fontSize: 32,
-              fontFamily: "Manrope",
-              fontWeight: FontWeight.w600,
+            const SizedBox(height: 5),
+            Text(
+              date.day.toString(),
+              style: TextStyle(
+                color: controller.selectedDate.value.day == date.day
+                    ? Colors.white
+                    : Colors.black,
+                // Colors.black,
+                fontSize: 32,
+                fontFamily: "Manrope",
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
