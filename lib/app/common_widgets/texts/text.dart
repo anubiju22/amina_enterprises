@@ -60,7 +60,8 @@ Text blackText(String label, double fontSize,
   return Text(
     label,
     style: TextStyle(
-        fontFamily: "Manrope-SemiBold",
+        fontFamily: 'Manrope-SemiBold',
+        
         color: Colors.black,
         fontSize: fontSize,
         fontWeight: fontWeight),
