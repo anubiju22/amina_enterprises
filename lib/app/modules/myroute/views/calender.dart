@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HorizontalCalendar extends StatelessWidget {
+  const HorizontalCalendar({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -43,17 +45,17 @@ class HorizontalCalendar extends StatelessWidget {
         children: [
           Text(
             dayOfWeek.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xff252525),
               fontSize: 16,
               fontFamily: "Manrope",
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             date.day.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 32,
               fontFamily: "Manrope",
