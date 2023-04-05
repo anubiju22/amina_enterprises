@@ -15,7 +15,7 @@ class MyrouteView extends GetView<MyrouteController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CommonAppBar(label: "My Route"),
+        appBar: const CommonAppBar(label: "My Route"),
         backgroundColor: scaffoldBgColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
@@ -23,7 +23,7 @@ class MyrouteView extends GetView<MyrouteController> {
             children: [
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   greyText(
@@ -31,10 +31,10 @@ class MyrouteView extends GetView<MyrouteController> {
                     "March 2023",
                     20,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.expand_more,
                     color: Colors.grey,
                   )
@@ -74,11 +74,11 @@ class MyrouteView extends GetView<MyrouteController> {
               // ),
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   svgWidget('assets/svg/location.svg'),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   greyText(
@@ -88,16 +88,16 @@ class MyrouteView extends GetView<MyrouteController> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   itemCount: 3,
-                  itemBuilder: (BuildContext, context) {
+                  itemBuilder: (BuildContext context, int index) {
                     return Column(
-                      children: [
+                      children: const [
                         Divider(
                           thickness: 2,
                         ),
@@ -110,7 +110,7 @@ class MyrouteView extends GetView<MyrouteController> {
                       ],
                     );
                   }),
-              Divider(
+              const Divider(
                 thickness: 2,
               ),
             ],

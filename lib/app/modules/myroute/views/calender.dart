@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class HorizontalCalendar extends StatelessWidget {
+  const HorizontalCalendar({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 6,
+        itemCount: 30,
         itemBuilder: (BuildContext context, int index) {
           final DateTime date = DateTime.now().add(Duration(days: index));
+
           return _buildDay(date);
         },
       ),
@@ -24,10 +27,10 @@ class HorizontalCalendar extends StatelessWidget {
 
     return Container(
       width: 50,
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
-        color: Colors.grey[300],
+        color: DateTime.now().day == date.day ? primaryColor : scaffoldBgColor,
         // scaffoldBgColor,
       ),
       child: Column(
@@ -36,17 +39,17 @@ class HorizontalCalendar extends StatelessWidget {
         children: [
           Text(
             dayOfWeek.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xff252525),
               fontSize: 16,
               fontFamily: "Manrope",
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             date.day.toString(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 32,
               fontFamily: "Manrope",
