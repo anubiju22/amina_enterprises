@@ -41,8 +41,9 @@ class HorizontalCalendar extends StatelessWidget {
         children: [
           Text(
             dayOfWeek.toUpperCase(),
-            style: const TextStyle(
-              color: Color(0xff252525),
+            style: TextStyle(
+              color:
+                  DateTime.now().day == date.day ? Colors.white : Colors.black,
               fontSize: 16,
               fontFamily: "Manrope",
               fontWeight: FontWeight.w500,
@@ -51,8 +52,10 @@ class HorizontalCalendar extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             date.day.toString(),
-            style: const TextStyle(
-              color: Colors.black,
+            style: TextStyle(
+              color:
+                  DateTime.now().day == date.day ? Colors.white : Colors.black,
+              // Colors.black,
               fontSize: 32,
               fontFamily: "Manrope",
               fontWeight: FontWeight.w600,

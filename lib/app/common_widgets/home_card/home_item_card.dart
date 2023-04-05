@@ -27,7 +27,7 @@ class HomeCardItem extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 15.5, vertical: 15.5),
               child: svgWidget(path),
             ),
           ),
