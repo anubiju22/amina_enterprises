@@ -20,17 +20,13 @@ class HomeCardItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Card(
-            elevation: 4,
-            color: homeMenuColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-              child: svgWidget(path),
-            ),
-          ),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.16,
+              height: MediaQuery.of(context).size.width * 0.16,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: homeMenuColor),
+              child: svgWidget(path)),
           const SizedBox(
             height: 6,
           ),
@@ -49,7 +45,7 @@ class HomeCardItem extends StatelessWidget {
 class HomeCategories extends StatelessWidget {
   final String path;
   final String label;
-  final Color color;
+  final ColorFilter color;
   final Function? onClick;
 
   const HomeCategories({
@@ -72,8 +68,9 @@ class HomeCategories extends StatelessWidget {
           Container(
               width: MediaQuery.of(context).size.width * 0.20,
               height: MediaQuery.of(context).size.width * 0.20,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: color),
-              child: svgWidget(path)),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16), color: Colors.white),
+              child: svgWidget(path, color: color)),
           const SizedBox(
             height: 10,
           ),
