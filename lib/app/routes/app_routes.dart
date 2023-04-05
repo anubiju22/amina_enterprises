@@ -16,6 +16,7 @@ abstract class Routes {
   static const CAMERA_PICTURE = _Paths.CAMERA_PICTURE;
   static const EMPLOYEE_LOGIN = _Paths.EMPLOYEE_LOGIN;
   static const SUPPORT = _Paths.SUPPORT;
+  static const ORDER_HISTORY = _Paths.ORDER_HISTORY;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const CAMERA_PICTURE = '/camera-picture';
   static const EMPLOYEE_LOGIN = '/employee_login';
   static const SUPPORT = '/support';
+  static const ORDER_HISTORY = '/order-history';
 }

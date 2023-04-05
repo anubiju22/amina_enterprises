@@ -135,7 +135,9 @@ class HomeView extends GetView<HomeController> {
                     HomeCardItem(
                       path: 'assets/svg/home_checklist.svg',
                       label: 'My Order',
-                      ontap: () {},
+                      ontap: () {
+                        Get.toNamed(Routes.ORDER_HISTORY);
+                      },
                     ),
                     HomeCardItem(
                       path: 'assets/svg/home_profile.svg',

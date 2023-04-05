@@ -21,8 +21,9 @@ class OtpView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: MediaQuery.of(context).size.width * 0.40),
                   child: Image.asset("assets/logo/logo.png")),
               const BottomWidget(),
             ],
@@ -40,7 +41,7 @@ class BottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.44,
+      height: MediaQuery.of(context).size.height * 0.43,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),

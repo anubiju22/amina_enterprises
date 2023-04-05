@@ -58,64 +58,60 @@ class _CameraViewState extends State<CameraView> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.78,
-              child: Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  fit: StackFit.loose,
-                  children: [
-                    SizedBox(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.75,
-                        child: CameraPreview(cameraController)),
-                    Positioned(
-                      top: MediaQuery.of(context).size.height * 0.71,
-                      child: GestureDetector(
-                          onTap: () {
-                            cameraController.takePicture().then(
-                              (value) {
-                                setState(() {
-                                  imagePath = value.path;
-                                });
-                              },
-                            );
-                          },
-                          child: camButton(Icons.camera_alt_outlined)),
-                    ),
-                    if (imagePath != "")
-                      SizedBox(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.75,
-                        child: Image.file(
-                          File(imagePath),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                  ]),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-              child: Row(
+            Stack(
+                alignment: AlignmentDirectional.topCenter,
+                fit: StackFit.loose,
                 children: [
-                  svgWidget('assets/svg/location.svg',
-                      color: const ColorFilter.mode(
-                          Colors.black, BlendMode.srcIn)),
-                  const Text(
-                    'Feroke, Calicut, Kerala',
-                    style: TextStyle(fontSize: 15),
-                  ),
-                ],
-              ),
+                  SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.75,
+                      child: CameraPreview(cameraController)),
+                  if (imagePath != "")
+                    SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.75,
+                      child: Image.file(
+                        File(imagePath),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: const BoxDecoration(shape: BoxShape.circle),
+                    child: const Icon(Icons.close),
+                  )
+                ]),
+            const SizedBox(
+              height: 20,
             ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-              child: CommonButtonWidget(label: 'Submit', onClick: () {}),
-            )
+            Row(
+              children: [
+                svgWidget('assets/svg/location.svg'),
+                const SizedBox(
+                  width: 2,
+                ),
+                const Text(
+                  'Feroke, Calicut, Kerala',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                  onTap: () {
+                    cameraController.takePicture().then(
+                      (value) {
+                        setState(() {
+                          imagePath = value.path;
+                        });
+                      },
+                    );
+                  },
+                  child: camButton(Icons.camera_alt_outlined)),
+            ),
+            //  CommonButtonWidget(label: 'Submit', onClick: () {})
           ],
         ),
       );

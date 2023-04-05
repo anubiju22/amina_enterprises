@@ -15,8 +15,8 @@ class EmployeeLoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomWidget(),
-        backgroundColor: Color(0xFF033EB2),
+        bottomNavigationBar: const BottomWidget(),
+        backgroundColor: const Color(0xFF033EB2),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +37,7 @@ class BottomWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.40,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
           topRight: Radius.circular(32),
@@ -49,13 +49,13 @@ class BottomWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             const LoginText(
               text: "Employee Login",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             LoginTextField(
@@ -69,7 +69,7 @@ class BottomWidget extends StatelessWidget {
               // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             CommonButtonWidget(
               label: "GET OTP",

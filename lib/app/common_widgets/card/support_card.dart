@@ -31,6 +31,9 @@ class SupportCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   blackText(label, 18, fontWeight: FontWeight.bold),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       greyText('Mobile No: ', 14),
