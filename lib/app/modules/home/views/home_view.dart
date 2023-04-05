@@ -95,83 +95,84 @@ class HomeView extends GetView<HomeController> {
               blackText(
                 'Menu',
                 22,
-                fontWeight: FontWeight.w700,
+               // fontWeight: FontWeight.w700,
               ),
               sizedBox,
-              SizedBox(
-                width: Get.width * 1.5,
-                child: Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: [
-                    HomeCardItem(
-                      path: 'assets/svg/home_user.svg',
-                      label: 'Attendance',
-                      ontap: () {
-                        Get.toNamed(Routes.ATTENDANCE_REPORT);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/route.svg',
-                      label: 'My Route',
-                      ontap: () {
-                        Get.toNamed(Routes.MYROUTE);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/home_shop.svg',
-                      label: 'Shops',
-                      ontap: () {
-                        Get.toNamed(Routes.SHOPS);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/home_list.svg',
-                      label: 'My Visit',
-                      ontap: () {
-                        Get.toNamed(Routes.MYVISIT);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/home_checklist.svg',
-                      label: 'My Order',
-                      ontap: () {
-                        Get.toNamed(Routes.ORDER_HISTORY);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/home_profile.svg',
-                      label: 'Profile',
-                      ontap: () {
-                        // Get.toNamed(Routes.ProfileView);
-                      },
-                    ),
-                    HomeCardItem(
-                      path: 'assets/svg/call_center.svg',
-                      label: 'Support',
-                      ontap: () {
-                        Get.toNamed(Routes.SUPPORT);
-                      },
-                    ),
-                  ],
-                ),
-              ),
-              // GridView.builder(
-              //     padding: EdgeInsets.zero,
-              //     shrinkWrap: true,
-              //     scrollDirection: Axis.vertical,
-              //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              //         crossAxisCount: 4, mainAxisSpacing: 20.0
+              // SizedBox(
+              //   width: Get.width * 0.9,
+              //   child: Wrap(
+              //     spacing: 10,
+              //     runSpacing: 10,
+              //     children: [
+              //       HomeCardItem(
+              //         path: 'assets/svg/home_user.svg',
+              //         label: 'Attendance',
+              //         ontap: () {
+              //           Get.toNamed(Routes.ATTENDANCE_REPORT);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/route.svg',
+              //         label: 'My Route',
+              //         ontap: () {
+              //           Get.toNamed(Routes.MYROUTE);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/home_shop.svg',
+              //         label: 'Shops',
+              //         ontap: () {
+              //           Get.toNamed(Routes.SHOPS);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/home_list.svg',
+              //         label: 'My Visit',
+              //         ontap: () {
+              //           Get.toNamed(Routes.MYVISIT);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/home_checklist.svg',
+              //         label: 'My Order',
+              //         ontap: () {
+              //           Get.toNamed(Routes.ORDER_HISTORY);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/home_profile.svg',
+              //         label: 'Profile',
+              //         ontap: () {
+              //           // Get.toNamed(Routes.ProfileView);
+              //         },
+              //       ),
+              //       HomeCardItem(
+              //         path: 'assets/svg/call_center.svg',
+              //         label: 'Support',
+              //         ontap: () {
+              //           Get.toNamed(Routes.SUPPORT);
+              //         },
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              GridView.builder(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4, mainAxisSpacing: 20.0
 
-              //         // number of columns in the grid
-              //         ),
-              //     itemCount: controller.items.length,
-              //     itemBuilder: (context, index) {
-              //       return HomeCardItem(
-              //           path: controller.images[index],
-              //           label: controller.items[index],
-              //           ontap: ,);
-              //     }),
+                      // number of columns in the grid
+                      ),
+                  itemCount: controller.menuItems.length,
+                  itemBuilder: (context, index) {
+                    return HomeCardItem(
+                      path: controller.menuItems[index].image,
+                      label: controller.menuItems[index].label,
+                      ontap: controller.menuItems[index].onClick,
+                    );
+                  }),
               const SizedBox(
                 height: 20,
               ),
