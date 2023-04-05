@@ -28,6 +28,8 @@ class HomeAppBar extends GetView<DashboardController>
             color: Colors.white, fontWeight: FontWeight.w800, fontSize: 20),
       ),
       actions: [
+        IconButton(
+            onPressed: () {}, icon: svgWidget('assets/svg/shop_cart.svg')),
         IconButton(onPressed: () {}, icon: svgWidget('assets/svg/search.svg'))
       ],
     );

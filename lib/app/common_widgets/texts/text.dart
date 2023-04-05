@@ -14,7 +14,7 @@ class BlackText extends StatelessWidget {
       style: const TextStyle(
         color: Colors.black,
         fontSize: 16,
-        fontFamily: "Manrope",
+        fontFamily: 'Manrope',
         fontWeight: FontWeight.w600,
       ),
     );
@@ -33,7 +33,7 @@ class GreyText extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-        fontFamily: "Manrope",
+        fontFamily: 'Manrope',
         color: Color(0xff6c6c6c),
         fontSize: 12,
       ),
@@ -48,7 +48,7 @@ Text greyText(String label, double fontSize,
     label,
     textAlign: textAlign,
     style: TextStyle(
-        fontFamily: "Manrope",
+        fontFamily: 'Manrope',
         color: const Color(0xFF7B7B7B),
         fontSize: fontSize,
         fontWeight: fontWeight),
@@ -60,8 +60,7 @@ Text blackText(String label, double fontSize,
   return Text(
     label,
     style: TextStyle(
-        fontFamily: 'Manrope-SemiBold',
-        
+        fontFamily: 'Manrope',
         color: Colors.black,
         fontSize: fontSize,
         fontWeight: fontWeight),

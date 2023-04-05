@@ -30,12 +30,7 @@ class HomeCardItem extends StatelessWidget {
           const SizedBox(
             height: 6,
           ),
-          Text(label,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 14,
-                fontFamily: 'Manrope-Bold',
-              ))
+          blackText(label, 14, fontWeight: FontWeight.w500)
         ],
       ),
     );
@@ -74,7 +69,7 @@ class HomeCategories extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          blackText(label, 14)
+          blackText(label, 14, fontWeight: FontWeight.w500)
         ],
       ),
     );
