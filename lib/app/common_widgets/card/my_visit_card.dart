@@ -21,7 +21,7 @@ class VisitCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.125,
+      height: MediaQuery.of(context).size.height * 0.10,
       child: Row(children: <Widget>[
         header(context, slno),
         verticalDivider(),
@@ -30,21 +30,20 @@ class VisitCardWidget extends StatelessWidget {
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 3, left: 5.0, right: 4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                blackText(name, 16, fontWeight: FontWeight.w600),
+                blackText(name, 15,
+                    fontWeight: FontWeight.w600,
+                    textOverflow: TextOverflow.ellipsis),
                 const SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
                     svgWidget('assets/svg/location.svg', size: 15),
-                    Wrap(children: [greyText(location, 12)]),
+                    greyText(location, 12, textOverflow: TextOverflow.ellipsis),
                   ],
                 ),
                 const SizedBox(
@@ -90,7 +89,7 @@ Container verticalDivider() {
 
 SizedBox header(BuildContext context, String label, {double? width}) {
   return SizedBox(
-      width: width ?? MediaQuery.of(context).size.width * .12,
+      width: width ?? MediaQuery.of(context).size.width * .10,
       child: Text(
         label,
         textAlign: TextAlign.center,

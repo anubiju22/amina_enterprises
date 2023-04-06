@@ -8,3 +8,4 @@ const homeBagColor = Color(0xFFEB6666);
 const homeAppColor = Color(0xFF937DCE);
 const dateArrowColor = Color(0xFFAEAEAE);
 const greyColor = Color(0xFF7B7B7B);
+

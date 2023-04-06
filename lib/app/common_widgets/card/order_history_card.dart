@@ -41,9 +41,12 @@ class OrderHistoryCardWidget extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              greyText(
-                  'Crystal Building, Malad, Rathodi,Payambra post, Mankavu, Calicut',
-                  12)
+              Expanded(
+                child: greyText(
+                    'Crystal Building, Malad, Rathodi, Mankavu, Calicut',
+                    12,
+                    textOverflow: TextOverflow.ellipsis),
+              )
             ],
           )
         ]),
