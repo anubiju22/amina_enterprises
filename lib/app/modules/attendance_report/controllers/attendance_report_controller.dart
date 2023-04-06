@@ -9,20 +9,20 @@ class AttendanceReportController extends GetxController {
 
   @override
   void onInit() {
-    date.value = dateFormat2(selectedDate);
+    date.value = dateFormat3(selectedDate);
     super.onInit();
   }
 
   incrementMonth() {
     selectedDate =
         DateTime(selectedDate.year, selectedDate.month + 1, selectedDate.day);
-    date.value = dateFormat2(selectedDate);
+    date.value = dateFormat3(selectedDate);
   }
 
   decrementMonth() {
     selectedDate =
         DateTime(selectedDate.year, selectedDate.month - 1, selectedDate.day);
-    date.value = dateFormat2(selectedDate);
+    date.value = dateFormat3(selectedDate);
   }
 
   void changeDate(BuildContext context) async {
@@ -30,7 +30,7 @@ class AttendanceReportController extends GetxController {
 
     if (pickDate != null) {
       selectedDate = pickDate;
-      date.value = dateFormat2(pickDate);
+      date.value = dateFormat3(pickDate);
     }
   }
 }

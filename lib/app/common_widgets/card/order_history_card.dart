@@ -1,6 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class OrderHistoryCardWidget extends StatelessWidget {
@@ -12,7 +11,7 @@ class OrderHistoryCardWidget extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 3,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +41,9 @@ class OrderHistoryCardWidget extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              greyText('Crystal Building, Malad, Rathodi, Mankavu, Calicut', 12)
+              greyText(
+                  'Crystal Building, Malad, Rathodi,Payambra post, Mankavu, Calicut',
+                  12)
             ],
           )
         ]),

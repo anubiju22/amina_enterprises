@@ -1,23 +1,34 @@
+import 'package:amina_enterprises/constraints/date_formats.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MyvisitController extends GetxController {
-  //TODO: Implement MyvisitController
-
-  final count = 0.obs;
+  RxString date = ''.obs;
+  DateTime selectedDate = DateTime.now();
   @override
   void onInit() {
+    date.value = dateFormat2(selectedDate);
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void changeDate(BuildContext context) async {
+    final pickDate = await selectDate(context);
+
+    if (pickDate != null) {
+      selectedDate = pickDate;
+      date.value = dateFormat2(pickDate);
+    }
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  incrementDay() {
+    selectedDate =
+        DateTime(selectedDate.year, selectedDate.month, selectedDate.day + 1);
+    date.value = dateFormat2(selectedDate);
   }
 
-  void increment() => count.value++;
+  decrementDay() {
+    selectedDate =
+        DateTime(selectedDate.year, selectedDate.month, selectedDate.day - 1);
+    date.value = dateFormat2(selectedDate);
+  }
 }

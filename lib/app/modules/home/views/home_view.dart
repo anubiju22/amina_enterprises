@@ -32,11 +32,11 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: scaffoldBgColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Card(
-                elevation: 4,
+                elevation: 3,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 child: Padding(
@@ -103,10 +103,11 @@ class HomeView extends GetView<HomeController> {
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4, mainAxisSpacing: 20.0
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 15.0,
 
-                      // number of columns in the grid
-                      ),
+                    // number of columns in the grid
+                  ),
                   itemCount: controller.menuItems.length,
                   itemBuilder: (context, index) {
                     return HomeCardItem(
@@ -123,7 +124,7 @@ class HomeView extends GetView<HomeController> {
                 height: 20,
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeCategories(
