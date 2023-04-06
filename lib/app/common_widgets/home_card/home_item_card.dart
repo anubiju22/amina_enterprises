@@ -17,20 +17,24 @@ class HomeCardItem extends StatelessWidget {
         ontap!();
       },
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-              width: MediaQuery.of(context).size.width * 0.16,
-              height: MediaQuery.of(context).size.width * 0.16,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: homeMenuColor),
-              child: svgWidget(path)),
-          const SizedBox(
-            height: 6,
-          ),
-          blackText(label, 14, fontWeight: FontWeight.w500)
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: [
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.16,
+                  height: MediaQuery.of(context).size.width * 0.16,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: homeMenuColor),
+                  child: svgWidget(path)),
+              const SizedBox(
+                height: 6,
+              ),
+              blackText(label, 14, fontWeight: FontWeight.w500)
+            ],
+          )
         ],
       ),
     );
@@ -57,12 +61,12 @@ class HomeCategories extends StatelessWidget {
         onClick!();
       },
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              width: MediaQuery.of(context).size.width * 0.20,
-              height: MediaQuery.of(context).size.width * 0.20,
+              width: MediaQuery.of(context).size.width * 0.18,
+              height: MediaQuery.of(context).size.width * 0.18,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16), color: Colors.white),
               child: svgWidget(path, color: color)),

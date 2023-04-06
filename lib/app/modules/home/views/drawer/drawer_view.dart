@@ -18,7 +18,9 @@ class DrawerView extends GetView<DashboardController> {
           Center(
               child: Image.asset(
             'assets/logo/drawer_logo.png',
-            height: size.height * 0.15,
+            fit: BoxFit.cover,
+             
+            // height: size.height * 0.13,
           )).paddingOnly(top: 30),
           ListView.builder(
               shrinkWrap: true,

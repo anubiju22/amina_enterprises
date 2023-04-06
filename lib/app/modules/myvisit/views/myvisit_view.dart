@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
-import 'package:amina_enterprises/app/common_widgets/card/shop_card.dart';
+import 'package:amina_enterprises/app/common_widgets/card/my_visit_card.dart';
+import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,19 +14,51 @@ class MyvisitView extends GetView<MyvisitController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: scaffoldBgColor,
-        appBar: CommonAppBar(label: 'My Visit'),
-        body: ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            itemCount: 3,
-            itemBuilder: (BuildContext, context) {
-              return ShopCard(
-                visibles: true,
-                shopname: "PRINCE FOOTWEAR BANDBAHAL",
-                location: "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
-                number: "9856254147",
-                time: "3:49 PM",
-                timer: "0 hrs 3 mins",
-              );
-            }));
+        appBar: const CommonAppBar(label: 'My Visit'),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Obx(() => AttendanceDatePicker(
+                  date: controller.date.value,
+                  changeDate: () {
+                    controller.changeDate(context);
+                  },
+                  decrement: () {
+                    controller.decrementDay();
+                  },
+                  increment: () {
+                    controller.incrementDay();
+                  },
+                )),
+            const Divider(
+              thickness: 5,
+              color: Colors.white,
+            ),
+            Expanded(
+              child: ListView.separated(
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return VisitCardWidget(
+                        slno: num.parse((index + 1).toString()).toString(),
+                        name: 'CHOLAN SHOE MART',
+                        location:
+                            'Crystal Building, Malad, Rathodi, Mankavu, Calicut',
+                        duration: '3:49 PM',
+                        remark: 'Order Booked');
+                  },
+                  separatorBuilder: (c, i) {
+                    return divider();
+                  }),
+            ),
+          ],
+        ));
   }
+}
+
+Container divider() {
+  return Container(
+    height: 1.5,
+    color: const Color(0xFFE2E2E2),
+    width: double.infinity,
+  );
 }

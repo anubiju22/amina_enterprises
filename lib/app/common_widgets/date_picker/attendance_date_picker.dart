@@ -20,13 +20,17 @@ class AttendanceDatePicker extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         IconButton(
           onPressed: () {
-            increment();
+            decrement();
           },
           icon: const Icon(Icons.arrow_back_ios),
           color: dateArrowColor,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: changeDate == null
+              ? null
+              : () {
+                  changeDate!();
+                },
           child: Row(
             children: [
               const Icon(Icons.calendar_today, size: 17, color: primaryColor),
@@ -45,7 +49,7 @@ class AttendanceDatePicker extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {
-            decrement();
+            increment();
           },
           icon: const Icon(Icons.arrow_forward_ios),
           color: dateArrowColor,
