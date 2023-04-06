@@ -10,6 +10,7 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/employee_login.dart';
 import '../modules/login/views/login_home_view.dart';
 import '../modules/login/views/otp_view.dart';
+import '../modules/login/views/retailer_login.dart';
 import '../modules/myroute/bindings/myroute_binding.dart';
 import '../modules/myroute/views/myroute_view.dart';
 import '../modules/myvisit/bindings/myvisit_binding.dart';
@@ -86,6 +87,11 @@ class AppPages {
     GetPage(
       name: _Paths.EMPLOYEE_LOGIN,
       page: () => const EmployeeLoginView(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.RETAILER_LOGIN,
+      page: () => const RetailerLoginView(),
       binding: LoginBinding(),
     ),
     GetPage(

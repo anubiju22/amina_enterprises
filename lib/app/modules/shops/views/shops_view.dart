@@ -17,11 +17,12 @@ class ShopsView extends GetView<ShopsController> {
         backgroundColor: scaffoldBgColor,
         appBar: CommonAppBar(label: 'Shops'),
         body: ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            itemCount: 3,
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            itemCount: 4,
+            physics: const ScrollPhysics(),
             itemBuilder: (BuildContext, context) {
               return ShopCard(
-                visible: true,
+                // visible: true,
                 shopname: "PRINCE FOOTWEAR BANDBAHAL",
                 location: "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
                 number: "9856254147",

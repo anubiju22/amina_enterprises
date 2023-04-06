@@ -73,7 +73,7 @@ class BottomWidget extends StatelessWidget {
               icon: "assets/svg/home_profile.svg",
               label: "Retailer Customer",
               buttonClick: () {
-                Get.toNamed(Routes.OTP);
+                Get.toNamed(Routes.RETAILER_LOGIN);
               },
               color: const Color(0xFF5562D7),
             ),

@@ -16,19 +16,19 @@ class EmployeeLoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF033EB2),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: MediaQuery.of(context).size.width * 0.30),
-                child: Image.asset("assets/logo/logo.png")),
-            BottomWidget().paddingOnly(bottom: 0),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          // Padding(
+          //     padding: EdgeInsets.symmetric(
+          //         horizontal: 20,
+          //         vertical: MediaQuery.of(context).size.width * 0.30),
+          // child:
+          Expanded(child: Image.asset("assets/logo/logo.png")),
+          // ),
+          Positioned(bottom: 0, child: BottomWidget()),
+        ],
       ),
     );
   }
@@ -86,7 +86,7 @@ class BottomWidget extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
 
               // )

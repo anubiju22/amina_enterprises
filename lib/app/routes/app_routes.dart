@@ -17,6 +17,7 @@ abstract class Routes {
   static const EMPLOYEE_LOGIN = _Paths.EMPLOYEE_LOGIN;
   static const SUPPORT = _Paths.SUPPORT;
   static const ORDER_HISTORY = _Paths.ORDER_HISTORY;
+  static const RETAILER_LOGIN = _Paths.RETAILER_LOGIN;
 }
 
 abstract class _Paths {
@@ -35,4 +36,5 @@ abstract class _Paths {
   static const EMPLOYEE_LOGIN = '/employee_login';
   static const SUPPORT = '/support';
   static const ORDER_HISTORY = '/order-history';
+  static const RETAILER_LOGIN = '/retailer_login';
 }
