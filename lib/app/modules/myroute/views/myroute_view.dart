@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../common_widgets/myroute_bottomsheet.dart';
 import '../controllers/myroute_controller.dart';
 
 class MyrouteView extends GetView<MyrouteController> {
@@ -105,15 +106,32 @@ class MyrouteView extends GetView<MyrouteController> {
                   itemCount: 3,
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
-                      children: const [
+                      children: [
                         Divider(
                           thickness: 2,
                         ),
-                        MyRouteCard(
-                          shopname: "PRINCE FOOTWEAR BANDBAHAL",
-                          location:
-                              "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
-                          number: "9856254147",
+                        InkWell(
+                          onTap: () {
+                            Get.bottomSheet(
+                              RouteBottomSheet(
+                                tittle: "PRINCE FOOTWEAR BANDBAHAL",
+                                type: "Retailer",
+                              ),
+                              // ShopBottomSheet(
+                              //   empRetailer: item,
+                              // ),
+                              // elevation: 20.0,
+                              // enableDrag: false,
+                              // backgroundColor: Colors.white,
+                              // shape: bootomSheetShape(),
+                            );
+                          },
+                          child: MyRouteCard(
+                            shopname: "PRINCE FOOTWEAR BANDBAHAL",
+                            location:
+                                "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
+                            number: "9856254147",
+                          ),
                         ),
                       ],
                     );

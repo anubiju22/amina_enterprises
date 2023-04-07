@@ -35,25 +35,23 @@ class HorizontalCalendar extends GetView<MyrouteController> {
   ) {
     final formatter = DateFormat('E');
     final dayOfWeek = formatter.format(date);
-
-    return Container(
-      width: 50,
-      margin: const EdgeInsets.all(5),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.0),
-        color: controller.selectedDate.value.day == date.day
-            ? primaryColor
-            : scaffoldBgColor,
-        // scaffoldBgColor,
-      ),
-      child: InkWell(
-        // onTap: () {
-        //   // controller.toogle();
-        // },
-
-        onTap: () {
-          // controller.changeColor();
-        },
+    RxBool _isTapped = false.obs;
+    return GestureDetector(
+      onTapDown: (_) => _isTapped.value = true,
+      onTapUp: (_) => _isTapped.value = false,
+      child: Container(
+        width: 50,
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+          color: _isTapped.value
+              ?
+              // controller.selectedDate.value.day == date.day
+              //  ?
+              primaryColor
+              : scaffoldBgColor,
+          // scaffoldBgColor,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
