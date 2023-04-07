@@ -24,7 +24,7 @@ class DrawerView extends GetView<DashboardController> {
           const DrawerHeaderCard(),
           ListView.builder(
               shrinkWrap: true,
-              // physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(top: 10),
               itemCount: controller.drawerItems.length,
               itemBuilder: (context, index) {
                 return Obx(
