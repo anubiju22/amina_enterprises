@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common_widgets/myroute_bottomsheet.dart';
+import '../../footwears/views/footwears_view.dart';
 import '../controllers/myroute_controller.dart';
 
 class MyrouteView extends GetView<MyrouteController> {
@@ -120,10 +121,10 @@ class MyrouteView extends GetView<MyrouteController> {
                               // ShopBottomSheet(
                               //   empRetailer: item,
                               // ),
-                              // elevation: 20.0,
-                              // enableDrag: false,
-                              // backgroundColor: Colors.white,
-                              // shape: bootomSheetShape(),
+                              elevation: 20.0,
+                              enableDrag: false,
+                              backgroundColor: Colors.white,
+                              shape: bootomSheetShape(),
                             );
                           },
                           child: MyRouteCard(

@@ -67,7 +67,8 @@ class MyRouteCard extends StatelessWidget {
                 )),
             const SizedBox(
               width: 50,
-            )
+            ),
+            orderButtonFunction('Pending')
           ]),
         ]));
   }
