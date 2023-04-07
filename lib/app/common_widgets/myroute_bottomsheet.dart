@@ -83,7 +83,23 @@ class RouteBottomSheet extends StatelessWidget {
               HomeCardItem(
                 path: "assets/svg/route.svg",
                 label: "Mark Visit",
-                ontap: () {},
+                ontap: () {
+                  // Get.dialog(Visitpopup());
+                  Get.dialog(
+                    AlertDialog(
+                      title: Text('AlertDialog Title'),
+                      content: Text('AlertDialog Body'),
+                      actions: [
+                        TextButton(
+                          child: Text('Close'),
+                          onPressed: () {
+                            Get.back(); // dismiss the dialog
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
               HomeCardItem(
                 path: "assets/svg/home_profile.svg",
@@ -122,6 +138,28 @@ class RouteBottomSheet extends StatelessWidget {
             ],
           )
         ]),
+      ),
+    );
+  }
+}
+
+class Visitpopup extends StatelessWidget {
+  const Visitpopup({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text(
+            'This is a popup screen',
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
       ),
     );
   }
