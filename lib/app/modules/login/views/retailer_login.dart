@@ -29,7 +29,7 @@ class RetailerLoginView extends GetView<LoginController> {
               //     child:
               Expanded(child: Image.asset("assets/logo/logo.png")),
               //  ),
-              Positioned(bottom: 0, child: BottomWidget()),
+              const Positioned(bottom: 0.0, child: BottomWidget()),
             ],
           ),
         ],

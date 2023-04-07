@@ -12,7 +12,7 @@ class LoginText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         color: primaryColor,
         fontSize: 24,
         fontFamily: "Manrope",

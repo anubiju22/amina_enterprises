@@ -91,12 +91,12 @@ class HomeView extends GetView<HomeController> {
               ),
               sizedBox,
               GridView.builder(
-                  padding: EdgeInsets.zero,
+                  //  padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
-                    mainAxisSpacing: 15.0,
+                    mainAxisSpacing: 20.0,
 
                     // number of columns in the grid
                   ),
