@@ -16,26 +16,23 @@ class HomeCardItem extends StatelessWidget {
       onTap: () {
         ontap!();
       },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.center,
-            children: [
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.16,
-                  height: MediaQuery.of(context).size.width * 0.16,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: homeMenuColor),
-                  child: svgWidget(path)),
-              const SizedBox(
-                height: 6,
-              ),
-              blackText(label, 14, fontWeight: FontWeight.w500)
-            ],
-          )
-        ],
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: homeMenuColor),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 15.0, vertical: 15),
+                  child: svgWidget(path),
+                )),
+            blackText(label, 13,
+                textAlign: TextAlign.center, fontWeight: FontWeight.w500)
+          ],
+        ),
       ),
     );
   }
