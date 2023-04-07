@@ -44,12 +44,12 @@ class HorizontalCalendar extends GetView<MyrouteController> {
         margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
-          color: _isTapped.value
-              ?
-              // controller.selectedDate.value.day == date.day
-              //  ?
-              primaryColor
-              : scaffoldBgColor,
+          color:
+              // _isTapped.value
+              //     ?
+              controller.selectedDate.value.day == date.day
+                  ? primaryColor
+                  : scaffoldBgColor,
           // scaffoldBgColor,
         ),
         child: Column(

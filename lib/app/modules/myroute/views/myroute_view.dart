@@ -118,9 +118,6 @@ class MyrouteView extends GetView<MyrouteController> {
                                 tittle: "PRINCE FOOTWEAR BANDBAHAL",
                                 type: "Retailer",
                               ),
-                              // ShopBottomSheet(
-                              //   empRetailer: item,
-                              // ),
                               elevation: 20.0,
                               enableDrag: false,
                               backgroundColor: Colors.white,
