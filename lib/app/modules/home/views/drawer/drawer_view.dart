@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/common_widgets/card/header_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
@@ -18,13 +19,12 @@ class DrawerView extends GetView<DashboardController> {
           Center(
               child: Image.asset(
             'assets/logo/drawer_logo.png',
-            fit: BoxFit.cover,
-             
-            // height: size.height * 0.13,
-          )).paddingOnly(top: 30),
+            fit: BoxFit.fill,
+          )).paddingOnly(top: 20),
+          const DrawerHeaderCard(),
           ListView.builder(
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(top: 10),
               itemCount: controller.drawerItems.length,
               itemBuilder: (context, index) {
                 return Obx(

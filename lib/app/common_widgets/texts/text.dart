@@ -42,25 +42,32 @@ class GreyText extends StatelessWidget {
 }
 
 Text greyText(String label, double fontSize,
-    {TextAlign? textAlign = TextAlign.center,
+    {TextAlign? textAlign,
+    TextOverflow? textOverflow,
     FontWeight? fontWeight = FontWeight.w400}) {
   return Text(
     label,
     textAlign: textAlign,
     style: TextStyle(
         fontFamily: 'Manrope',
+        overflow: textOverflow,
         color: const Color(0xFF7B7B7B),
         fontSize: fontSize,
         fontWeight: fontWeight),
   );
 }
 
-Text blackText(String label, double fontSize,
-    {FontWeight? fontWeight = FontWeight.w400}) {
+Text blackText(
+  String label,
+  double fontSize, {
+  FontWeight? fontWeight = FontWeight.w400,
+  TextOverflow? textOverflow,
+}) {
   return Text(
     label,
     style: TextStyle(
         fontFamily: 'Manrope',
+        overflow: textOverflow,
         color: Colors.black,
         fontSize: fontSize,
         fontWeight: fontWeight),

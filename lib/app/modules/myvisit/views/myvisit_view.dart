@@ -36,13 +36,13 @@ class MyvisitView extends GetView<MyvisitController> {
             ),
             Expanded(
               child: ListView.separated(
-                  itemCount: 3,
+                  itemCount: 8,
                   itemBuilder: (context, index) {
                     return VisitCardWidget(
                         slno: num.parse((index + 1).toString()).toString(),
                         name: 'CHOLAN SHOE MART',
                         location:
-                            'Crystal Building, Malad, Rathodi, Mankavu, Calicut',
+                            'Crystal Building, Malad, Rathodi,Mankavu, Calicut',
                         duration: '3:49 PM',
                         remark: 'Order Booked');
                   },

@@ -1,6 +1,7 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
+import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/camera_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
@@ -75,16 +76,7 @@ class HomeView extends GetView<HomeController> {
                           )
                         ],
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.15,
-                        height: MediaQuery.of(context).size.height * 0.10,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle, color: Color(0xFFE7E7E7)),
-                        child: Align(
-                            alignment: Alignment.bottomCenter,
-                            child:
-                                Image.asset('assets/image/profile_mask.png')),
-                      )
+                      svgWidget('assets/svg/profile_circle.svg')
                     ],
                   ),
                 ),
