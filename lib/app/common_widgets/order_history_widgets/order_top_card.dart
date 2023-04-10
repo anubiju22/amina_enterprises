@@ -2,6 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/card/status_card.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OrderTopWidget extends StatelessWidget {
   final String no;
@@ -14,33 +15,44 @@ class OrderTopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             greyText("Order No : $no", 12),
+            const SizedBox(
+              height: 6,
+            ),
             blackText(orderNo, 16, fontWeight: FontWeight.w600),
+            const SizedBox(
+              height: 15,
+            ),
             Row(
               children: [
                 Container(
-                  width: 5,
-                  height: 5,
+                  width: 7,
+                  height: 7,
                   decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: primaryColor),
                 ),
-                Column(
-                  children: [blackText('Ordered', 12), greyText('3:49 PM', 12)],
-                )
+                const SizedBox(
+                  width: 4,
+                ),
+                blackText('Ordered', 12)
               ],
-            )
+            ),
+            greyText('3:49 PM', 12).paddingOnly(left: 6)
           ],
-        ),
-        Center(
-          child: Column(
-            children: [
-              blackText('Order Status :', 12),
-              orderButtonFunction(type),
-            ],
-          ),
+        ).paddingSymmetric(vertical: 8),
+        Column(
+          children: [
+            blackText('Order Status :', 12),
+            const SizedBox(
+              height: 8,
+            ),
+            orderButtonFunction(type),
+          ],
         )
       ],
     );

@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/modules/order_history/views/order_history_details_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/attendance_report/bindings/attendance_report_binding.dart';
@@ -102,6 +103,11 @@ class AppPages {
     GetPage(
       name: _Paths.ORDER_HISTORY,
       page: () => const OrderHistoryView(),
+      binding: OrderHistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_HISTORY_DETAILS,
+      page: () => const OrderHistoryDetailsView(),
       binding: OrderHistoryBinding(),
     ),
   ];

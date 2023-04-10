@@ -19,8 +19,8 @@ Widget orderButtonFunction(String type) {
           type, const Color(0xFFE9EAFF), const Color(0xFF3F46EF));
 
     case "Completed":
-      return statusButtonWidget(type, const Color(0xFF00C700).withOpacity(0.1),
-          const Color(0xFF00C700));
+      return statusButtonWidget(
+          type, const Color(0xFFFEA500), const Color(0xFFFFFFFF));
     case "Partially Completed":
       return statusButtonWidget(
           type, const Color(0xFFE5F9FF), const Color(0xFF4C7785));
