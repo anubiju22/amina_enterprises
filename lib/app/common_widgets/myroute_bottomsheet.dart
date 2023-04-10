@@ -1,11 +1,14 @@
+import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../routes/app_pages.dart';
+import 'textfeild/logintextfeild.dart';
 
 class RouteBottomSheet extends StatelessWidget {
   final String tittle, type;
@@ -86,18 +89,7 @@ class RouteBottomSheet extends StatelessWidget {
                 ontap: () {
                   // Get.dialog(Visitpopup());
                   Get.dialog(
-                    AlertDialog(
-                      title: Text('AlertDialog Title'),
-                      content: Text('AlertDialog Body'),
-                      actions: [
-                        TextButton(
-                          child: Text('Close'),
-                          onPressed: () {
-                            Get.back(); // dismiss the dialog
-                          },
-                        ),
-                      ],
-                    ),
+                    alertBox(),
                   );
                 },
               ),
@@ -139,6 +131,80 @@ class RouteBottomSheet extends StatelessWidget {
           )
         ]),
       ),
+    );
+  }
+}
+
+class alertBox extends StatelessWidget {
+  const alertBox({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30))),
+      title: blackText("Mark Visit", 20, fontWeight: FontWeight.w600),
+      content: Container(
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.circular(40),
+        //   color: Colors.white,
+        // ),
+        height: 200,
+
+        // height: MediaQuery.of(context).size.height * 0.25,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            blackText('Remarks', 18, fontWeight: FontWeight.w400),
+            SizedBox(
+              height: 15,
+            ),
+            LoginTextField(
+              hintText: 'select',
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 5,
+                ),
+                svgWidget('assets/svg/location.svg',
+                    color: ColorFilter.mode(primaryColor, BlendMode.srcIn)),
+                const SizedBox(
+                  width: 5,
+                ),
+                greyText(
+                  fontWeight: FontWeight.w400,
+                  "Palayam, Kozhikode",
+                  12,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            CommonButtonWidget(
+              label: "UPDATE",
+              onClick: () {
+                Get.back();
+              },
+            ),
+          ],
+        ),
+      ),
+      // actions: [
+      //   TextButton(
+      //     child: Text('Close'),
+      //     onPressed: () {
+      //       Get.back(); // dismiss the dialog
+      //     },
+      //   ),
+      // ],
     );
   }
 }
