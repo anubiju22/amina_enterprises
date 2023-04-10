@@ -37,9 +37,7 @@ class ShopCard extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BlackText(
-                text: shopname,
-              ),
+              blackText(shopname, 16, fontWeight: FontWeight.w600),
               SizedBox(
                 height: 5,
               ),
@@ -49,8 +47,9 @@ class ShopCard extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  GreyText(
-                    text: location,
+                  greyText(
+                    location,
+                    12,
                   )
                 ],
               ),
@@ -63,9 +62,7 @@ class ShopCard extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  GreyText(
-                    text: number.toString(),
-                  )
+                  greyText(number.toString(), 12)
                 ],
               ),
               // Visibility(

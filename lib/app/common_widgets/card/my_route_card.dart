@@ -20,9 +20,7 @@ class MyRouteCard extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          BlackText(
-            text: shopname,
-          ),
+          blackText(shopname, 16, fontWeight: FontWeight.w600),
           const SizedBox(
             height: 5,
           ),
@@ -32,9 +30,7 @@ class MyRouteCard extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              GreyText(
-                text: location,
-              )
+              greyText(location, 12)
             ],
           ),
           const SizedBox(
@@ -45,9 +41,7 @@ class MyRouteCard extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            GreyText(
-              text: number,
-            ),
+            greyText(number, 12),
             SizedBox(
               width: 30,
             ),

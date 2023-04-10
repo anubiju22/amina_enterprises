@@ -59,15 +59,11 @@ class RouteBottomSheet extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          BlackText(
-            text: tittle,
-          ),
+          blackText(tittle, 16, fontWeight: FontWeight.w600),
           SizedBox(
             height: 10,
           ),
-          GreyText(
-            text: type,
-          ),
+          greyText(type, 12),
           SizedBox(
             height: 20,
           ),

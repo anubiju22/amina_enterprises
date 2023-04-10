@@ -82,9 +82,7 @@ class ProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GreyText(
-                  text: brandName,
-                ),
+                greyText(brandName, 12),
                 overlapped(
                   color,
                   colors,
