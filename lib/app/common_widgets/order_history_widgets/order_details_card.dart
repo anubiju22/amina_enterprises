@@ -6,8 +6,13 @@ class OrderDetailsWidget extends StatelessWidget {
   final String type;
   final String artNo;
   final String artType;
+  final String mrp;
   const OrderDetailsWidget(
-      {super.key, required this.type, required this.artNo, required this.artType});
+      {super.key,
+      required this.type,
+      required this.artNo,
+      required this.artType,
+      required this.mrp});
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +26,48 @@ class OrderDetailsWidget extends StatelessWidget {
         Row(
           children: [
             Image.asset('assets/image/slipper.png'),
+            const SizedBox(
+              width: 4,
+            ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 orderType(type),
-                blackText(artNo, 18, fontWeight: FontWeight.w500),
+                const SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    blackText(artNo, 18, fontWeight: FontWeight.w500),
+                    Text(
+                      mrp,
+                      style: const TextStyle(
+                          color: primaryColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    )
+                  ],
+                ),
                 greyText(artType, 12),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.60,
-                  height: MediaQuery.of(context).size.height * 0.07,
+                  height: MediaQuery.of(context).size.height * 0.08,
                   child: Row(children: [
                     Column(
                       children: [greyText('Packing', 10), orderQty('7 * 10')],
                     ),
-                    const Divider(
+                    const VerticalDivider(
                       thickness: 1,
+                      endIndent: 10,
                       color: Color(0xFFCAC4C4),
                     ),
                     Column(
                       children: [greyText('Order quantity', 10), orderQty('1')],
                     ),
-                    const Divider(
+                    const VerticalDivider(
                       thickness: 1,
+                      endIndent: 10,
                       color: Color(0xFFCAC4C4),
                     ),
                     Column(
@@ -68,7 +94,7 @@ Widget orderType(String label) {
         border: Border.all(color: borderColor, width: 1)),
     child: Padding(
       padding: const EdgeInsets.all(8.0),
-      child: greyText("ORDER TYPE : $label", 10),
+      child: blackText("ORDER TYPE : $label", 10),
     ),
   );
 }
