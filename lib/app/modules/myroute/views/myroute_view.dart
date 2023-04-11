@@ -4,9 +4,12 @@ import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/myroute/views/calender.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
+import 'package:amina_enterprises/constraints/date_formats.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../../../common_widgets/myroute_bottomsheet.dart';
 import '../../footwears/views/footwears_view.dart';
@@ -23,37 +26,33 @@ class MyrouteView extends GetView<MyrouteController> {
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(
             children: [
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  greyText(
-                    fontWeight: FontWeight.w500,
-                    "${controller.selectedMonth},${controller.selectedYear}",
-                    20,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        controller.chooseDate();
-                      },
-                      child: Icon(
-                        Icons.expand_more,
-                        color: Colors.grey,
-                      )),
-                  //  Icon(
-                  //   Icons.expand_more,
-                  //   color: Colors.grey,
-                  // )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: HorizontalCalendar(),
-              ),
+              // Row(
+              //   children: [
+              //     const SizedBox(
+              //       width: 10,
+              //     ),
+              //     greyText(
+              //       fontWeight: FontWeight.w500,
+              //       DateFormat('MMMM yyyy').format(controller.selectedDates),
+              //       20,
+              //     ),
+
+              //     TextButton(
+              //         onPressed: () {
+              //           controller.chooseDate();
+              //         },
+              //         child: Icon(
+              //           Icons.expand_more,
+              //           color: Colors.grey,
+              //         )),
+
+              //   ],
+              // ),
+
+              // Padding(
+              //   padding: const EdgeInsets.all(20),
+              //   child: HorizontalCalendar(),
+              // ),
               // Row(
               //   children: [
               //     Container(
@@ -65,16 +64,13 @@ class MyrouteView extends GetView<MyrouteController> {
               //           date: DateTime.now(),
               //           initialDate:
               //               DateTime.now().subtract(Duration(days: 30)),
-              //           showMonth: true,
-
-              //           //  firstDate: DateTime.now().subtract(Duration(days: 30)),
+              //           showMonth: true,         //  firstDate: DateTime.now().subtract(Duration(days: 30)),
               //           lastDate: DateTime.now().add(Duration(days: 30)),
               //           // selectedDateTime: DateTime.now(),
               //           onDateSelected: (date) => print(date),
               //           textColor: Colors.black45,
               //           backgroundColor: Colors.transparent,
               //           selectedColor: Colors.blue,
-
               //           // baseColor: Colors.grey.shade300,
               //           // You can add more properties here as needed
               //         ),
@@ -82,6 +78,39 @@ class MyrouteView extends GetView<MyrouteController> {
               //     )
               //   ],
               // ),
+
+              // CalendarTimeline(
+
+              //   // shrink: true,
+              //   // showYears: true,
+              //   initialDate: DateTime.now(),
+              //   firstDate: DateTime(2019, 1, 15),
+              //   lastDate: DateTime(2028, 11, 20),
+              //   onDateSelected: (date) => print(date),
+              //   leftMargin: 20,
+              //   // monthColor: Colors.blueGrey,
+              //   dayColor: Colors.black,
+              //   activeDayColor: Colors.white,
+              //   activeBackgroundDayColor: primaryColor,
+              //   dotsColor: primaryColor,
+              //   // selectableDayPredicate: (date) => date.day != 23,
+              //   // locale: 'en_ISO',
+              // ),
+
+              // HorizontalCalendar(
+              //   dateTextStyle: TextStyle(fontSize: 18, color: Colors.black),
+              //   monthTextStyle: TextStyle(fontSize: 12, color: Colors.grey),
+              //   padding: EdgeInsets.all(16),
+              //   height: 100,
+              //   selectedColor: Colors.blue,
+              //   onDateSelected: (date) {
+              //     // Do something when a date is selected
+              //   },
+              // ),
+
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
                   const SizedBox(

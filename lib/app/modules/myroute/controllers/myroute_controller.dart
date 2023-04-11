@@ -7,15 +7,10 @@ class MyrouteController extends GetxController {
   //TODO: Implement MyrouteController
 
   var selectedDate = DateTime.now().obs;
-  var selectedMonth = DateTime.now().month;
-  // DateFormat('MMMM');
-
-  // String formatDate(DateTime date) => new DateFormat("MMMM d").format(date);
-  //  DateTime.now().month;
-  var selectedYear = DateTime.now().year;
+  final DateTime selectedDates = DateTime.now();
 
   final isLoading = false.obs;
-
+  var color = Colors.blue.obs;
   @override
   void onInit() {
     super.onInit();
@@ -33,5 +28,9 @@ class MyrouteController extends GetxController {
       selectedDate.value = pickedDate;
       isLoading(false);
     }
+  }
+
+  void changeColor() {
+    color.value = color.value == Colors.blue ? Colors.red : Colors.blue;
   }
 }

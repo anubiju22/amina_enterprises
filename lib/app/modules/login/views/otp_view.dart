@@ -15,19 +15,23 @@ class OtpView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color(0xFF033EB2),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: MediaQuery.of(context).size.width * 0.40),
-                  child: Image.asset("assets/logo/logo.png")),
-              const BottomWidget()
-            ],
-          ),
+        body: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Padding(
+                //     padding: EdgeInsets.symmetric(
+                //         horizontal: 20,
+                //         vertical: MediaQuery.of(context).size.width * 0.40),
+                //     child:
+                //      Image.asset("assets/logo/logo.png")),
+                Expanded(child: Image.asset("assets/logo/logo.png")),
+                Positioned(bottom: 0, child: BottomWidget()),
+              ],
+            ),
+          ],
         ));
   }
 }

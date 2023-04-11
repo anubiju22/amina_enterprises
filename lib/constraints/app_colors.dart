@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 const primaryColor = Color(0xFF033EB2);
+
+// gradientColors = <Color>[Colors.red, Colors.blue]
 const homeMenuColor = Color(0xFFDCE8FF);
 const scaffoldBgColor = Color(0xFFF3F3F3);
 const homeFootColor = Color(0xFF59D1CA);
