@@ -128,7 +128,7 @@ class _CameraViewState extends State<CameraView> {
       width: 60,
       decoration: const BoxDecoration(
           shape: BoxShape.circle,
-          color: primaryColor,
+          color: redColor,
           boxShadow: [
             BoxShadow(color: Colors.white, offset: Offset(2, 2), blurRadius: 12)
           ]),

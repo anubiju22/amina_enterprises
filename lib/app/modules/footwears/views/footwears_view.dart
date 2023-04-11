@@ -25,8 +25,8 @@ class FootwearsView extends GetView<FootwearsController> {
               color: Colors.white,
               child: TabBar(
                 labelStyle: const TextStyle(fontWeight: FontWeight.bold),
-                labelColor: primaryColor,
-                indicatorColor: primaryColor,
+                labelColor: redColor,
+                indicatorColor: redColor,
                 unselectedLabelStyle:
                     const TextStyle(fontWeight: FontWeight.bold),
                 unselectedLabelColor: Colors.black,

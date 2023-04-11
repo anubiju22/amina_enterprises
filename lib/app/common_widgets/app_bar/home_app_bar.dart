@@ -14,7 +14,9 @@ class HomeAppBar extends GetView<DashboardController>
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: primaryColor,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(gradient: primaryColor),
+      ),
       leading: InkWell(
         onTap: () {
           onClick();

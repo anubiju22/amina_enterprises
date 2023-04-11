@@ -30,6 +30,7 @@
 //     );
 //   }
 
+<<<<<<< HEAD
 //   Widget _buildDay(
 //     DateTime date,
 //   ) {
@@ -87,3 +88,62 @@
 //     );
 //   }
 // }
+=======
+  Widget _buildDay(
+    DateTime date,
+  ) {
+    final formatter = DateFormat('E');
+    final dayOfWeek = formatter.format(date);
+    RxBool _isTapped = false.obs;
+    return GestureDetector(
+      onTapDown: (_) => _isTapped.value = true,
+      onTapUp: (_) => _isTapped.value = false,
+      child: Container(
+        width: 50,
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.0),
+          color:
+              // _isTapped.value
+              //     ?
+              controller.selectedDate.value.day == date.day
+                  ? redColor
+                  : scaffoldBgColor,
+          // scaffoldBgColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              dayOfWeek.toUpperCase(),
+              style: TextStyle(
+                color: controller.selectedDate.value.day == date.day
+                    ? Colors.white
+                    : Colors.black,
+                // controller.isSelected == true ? Colors.white : Colors.black,
+                fontSize: 16,
+                fontFamily: "Manrope",
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              date.day.toString(),
+              style: TextStyle(
+                color: controller.selectedDate.value.day == date.day
+                    ? Colors.white
+                    : Colors.black,
+                // Colors.black,
+                fontSize: 32,
+                fontFamily: "Manrope",
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+>>>>>>> main

@@ -82,7 +82,7 @@ class ColorWidget extends StatelessWidget {
               width: selected ? 40 : 35,
               height: selected ? 40 : 35,
               decoration: BoxDecoration(
-                color: selected ? null : primaryColor,
+                color: selected ? null : redColor,
                 border: Border.all(color: Colors.black),
                 shape: BoxShape.circle,
               ),
@@ -91,8 +91,8 @@ class ColorWidget extends StatelessWidget {
                       child: Container(
                         width: 25,
                         height: 25,
-                        decoration: BoxDecoration(
-                          color: primaryColor,
+                        decoration: const BoxDecoration(
+                          color: redColor,
                           shape: BoxShape.circle,
                         ),
                       ),

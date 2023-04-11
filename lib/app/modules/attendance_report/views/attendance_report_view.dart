@@ -84,7 +84,7 @@ class AttendanceReportView extends GetView<AttendanceReportController> {
     return SizedBox(
         child: Text(
       label,
-      style: const TextStyle(color: primaryColor),
+      style: const TextStyle(color: redColor),
     ));
   }
 

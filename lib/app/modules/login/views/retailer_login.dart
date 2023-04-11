@@ -15,26 +15,93 @@ class RetailerLoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF033EB2),
-      body: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Padding(
-              //     padding: EdgeInsets.symmetric(
-              //         horizontal: 20,
-              //         vertical: MediaQuery.of(context).size.width * 0.30),
-              //     child:
-              Expanded(child: Image.asset("assets/logo/logo.png")),
-              //  ),
-              const Positioned(bottom: 0.0, child: BottomWidget()),
-            ],
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          child: Container(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width,
+              maxHeight: MediaQuery.of(context).size.height,
+            ),
+            decoration: const BoxDecoration(gradient: primaryColor),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Center(child: Image.asset("assets/logo/logo.png")),
+                        // ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(32),
+                          topRight: Radius.circular(32),
+                        ),
+                        color: scaffoldBgColor,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            const LoginText(
+                              text: "Retailer Customer Login",
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            LoginTextField(
+                              hintText: 'Username',
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: svgWidget(
+                                  'assets/svg/Call.svg',
+                                ),
+                              ),
+                              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            LoginTextField(
+                              hintText: 'Password',
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: svgWidget(
+                                  'assets/svg/LockClosed.svg',
+                                ),
+                              ),
+                              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            CommonButtonWidget(
+                              label: "LOGIN",
+                              onClick: () {
+                                Get.toNamed(Routes.HOME);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
 

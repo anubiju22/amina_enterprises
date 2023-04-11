@@ -2,8 +2,6 @@ import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/productdetails/controllers/productdetails_controller.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
 class ProductHeaderSection extends StatelessWidget {
@@ -22,9 +20,9 @@ class ProductHeaderSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 "GP4300",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                 ),
@@ -32,10 +30,10 @@ class ProductHeaderSection extends StatelessWidget {
               Row(
                 children: [
                   blackText('MRP:  ', 14),
-                  Text(
+                  const Text(
                     "₹ 250",
-                    style: const TextStyle(
-                      color: primaryColor,
+                    style: TextStyle(
+                      color: redColor,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),

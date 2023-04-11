@@ -44,7 +44,7 @@ class OrderDetailsWidget extends StatelessWidget {
                     Text(
                       mrp,
                       style: const TextStyle(
-                          color: primaryColor,
+                          color: redColor,
                           fontSize: 18,
                           fontWeight: FontWeight.w600),
                     )

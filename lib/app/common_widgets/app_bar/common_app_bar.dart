@@ -12,7 +12,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: primaryColor,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(gradient: primaryColor),
+      ),
       centerTitle: false,
       leading: InkWell(
           onTap: () {

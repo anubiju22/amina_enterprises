@@ -16,7 +16,7 @@ class DashboardView extends GetView<DashboardController> {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.selectedIndex.value,
           elevation: 0,
-          selectedItemColor: primaryColor,
+          selectedItemColor: redColor,
           onTap: (int index) async {
             controller.selectedIndex.value = index;
           },

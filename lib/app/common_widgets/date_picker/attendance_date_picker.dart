@@ -33,7 +33,7 @@ class AttendanceDatePicker extends StatelessWidget {
                 },
           child: Row(
             children: [
-              const Icon(Icons.calendar_today, size: 17, color: primaryColor),
+              const Icon(Icons.calendar_today, size: 17, color: redColor),
               const SizedBox(
                 width: 5,
               ),

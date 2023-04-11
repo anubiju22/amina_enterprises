@@ -15,89 +15,82 @@ class EmployeeLoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF033EB2),
-      body: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // Padding(
-              //     padding: EdgeInsets.symmetric(
-              //         horizontal: 20,
-              //         vertical: MediaQuery.of(context).size.width * 0.30),
-              // child:
-              Expanded(child: Image.asset("assets/logo/logo.png")),
-              // ),
-              Positioned(bottom: 0, child: BottomWidget()),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BottomWidget extends StatelessWidget {
-  const BottomWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.40,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(32),
-          topRight: Radius.circular(32),
-        ),
-        color: scaffoldBgColor,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              const LoginText(
-                text: "Employee Login",
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              LoginTextField(
-                hintText: 'Enter your Phone Number',
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: svgWidget(
-                    'assets/svg/Call.svg',
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          child: Container(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width,
+              maxHeight: MediaQuery.of(context).size.height,
+            ),
+            decoration: const BoxDecoration(gradient: primaryColor),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 4,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Center(child: Image.asset("assets/logo/logo.png")),
+                        // ),
+                      ],
+                    ),
                   ),
-                ),
-                // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              CommonButtonWidget(
-                label: "GET OTP",
-                onClick: () {
-                  Get.toNamed(Routes.OTP);
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(32),
+                          topRight: Radius.circular(32),
+                        ),
+                        color: scaffoldBgColor,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.03,
+                            ),
+                            const LoginText(
+                              text: "Employee Login",
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.03,
+                            ),
+                            LoginTextField(
+                              hintText: 'Enter your Phone Number',
+                              prefixIcon: Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: svgWidget(
+                                  'assets/svg/Call.svg',
+                                ),
+                              ),
+                              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.03,
+                            ),
+                            CommonButtonWidget(
+                              label: "GET OTP",
+                              onClick: () {
+                                Get.toNamed(Routes.OTP);
+                              },
+                            ),
 
-              // )
-            ],
+                            // )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
+

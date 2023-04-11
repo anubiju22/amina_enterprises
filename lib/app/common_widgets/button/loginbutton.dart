@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CommonButtonWidget extends StatelessWidget {
@@ -8,15 +9,14 @@ class CommonButtonWidget extends StatelessWidget {
   final VoidCallback onClick;
   final bool? isLoading;
 
-  const CommonButtonWidget({
-    super.key,
-    required this.label,
-    required this.onClick,
-    this.fontSize,
-    this.isLoading,
-    this.borderRadius = 10,
-    this.color = const Color(0xFF033EB2),
-  });
+  const CommonButtonWidget(
+      {super.key,
+      required this.label,
+      required this.onClick,
+      this.fontSize,
+      this.isLoading,
+      this.borderRadius = 10,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class CommonButtonWidget extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(borderRadius!),
               // color: color ?? AppColors().primaryColor
-              color: color),
+              gradient: primaryColor),
           child: isLoading == true
               ? const Center(
                   child: CircularProgressIndicator(

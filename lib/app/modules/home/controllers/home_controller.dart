@@ -47,8 +47,6 @@ class HomeController extends GetxController {
       }),
     ]);
 
-    // Get.dialog(getDivision(divisionItems, selectItem));
-
     startCamera();
   }
 

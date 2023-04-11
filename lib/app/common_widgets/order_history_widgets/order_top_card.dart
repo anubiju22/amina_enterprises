@@ -34,7 +34,7 @@ class OrderTopWidget extends StatelessWidget {
                   width: 7,
                   height: 7,
                   decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: primaryColor),
+                      shape: BoxShape.circle, color: redColor),
                 ),
                 const SizedBox(
                   width: 4,

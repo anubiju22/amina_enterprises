@@ -47,7 +47,7 @@ class ProductCard extends StatelessWidget {
                     if (loadingProgress == null) return child;
                     return Center(
                       child: CircularProgressIndicator(
-                        color: primaryColor,
+                        color: redColor,
                         value: loadingProgress.expectedTotalBytes != null
                             ? loadingProgress.cumulativeBytesLoaded /
                                 loadingProgress.expectedTotalBytes!
@@ -59,7 +59,7 @@ class ProductCard extends StatelessWidget {
                       const Center(
                     child: Icon(
                       Icons.error,
-                      color: primaryColor,
+                      color: redColor,
                     ),
                   ),
                 ),
@@ -73,7 +73,7 @@ class ProductCard extends StatelessWidget {
                   "₹ $mrp",
                   style: const TextStyle(
                       fontFamily: "Manrope",
-                      color: primaryColor,
+                      color: redColor,
                       fontSize: 18,
                       fontWeight: FontWeight.w700),
                 ),

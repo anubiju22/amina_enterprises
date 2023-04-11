@@ -25,7 +25,7 @@ class ProductSizeCategorySection extends StatelessWidget {
                 onPressed: () {},
                 text: 'CARTOON',
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               TypeWidget(
@@ -64,7 +64,7 @@ class TypeWidget extends StatelessWidget {
             width: 16,
             height: 16,
             decoration: BoxDecoration(
-              border: Border.all(color: primaryColor),
+              border: Border.all(color: redColor),
               shape: BoxShape.circle,
             ),
             child: selected
@@ -73,7 +73,7 @@ class TypeWidget extends StatelessWidget {
                       width: 10,
                       height: 10,
                       decoration: const BoxDecoration(
-                        color: primaryColor,
+                        color: redColor,
                         shape: BoxShape.circle,
                       ),
                     ),

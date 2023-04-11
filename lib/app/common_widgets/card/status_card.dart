@@ -30,7 +30,7 @@ Widget orderButtonFunction(String type) {
 
     case "Processing":
       return statusButtonWidget(
-          type, const Color(0xFF3585DB).withOpacity(0.1), primaryColor);
+          type, const Color(0xFF3585DB).withOpacity(0.1), redColor);
 
     default:
       return const SizedBox();

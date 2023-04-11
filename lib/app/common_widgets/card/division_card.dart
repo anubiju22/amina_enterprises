@@ -18,7 +18,7 @@ class DivisionCardWidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          blackText(label, 18, fontWeight: FontWeight.w600),
+          blackText(label, 16, fontWeight: FontWeight.w600),
           InkWell(
               onTap: () {
                 act!(label);
@@ -38,14 +38,13 @@ Widget radioButton(String text, String selectItem) {
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-              width: 1.5,
-              color: text == selectItem ? primaryColor : Colors.grey)),
+              width: 1.5, color: text == selectItem ? redColor : Colors.grey)),
       child: Center(
           child: Container(
         height: 10,
         width: 10,
         decoration: BoxDecoration(
-            color: text == selectItem ? primaryColor : Colors.transparent,
+            color: text == selectItem ? redColor : Colors.transparent,
             shape: BoxShape.circle),
       )),
     )

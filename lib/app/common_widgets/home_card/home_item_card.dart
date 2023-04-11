@@ -27,7 +27,8 @@ class HomeCardItem extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 15.0, vertical: 15),
-                  child: svgWidget(path),
+                  child: svgWidget(path,
+                      color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
                 )),
             blackText(label, 13,
                 textAlign: TextAlign.center, fontWeight: FontWeight.w500)

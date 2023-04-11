@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 const primaryColor = Color(0xFF033EB2);
 
 // gradientColors = <Color>[Colors.red, Colors.blue]
 const homeMenuColor = Color(0xFFDCE8FF);
+=======
+const primaryColor = LinearGradient(
+  begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
+  colors: [
+    Color(0xFFB20002),
+    Color(0xFFD80005),
+  ],
+);
+const mapColor = Color(0xFF033EB2);
+const redColor = Color(0xFFD80005);
+const red2Color = Color(0xFFB20002);
+const homeMenuColor = Color(0xFFFBE6E6);
+>>>>>>> main
 const scaffoldBgColor = Color(0xFFF3F3F3);
 const homeFootColor = Color(0xFF59D1CA);
 const homeBagColor = Color(0xFFEB6666);

@@ -41,13 +41,20 @@ class MyRouteCard extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
+<<<<<<< HEAD
             greyText(number, 12),
             SizedBox(
+=======
+            GreyText(
+              text: number,
+            ),
+            const SizedBox(
+>>>>>>> main
               width: 30,
             ),
             svgWidget('assets/svg/pin_drop.svg',
                 size: 20,
-                color: const ColorFilter.mode(primaryColor, BlendMode.srcIn)),
+                color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
             TextButton(
                 style: TextButton.styleFrom(
                   minimumSize: Size.zero,
@@ -57,7 +64,7 @@ class MyRouteCard extends StatelessWidget {
                 onPressed: () {},
                 child: const Text(
                   "Google Map",
-                  style: TextStyle(color: primaryColor, fontSize: 12),
+                  style: TextStyle(color: mapColor, fontSize: 12),
                 )),
             const SizedBox(
               width: 50,

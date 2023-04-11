@@ -6,6 +6,7 @@ import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/camera_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
+import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,10 @@ class HomeView extends GetView<HomeController> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              topWidget(context, '#AMINA ENTERPRISES'),
+              const SizedBox(
+                height: 10,
+              ),
               Card(
                 elevation: 3,
                 shape: RoundedRectangleBorder(
@@ -150,61 +155,86 @@ class HomeView extends GetView<HomeController> {
   }
 }
 
- // SizedBox(
-              //   width: Get.width * 0.9,
-              //   child: Wrap(
-              //     spacing: 10,
-              //     runSpacing: 10,
-              //     children: [
-              //       HomeCardItem(
-              //         path: 'assets/svg/home_user.svg',
-              //         label: 'Attendance',
-              //         ontap: () {
-              //           Get.toNamed(Routes.ATTENDANCE_REPORT);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/route.svg',
-              //         label: 'My Route',
-              //         ontap: () {
-              //           Get.toNamed(Routes.MYROUTE);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/home_shop.svg',
-              //         label: 'Shops',
-              //         ontap: () {
-              //           Get.toNamed(Routes.SHOPS);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/home_list.svg',
-              //         label: 'My Visit',
-              //         ontap: () {
-              //           Get.toNamed(Routes.MYVISIT);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/home_checklist.svg',
-              //         label: 'My Order',
-              //         ontap: () {
-              //           Get.toNamed(Routes.ORDER_HISTORY);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/home_profile.svg',
-              //         label: 'Profile',
-              //         ontap: () {
-              //           // Get.toNamed(Routes.ProfileView);
-              //         },
-              //       ),
-              //       HomeCardItem(
-              //         path: 'assets/svg/call_center.svg',
-              //         label: 'Support',
-              //         ontap: () {
-              //           Get.toNamed(Routes.SUPPORT);
-              //         },
-              //       ),
-              //     ],
-              //   ),
-              // ),
+Widget topWidget(BuildContext context, String label) {
+  return Row(
+    children: [
+      Text(
+        label,
+        style: const TextStyle(
+            color: redColor,
+            fontFamily: "Manrope",
+            fontWeight: FontWeight.w600,
+            fontSize: 16),
+      ),
+      const SizedBox(
+        width: 8,
+      ),
+      IconButton(
+          onPressed: () {
+            Get.dialog(getDivision(context));
+          },
+          icon: const Icon(
+            Icons.keyboard_arrow_down,
+            color: redColor,
+          ))
+    ],
+  );
+}
+// SizedBox(
+//   width: Get.width * 0.9,
+//   child: Wrap(
+//     spacing: 10,
+//     runSpacing: 10,
+//     children: [
+//       HomeCardItem(
+//         path: 'assets/svg/home_user.svg',
+//         label: 'Attendance',
+//         ontap: () {
+//           Get.toNamed(Routes.ATTENDANCE_REPORT);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/route.svg',
+//         label: 'My Route',
+//         ontap: () {
+//           Get.toNamed(Routes.MYROUTE);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/home_shop.svg',
+//         label: 'Shops',
+//         ontap: () {
+//           Get.toNamed(Routes.SHOPS);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/home_list.svg',
+//         label: 'My Visit',
+//         ontap: () {
+//           Get.toNamed(Routes.MYVISIT);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/home_checklist.svg',
+//         label: 'My Order',
+//         ontap: () {
+//           Get.toNamed(Routes.ORDER_HISTORY);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/home_profile.svg',
+//         label: 'Profile',
+//         ontap: () {
+//           // Get.toNamed(Routes.ProfileView);
+//         },
+//       ),
+//       HomeCardItem(
+//         path: 'assets/svg/call_center.svg',
+//         label: 'Support',
+//         ontap: () {
+//           Get.toNamed(Routes.SUPPORT);
+//         },
+//       ),
+//     ],
+//   ),
+// ),

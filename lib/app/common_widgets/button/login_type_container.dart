@@ -24,7 +24,7 @@ class LoginTypeContainer extends StatelessWidget {
       }),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        height: MediaQuery.of(context).size.height * .07,
+        height: MediaQuery.of(context).size.height * .067,
         decoration: BoxDecoration(
           color: color,
           borderRadius: const BorderRadius.all(
