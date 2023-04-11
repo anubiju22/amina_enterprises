@@ -2,14 +2,11 @@ import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart
 import 'package:amina_enterprises/app/common_widgets/card/my_route_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/app/modules/myroute/views/calender.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
-import 'package:amina_enterprises/constraints/date_formats.dart';
-
 import 'package:flutter/material.dart';
+import 'package:calendar_timeline/calendar_timeline.dart';
 
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 import '../../../common_widgets/myroute_bottomsheet.dart';
 import '../../footwears/views/footwears_view.dart';
@@ -17,6 +14,7 @@ import '../controllers/myroute_controller.dart';
 
 class MyrouteView extends GetView<MyrouteController> {
   const MyrouteView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,23 +77,22 @@ class MyrouteView extends GetView<MyrouteController> {
               //   ],
               // ),
 
-              // CalendarTimeline(
-
-              //   // shrink: true,
-              //   // showYears: true,
-              //   initialDate: DateTime.now(),
-              //   firstDate: DateTime(2019, 1, 15),
-              //   lastDate: DateTime(2028, 11, 20),
-              //   onDateSelected: (date) => print(date),
-              //   leftMargin: 20,
-              //   // monthColor: Colors.blueGrey,
-              //   dayColor: Colors.black,
-              //   activeDayColor: Colors.white,
-              //   activeBackgroundDayColor: primaryColor,
-              //   dotsColor: primaryColor,
-              //   // selectableDayPredicate: (date) => date.day != 23,
-              //   // locale: 'en_ISO',
-              // ),
+              CalendarTimeline(
+                // shrink: true,
+                // showYears: true,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(2019, 1, 15),
+                lastDate: DateTime(2028, 11, 20),
+                onDateSelected: (date) => print(date),
+                leftMargin: 20,
+                // monthColor: Colors.blueGrey,
+                dayColor: Colors.black,
+                activeDayColor: Colors.white,
+                activeBackgroundDayColor: primaryColor,
+                dotsColor: primaryColor,
+                // selectableDayPredicate: (date) => date.day != 23,
+                // locale: 'en_ISO',
+              ),
 
               // HorizontalCalendar(
               //   dateTextStyle: TextStyle(fontSize: 18, color: Colors.black),

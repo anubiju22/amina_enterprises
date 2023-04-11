@@ -7,7 +7,7 @@ class MyrouteController extends GetxController {
   //TODO: Implement MyrouteController
 
   var selectedDate = DateTime.now().obs;
-  final DateTime selectedDates = DateTime.now();
+  DateTime selectedDates = DateTime.now();
 
   final isLoading = false.obs;
   var color = Colors.blue.obs;
