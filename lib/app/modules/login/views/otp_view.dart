@@ -14,75 +14,6 @@ class OtpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-        backgroundColor: const Color(0xFF033EB2),
-        body: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Padding(
-                //     padding: EdgeInsets.symmetric(
-                //         horizontal: 20,
-                //         vertical: MediaQuery.of(context).size.width * 0.40),
-                //     child:
-                //      Image.asset("assets/logo/logo.png")),
-                Expanded(child: Image.asset("assets/logo/logo.png")),
-                Positioned(bottom: 0, child: BottomWidget()),
-              ],
-            ),
-          ],
-        ));
-  }
-}
-
-class BottomWidget extends StatelessWidget {
-  const BottomWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.43,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(32),
-          topRight: Radius.circular(32),
-        ),
-        color: scaffoldBgColor,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              const LoginText(
-                text: "Enter OTP",
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              OtpTextfield(
-                oncomplete: (pin) {
-                  return null;
-                },
-                onchange: (pin) {
-                  // controller.otp = pin;
-                  return null;
-                  // return null;
-                },
-              ),
-              TextButton(
-                  onPressed: () {},
-                  child: Row(
-=======
         resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
           child: Container(
@@ -98,7 +29,6 @@ class BottomWidget extends StatelessWidget {
                 Expanded(
                   flex: 4,
                   child: Column(
->>>>>>> main
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
