@@ -63,13 +63,15 @@ class HomeCategories extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-              width: MediaQuery.of(context).size.width * 0.18,
-              height: MediaQuery.of(context).size.width * 0.18,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16), color: Colors.white),
-              child: svgWidget(path, color: color)),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                child: svgWidget(path, color: color),
+              )),
           const SizedBox(
-            height: 10,
+            height: 6,
           ),
           blackText(label, 14, fontWeight: FontWeight.w500)
         ],

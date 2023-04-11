@@ -11,6 +11,12 @@ class HomeController extends GetxController {
   DashboardController dashBoardController = Get.find();
 
   final menuItems = <DrawerItem>[].obs;
+  final brands = [
+    'assets/image/winheels.png',
+    'assets/image/aqualite.png',
+    'assets/image/lunars.png'
+  ];
+ 
   final divisionItems = [
     '#AMINA ENTERPRICES',
     '#TRENDZ INDIA MARKETING',

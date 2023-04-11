@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/card/brands_card.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
@@ -148,6 +149,24 @@ class HomeView extends GetView<HomeController> {
                     onClick: () {},
                   )
                 ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              blackText('Explore Brands', 22, fontWeight: FontWeight.w700),
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.12,
+                child: ListView.builder(
+                    itemCount: 3,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return BrandCard(
+                        path: controller.brands[index],
+                      );
+                    }),
               )
             ]),
           ),
