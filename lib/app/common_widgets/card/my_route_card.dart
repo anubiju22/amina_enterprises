@@ -41,15 +41,8 @@ class MyRouteCard extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-<<<<<<< HEAD
             greyText(number, 12),
-            SizedBox(
-=======
-            GreyText(
-              text: number,
-            ),
             const SizedBox(
->>>>>>> main
               width: 30,
             ),
             svgWidget('assets/svg/pin_drop.svg',

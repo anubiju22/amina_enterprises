@@ -60,15 +60,15 @@ class RouteBottomSheet extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           blackText(tittle, 16, fontWeight: FontWeight.w600),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           greyText(type, 12),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           divider(),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Row(
@@ -85,7 +85,7 @@ class RouteBottomSheet extends StatelessWidget {
                 ontap: () {
                   // Get.dialog(Visitpopup());
                   Get.dialog(
-                    alertBox(),
+                    const alertBox(),
                   );
                 },
               ),
@@ -101,7 +101,7 @@ class RouteBottomSheet extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Row(
@@ -112,7 +112,7 @@ class RouteBottomSheet extends StatelessWidget {
                 height: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.centerLeft,
                     colors: [Color(0xff6dfa56), Color(0xff31cd40)],
@@ -139,7 +139,7 @@ class alertBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30))),
       title: blackText("Mark Visit", 20, fontWeight: FontWeight.w600),
       content: Container(
@@ -155,13 +155,13 @@ class alertBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             blackText('Remarks', 18, fontWeight: FontWeight.w400),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            LoginTextField(
+            const LoginTextField(
               hintText: 'select',
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -170,7 +170,7 @@ class alertBox extends StatelessWidget {
                   width: 5,
                 ),
                 svgWidget('assets/svg/location.svg',
-                    color: ColorFilter.mode(primaryColor, BlendMode.srcIn)),
+                    color: const ColorFilter.mode(mapColor, BlendMode.srcIn)),
                 const SizedBox(
                   width: 5,
                 ),
@@ -181,7 +181,7 @@ class alertBox extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             CommonButtonWidget(
@@ -216,7 +216,7 @@ class Visitpopup extends StatelessWidget {
       color: Colors.transparent,
       child: Container(
         color: Colors.white,
-        child: Center(
+        child: const Center(
           child: Text(
             'This is a popup screen',
             style: TextStyle(fontSize: 24),
