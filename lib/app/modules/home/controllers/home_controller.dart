@@ -41,7 +41,9 @@ class HomeController extends GetxController {
       DrawerItem('assets/svg/home_checklist.svg', 'My Order', () {
         Get.toNamed(Routes.ORDER_HISTORY);
       }),
-      DrawerItem('assets/svg/home_profile.svg', 'Profile', () {}),
+      // DrawerItem('assets/svg/home_profile.svg', 'Profile', () {
+
+      // }),
       DrawerItem('assets/svg/call_center.svg', 'Support', () {
         Get.toNamed(Routes.SUPPORT);
       }),

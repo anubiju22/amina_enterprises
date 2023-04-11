@@ -38,7 +38,7 @@ class OtpView extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                    flex: 2,
+                    flex: 3,
                     child: Container(
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -49,61 +49,59 @@ class OtpView extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const SizedBox(
-                                height: 30,
-                              ),
-                              const LoginText(
-                                text: "Enter OTP",
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              OtpTextfield(
-                                oncomplete: (pin) {
-                                  return null;
-                                },
-                                onchange: (pin) {
-                                  // controller.otp = pin;
-                                  return null;
-                                  // return null;
-                                },
-                              ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
-                                      Text(
-                                        "Didn’t receive OTP?",
-                                        style:
-                                            TextStyle(color: Color(0xFF818181)),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        "Resend",
-                                        style: TextStyle(color: redColor),
-                                      )
-                                    ],
-                                  )),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              CommonButtonWidget(
-                                label: "VERIFY OTP",
-                                onClick: () {
-                                  Get.toNamed(Routes.HOME);
-                                },
-                              )
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            const LoginText(
+                              text: "Enter OTP",
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            OtpTextfield(
+                              oncomplete: (pin) {
+                                return null;
+                              },
+                              onchange: (pin) {
+                                // controller.otp = pin;
+                                return null;
+                                // return null;
+                              },
+                            ),
+                            TextButton(
+                                onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      "Didn’t receive OTP?",
+                                      style:
+                                          TextStyle(color: Color(0xFF818181)),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      "Resend",
+                                      style: TextStyle(color: redColor),
+                                    )
+                                  ],
+                                )),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CommonButtonWidget(
+                              label: "VERIFY OTP",
+                              onClick: () {
+                                Get.toNamed(Routes.HOME);
+                              },
+                            )
 
-                              // )
-                            ],
-                          ),
+                            // )
+                          ],
                         ),
                       ),
                     ))

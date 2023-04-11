@@ -37,7 +37,7 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Container(
                     decoration: const BoxDecoration(
                       color: Colors.white,
