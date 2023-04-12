@@ -60,7 +60,7 @@ class MyRouteCard extends StatelessWidget {
                   style: TextStyle(color: mapColor, fontSize: 12),
                 )),
             const SizedBox(
-              width: 50,
+              width: 40,
             ),
             orderButtonFunction('visited')
           ]),

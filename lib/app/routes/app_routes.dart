@@ -19,6 +19,7 @@ abstract class Routes {
   static const ORDER_HISTORY = _Paths.ORDER_HISTORY;
   static const RETAILER_LOGIN = _Paths.RETAILER_LOGIN;
   static const ORDER_HISTORY_DETAILS = _Paths.ORDER_HISTORY_DETAILS;
+  static const CART = _Paths.CART;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const ORDER_HISTORY = '/order-history';
   static const RETAILER_LOGIN = '/retailer_login';
   static const ORDER_HISTORY_DETAILS = '/order_history_details';
+  static const CART = '/cart';
 }

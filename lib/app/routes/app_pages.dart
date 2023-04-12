@@ -1,8 +1,9 @@
-import 'package:amina_enterprises/app/modules/order_history/views/order_history_details_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/attendance_report/bindings/attendance_report_binding.dart';
 import '../modules/attendance_report/views/attendance_report_view.dart';
+import '../modules/cart/bindings/cart_binding.dart';
+import '../modules/cart/views/cart_view.dart';
 import '../modules/footwears/bindings/footwears_binding.dart';
 import '../modules/footwears/views/footwears_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -17,6 +18,7 @@ import '../modules/myroute/views/myroute_view.dart';
 import '../modules/myvisit/bindings/myvisit_binding.dart';
 import '../modules/myvisit/views/myvisit_view.dart';
 import '../modules/order_history/bindings/order_history_binding.dart';
+import '../modules/order_history/views/order_history_details_view.dart';
 import '../modules/order_history/views/order_history_view.dart';
 import '../modules/productdetails/bindings/productdetails_binding.dart';
 import '../modules/productdetails/views/productdetails_view.dart';
@@ -109,6 +111,11 @@ class AppPages {
       name: _Paths.ORDER_HISTORY_DETAILS,
       page: () => const OrderHistoryDetailsView(),
       binding: OrderHistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART,
+      page: () => const CartView(),
+      binding: CartBinding(),
     ),
   ];
 }

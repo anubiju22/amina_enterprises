@@ -4,6 +4,7 @@ import 'package:amina_enterprises/app/modules/productdetails/views/cut_size_sect
 import 'package:amina_enterprises/app/modules/productdetails/views/product_color_section.dart';
 import 'package:amina_enterprises/app/modules/productdetails/views/product_header_section.dart';
 import 'package:amina_enterprises/app/modules/productdetails/views/product_size_section.dart';
+import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -55,7 +56,9 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
                       ProductCutSizeDealerBuilder(),
                       CommonButtonWidget(
                         label: "ADD TO CART",
-                        onClick: () {},
+                        onClick: () {
+                          Get.toNamed(Routes.CART);
+                        },
                       )
                     ],
                   ),
