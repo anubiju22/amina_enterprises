@@ -25,6 +25,7 @@ dependencies:
   intl: ^0.17.0
   camera: ^0.10.3+2
   flutter_calendar_week: ^3.0.0
+  url_launcher: ^6.1.10
   # calendar_timeline: ^1.1.2
 
 dev_dependencies:
