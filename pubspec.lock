@@ -25,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  calendar_timeline:
-    dependency: "direct main"
-    description:
-      name: calendar_timeline
-      sha256: "7437ce216a7c579f2f9554f385dd77a3d5c9d15a63bc38d4d155b66302c85fba"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.2"
   camera:
     dependency: "direct main"
     description:
@@ -126,6 +118,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_calendar_week:
+    dependency: "direct main"
+    description:
+      name: flutter_calendar_week
+      sha256: edd499c1e4f6f862ac16e23b7b5b6ce18c232ed17d1dff9365bb07a4e3f5d32d
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -272,14 +272,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
-  scrollable_positioned_list:
-    dependency: transitive
-    description:
-      name: scrollable_positioned_list
-      sha256: ca7fcaa743db712d4f7b1580526f494d0093c77a721a65705ee51fbeac7a2bd3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.5"
   sky_engine:
     dependency: transitive
     description: flutter
