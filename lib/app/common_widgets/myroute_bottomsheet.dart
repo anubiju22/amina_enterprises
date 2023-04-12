@@ -68,13 +68,13 @@ class RouteBottomSheet extends StatelessWidget {
           ),
           divider(),
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               HomeCardItem(
-                path: "assets/svg/orders.svg",
+                path: "assets/svg/order.svg",
                 label: "Orders",
                 ontap: () {},
               ),
@@ -95,13 +95,13 @@ class RouteBottomSheet extends StatelessWidget {
               ),
               HomeCardItem(
                 path: "assets/svg/payment_history.svg",
-                label: "Payment History",
+                label: "Pay History",
                 ontap: () {},
               )
             ],
           ),
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -146,7 +146,7 @@ class alertBox extends StatelessWidget {
         //   borderRadius: BorderRadius.circular(40),
         //   color: Colors.white,
         // ),
-        height: 200,
+        // height: 250,
 
         // height: MediaQuery.of(context).size.height * 0.25,
         width: double.infinity,
@@ -157,8 +157,33 @@ class alertBox extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const LoginTextField(
-              hintText: 'select',
+            // const LoginTextField(
+            //   hintText: 'select',
+            // ),
+            SizedBox(
+              child: TextFormField(
+                decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                      onPressed: () {}, icon: Icon(Icons.expand_more)),
+                  fillColor: Color(0xFFF3F3F3),
+                  filled: true,
+                  hintText: "Select Item",
+                  hintStyle: const TextStyle(
+                    color: Color(0xff7b7b7b),
+                    fontSize: 16,
+                    fontFamily: "Manrope",
+                    fontWeight: FontWeight.w500,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
             ),
             const SizedBox(
               height: 15,
@@ -169,7 +194,7 @@ class alertBox extends StatelessWidget {
                   width: 5,
                 ),
                 svgWidget('assets/svg/location.svg',
-                    color: const ColorFilter.mode(mapColor, BlendMode.srcIn)),
+                    color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
                 const SizedBox(
                   width: 5,
                 ),
