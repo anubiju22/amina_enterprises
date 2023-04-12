@@ -47,7 +47,7 @@ class RouteBottomSheet extends StatelessWidget {
         //       ),
         //     )),
         Container(
-      height: MediaQuery.of(context).size.width * 0.75,
+      height: MediaQuery.of(context).size.width * 0.80,
       width: double.infinity,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -146,7 +146,7 @@ class alertBox extends StatelessWidget {
         //   borderRadius: BorderRadius.circular(40),
         //   color: Colors.white,
         // ),
-        // height: 250,
+        height: 250,
 
         // height: MediaQuery.of(context).size.height * 0.25,
         width: double.infinity,
