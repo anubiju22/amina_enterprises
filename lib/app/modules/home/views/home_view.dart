@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              topWidget(context, '#AMINA ENTERPRISES'),
+              TopWidget(),
               const SizedBox(
                 height: 10,
               ),
@@ -158,7 +158,7 @@ class HomeView extends GetView<HomeController> {
                 height: 20,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.12,
+                height: MediaQuery.of(context).size.height * 0.10,
                 child: ListView.builder(
                     itemCount: 3,
                     scrollDirection: Axis.horizontal,
@@ -174,31 +174,53 @@ class HomeView extends GetView<HomeController> {
   }
 }
 
-Widget topWidget(BuildContext context, String label) {
-  return Row(
-    children: [
-      Text(
-        label,
-        style: const TextStyle(
-            color: redColor,
-            fontFamily: "Manrope",
-            fontWeight: FontWeight.w600,
-            fontSize: 16),
-      ),
-      const SizedBox(
-        width: 8,
-      ),
-      IconButton(
-          onPressed: () {
-            Get.dialog(getDivision(context));
-          },
-          icon: const Icon(
-            Icons.keyboard_arrow_down,
-            color: redColor,
-          ))
-    ],
-  );
+class TopWidget extends GetView<HomeController> {
+  const TopWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Obx(
+          () => Text(
+            controller.label.value.isEmpty
+                ? controller.selectedValue
+                : controller.label.value,
+            style: const TextStyle(
+                color: redColor,
+                fontFamily: "Manrope",
+                fontWeight: FontWeight.w600,
+                fontSize: 16),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        IconButton(
+            onPressed: () {
+              Get.bottomSheet(
+                      SelectDivision(divisions: controller.divisionItems),
+                      elevation: 20.0,
+                      enableDrag: false,
+                      isDismissible: true,
+                      backgroundColor: scaffoldBgColor,
+                      shape: bottomSheetShape())
+                  .then((value) {
+                if (value != null) {
+                  controller.updateSelectedValue(value);
+                }
+              });
+            },
+            icon: const Icon(
+              Icons.keyboard_arrow_down,
+              color: redColor,
+            ))
+      ],
+    );
+  }
 }
+
+
 // SizedBox(
 //   width: Get.width * 0.9,
 //   child: Wrap(

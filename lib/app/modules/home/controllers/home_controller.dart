@@ -11,12 +11,13 @@ class HomeController extends GetxController {
   DashboardController dashBoardController = Get.find();
 
   final menuItems = <DrawerItem>[].obs;
+  final label = ''.obs;
   final brands = [
     'assets/image/winheels.png',
     'assets/image/aqualite.png',
     'assets/image/lunars.png'
   ];
- 
+
   final divisionItems = [
     '#AMINA ENTERPRICES',
     '#TRENDZ INDIA MARKETING',
@@ -62,6 +63,10 @@ class HomeController extends GetxController {
     selectedValue = value;
     //  print(value);
     update();
+  }
+
+  void updateSelectedValue(String value) {
+    label.value = value;
   }
 
   void startCamera() async {
