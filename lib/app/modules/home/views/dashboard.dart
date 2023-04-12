@@ -13,37 +13,47 @@ class DashboardView extends GetView<DashboardController> {
       body: Obx(() => Center(
           child: controller.widgetOptions
               .elementAt(controller.selectedIndex.value))),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: controller.selectedIndex.value,
-          elevation: 0,
-          selectedItemColor: redColor,
-          onTap: (int index) async {
-            controller.selectedIndex.value = index;
-          },
-          items: [
-            BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: svgWidget('assets/svg/bottom_home.svg'),
-                ),
-                label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: svgWidget('assets/svg/search.svg',
-                      color: const ColorFilter.mode(
-                          Colors.black, BlendMode.srcIn)),
-                ),
-                label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: svgWidget('assets/svg/home_profile.svg',
-                      color: const ColorFilter.mode(
-                          Colors.black, BlendMode.srcIn)),
-                ),
-                label: 'Profile')
-          ]),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: controller.selectedIndex.value,
+            elevation: 0,
+            onTap: (int index) async {
+              controller.selectedIndex.value = index;
+            },
+            items: [
+              BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(bottom: 5.0),
+                    child: svgWidget('assets/svg/bottom_home.svg',
+                        color: controller.selectedIndex.value == 0
+                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
+                            : const ColorFilter.mode(
+                                Colors.black, BlendMode.srcIn)),
+                  ),
+                  label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(bottom: 5.0),
+                    child: svgWidget('assets/svg/bottom_search.svg',
+                        color: controller.selectedIndex.value == 1
+                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
+                            : const ColorFilter.mode(
+                                Colors.black, BlendMode.srcIn)),
+                  ),
+                  label: 'Search'),
+              BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: const EdgeInsets.only(bottom: 5.0),
+                    child: svgWidget('assets/svg/bottom_profile.svg',
+                        color: controller.selectedIndex.value == 2
+                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
+                            : const ColorFilter.mode(
+                                Colors.black, BlendMode.srcIn)),
+                  ),
+                  label: 'Profile')
+            ]),
+      ),
     );
   }
 }
