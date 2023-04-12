@@ -7,10 +7,14 @@ class BrandCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Image.asset(path),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.30,
+      //  height: MediaQuery.of(context).size.width * 0.15,
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        child: Center(child: Image.asset(path)),
+      ),
     );
   }
 }
