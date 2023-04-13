@@ -31,19 +31,24 @@ class SelectDivision extends StatelessWidget {
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Obx(
-                  () => RadioListTile(
-                      title: Text(
-                        divisions[index],
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600),
-                      ),
-                      activeColor: redColor,
-                      controlAffinity: ListTileControlAffinity.trailing,
-                      value: divisions[index],
-                      groupValue: selectedItem.value,
-                      onChanged: (value) {
-                        selectedItem.value = value.toString();
-                      }),
+                  () => Theme(
+                    data: ThemeData(
+                      unselectedWidgetColor: redColor,
+                    ),
+                    child: RadioListTile(
+                        title: Text(
+                          divisions[index],
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w600),
+                        ),
+                        activeColor: redColor,
+                        controlAffinity: ListTileControlAffinity.trailing,
+                        value: divisions[index],
+                        groupValue: selectedItem.value,
+                        onChanged: (value) {
+                          selectedItem.value = value.toString();
+                        }),
+                  ),
                 );
               }),
           CommonButtonWidget(
