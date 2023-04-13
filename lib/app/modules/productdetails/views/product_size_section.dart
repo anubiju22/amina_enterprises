@@ -10,6 +10,17 @@ class ProductSizeCategorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return Row(
+    //   children: [
+    //     SizedBox(
+    //       width: 105,
+    //       child: blackText("SIZE", 16, fontWeight: FontWeight.w500),
+    //     ),
+    //     Wrap(
+    //       children: [],
+    //     )
+    //   ],
+    // );
     return GetBuilder<ProductdetailsController>(builder: (controller) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 15),

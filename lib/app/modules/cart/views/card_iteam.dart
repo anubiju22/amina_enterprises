@@ -114,9 +114,7 @@ class CartItemCard extends StatelessWidget {
                 width: 15,
               ),
               DeleteButton(),
-              SizedBox(
-                width: 50,
-              ),
+              Spacer(),
               Text(
                 "7*8",
                 textAlign: TextAlign.right,

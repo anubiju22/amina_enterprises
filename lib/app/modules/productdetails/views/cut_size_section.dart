@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/common_widgets/textfeild/numbertextfeild.dart';
 import 'package:amina_enterprises/app/modules/productdetails/controllers/productdetails_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,24 +36,16 @@ class ProductCutSizeDealerBuilder extends StatelessWidget {
                       const SizedBox(
                         width: 10,
                       ),
-                      // BounceWidget(
-                      //   onPressed: () {
-                      //     controller.updateSubCategoryVisibleStatus(index);
-                      //   },
-                      //   child: Icon(subcategory.isVisible!
-                      //       ? Icons.expand_less_rounded
-                      //       : Icons.add),
-                      // ),
                     ],
                   ),
-                  // if (subcategory.isVisible!)
+
                   const SizedBox(
                     width: double.infinity,
                     child: Divider(
                       color: Colors.grey,
                     ),
                   ),
-                  // if (subcategory.isVisible!)
+
                   const SizedBox(
                     height: 10,
                   ),
@@ -82,33 +75,94 @@ class ProductCutSizeDealerBuilder extends StatelessWidget {
                   // ),
                   Container(
                     padding: const EdgeInsets.only(top: 10, left: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    child: Column(
                       children: [
-                        const Text(
-                          "Enter Required Quantity",
-                          style: TextStyle(fontSize: 12),
+                        Row(
+                          children: const [
+                            Text(
+                              "5*8",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff393939),
+                                fontSize: 17,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            NumberTextfeild(),
+                            Spacer(),
+                            Text(
+                              "7*8",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff393939),
+                                fontSize: 17,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            NumberTextfeild(),
+                            SizedBox(
+                              width: 15,
+                            ),
+                          ],
                         ),
                         SizedBox(
-                          width: 55,
-                          height: 35,
-                          child: TextField(
-                            // isCenterText: true,
-                            // inputFormate: true,
-                            // maxLengthLimit: 3,
-                            // textInputType: TextInputType.number,
-                            // labelText: subcategory.requierdQty.toString(),
-                            // textEditingController:
-                            //     controller.totalQtyController,
-                            onChanged: (dynamic value) {
-                              // controller.updateCutSizeRequiredQuntity(
-                              //     index, value);
-                            },
-                            // hintText: '0',
-                          ),
-                        )
+                          height: 15,
+                        ),
+                        Row(
+                          children: const [
+                            Text(
+                              "6*8",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff393939),
+                                fontSize: 17,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            NumberTextfeild(),
+                            SizedBox(
+                              width: 15,
+                            ),
+                          ],
+                        ),
                       ],
                     ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     const ext(
+                    //       "Enter Required Quantity",
+                    //       style: TextStyle(fontSize: 12),
+                    //     ),
+                    //     SizedBox(
+                    //       width: 55,
+                    //       height: 35,
+                    //       child: TextField(
+                    //         // isCenterText: true,
+                    //         // inputFormate: true,
+                    //         // maxLengthLimit: 3,
+                    //         // textInputType: TextInputType.number,
+                    //         // labelText: subcategory.requierdQty.toString(),
+                    //         // textEditingController:
+                    //         //     controller.totalQtyController,
+                    //         onChanged: (dynamic value) {
+                    //           // controller.updateCutSizeRequiredQuntity(
+                    //           //     index, value);
+                    //         },
+                    //         // hintText: '0',
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                   )
                 ],
               ),
