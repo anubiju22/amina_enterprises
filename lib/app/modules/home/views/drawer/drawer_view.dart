@@ -14,59 +14,58 @@ class DrawerView extends GetView<DashboardController> {
     var size = MediaQuery.of(context).size;
     return Drawer(
       backgroundColor: Colors.white,
-      child: SingleChildScrollView(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Center(
-              child: Image.asset(
-            'assets/logo/drawer_logo.png',
-            fit: BoxFit.fill,
-          )).paddingOnly(top: 20),
-          const DrawerHeaderCard(),
-          ListView.builder(
-              shrinkWrap: true,
-              padding: const EdgeInsets.only(top: 10),
-              itemCount: controller.drawerItems.length,
-              itemBuilder: (context, index) {
-                return Obx(
-                  () => SingleChildScrollView(
-                    child: DrawerCard(
-                      path: controller.drawerItems[index].image,
-                      label: controller.drawerItems[index].label,
-                      onPressed: controller.drawerItems[index].onClick,
-                    ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Center(
+            child: Image.asset(
+          'assets/logo/drawer_logo.png',
+          fit: BoxFit.fill,
+        )).paddingOnly(top: 20),
+        const DrawerHeaderCard(),
+        ListView.builder(
+            shrinkWrap: true,
+            padding: const EdgeInsets.only(top: 10),
+            itemCount: controller.drawerItems.length,
+            itemBuilder: (context, index) {
+              return Obx(
+                () => SingleChildScrollView(
+                  child: DrawerCard(
+                    path: controller.drawerItems[index].image,
+                    label: controller.drawerItems[index].label,
+                    onPressed: controller.drawerItems[index].onClick,
                   ),
-                ).paddingOnly(left: 20);
-              }),
-          const SizedBox(
-            height: 25,
-          ),
-          Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(child: greyText("Powered By", 14)),
-              const SizedBox(
-                height: 5,
-              ),
-              Center(
-                child: Image.asset(
-                  "assets/logo/git_logo.png",
-                  height: 50,
                 ),
-              ),
-            ],
+              ).paddingOnly(left: 20);
+            }),
+        const Expanded(child: SizedBox()),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(child: greyText("Powered By", 14)),
+                const SizedBox(
+                  height: 5,
+                ),
+                Center(
+                  child: Image.asset(
+                    "assets/logo/git_logo.png",
+                    height: 50,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Center(
+                  child: blackText("BuildVersion:  1.0.1", 14),
+                ),
+              ],
+            ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Center(
-            child: blackText("BuildVersion:  1.0.0", 14),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }
