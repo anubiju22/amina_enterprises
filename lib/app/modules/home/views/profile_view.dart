@@ -26,7 +26,7 @@ class ProfileView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Center(child: Image.asset("assets/image/profilecircle.png")),
