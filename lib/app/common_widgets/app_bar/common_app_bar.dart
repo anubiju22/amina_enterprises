@@ -6,7 +6,8 @@ import '../svg_icons/svg_widget.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String label;
-  const CommonAppBar({super.key, required this.label});
+  final bool? visibility;
+  const CommonAppBar({super.key, required this.label, this.visibility = true});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,11 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: const TextStyle(fontSize: 20, color: Colors.white),
       ),
       actions: [
-        IconButton(
-            onPressed: () {}, icon: svgWidget('assets/svg/shop_cart.svg')),
+        Visibility(
+          visible: visibility!,
+          child: IconButton(
+              onPressed: () {}, icon: svgWidget('assets/svg/shop_cart.svg')),
+        ),
         IconButton(onPressed: () {}, icon: svgWidget('assets/svg/search.svg')),
       ],
     );

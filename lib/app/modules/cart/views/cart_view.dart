@@ -10,7 +10,10 @@ class CartView extends GetView<CartController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CommonAppBar(label: "Cart"),
+      appBar: const CommonAppBar(
+        label: "Cart",
+        visibility: false,
+      ),
       body: const Center(
         child: Text(
           'CartView is working',
