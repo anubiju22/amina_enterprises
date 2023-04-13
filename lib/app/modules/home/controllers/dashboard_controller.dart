@@ -42,8 +42,8 @@ class DashboardController extends GetxController {
       //   Get.back();
       // }),
       DrawerItem('assets/svg/call_center.svg', 'Support', () {
+         Get.back();
         Get.toNamed(Routes.SUPPORT);
-        Get.back();
       }),
       DrawerItem('assets/svg/logout.svg', 'Logout', () {
         Get.back();

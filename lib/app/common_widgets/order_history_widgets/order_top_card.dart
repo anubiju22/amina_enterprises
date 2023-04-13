@@ -28,21 +28,30 @@ class OrderTopWidget extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            Row(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 7,
-                  height: 7,
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: redColor),
+                Row(
+                  children: [
+                    Container(
+                      width: 7,
+                      height: 7,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: redColor),
+                    ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    blackText('Ordered', 12),
+                  ],
                 ),
-                const SizedBox(
-                  width: 4,
-                ),
-                blackText('Ordered', 12)
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.03),
+                  child: greyText('3:49 PM', 12),
+                )
               ],
             ),
-            greyText('3:49 PM', 12).paddingOnly(left: 6)
           ],
         ).paddingSymmetric(vertical: 8),
         Column(

@@ -96,9 +96,9 @@ class MyrouteView extends GetView<MyrouteController> {
               //   // locale: 'en_ISO',
               // ),
 
-              Calender(),
+              const Calender(),
 
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -127,13 +127,13 @@ class MyrouteView extends GetView<MyrouteController> {
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
                       children: [
-                        Divider(
+                        const Divider(
                           thickness: 2,
                         ),
                         InkWell(
                           onTap: () {
                             Get.bottomSheet(
-                              RouteBottomSheet(
+                              const RouteBottomSheet(
                                 tittle: "PRINCE FOOTWEAR BANDBAHAL",
                                 type: "Retailer",
                               ),
@@ -143,10 +143,10 @@ class MyrouteView extends GetView<MyrouteController> {
                               shape: bootomSheetShape(),
                             );
                           },
-                          child: MyRouteCard(
+                          child: const MyRouteCard(
                             shopname: "PRINCE FOOTWEAR BANDBAHAL",
                             location:
-                                "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
+                                "Crystal Building, Malad, Rathodi,Mankavu, Calicut",
                             number: "9856254147",
                           ),
                         ),
@@ -171,7 +171,7 @@ class Calender extends StatelessWidget {
   Widget build(BuildContext context) {
     return CalendarWeek(
       // month: [ ],
-      marginMonth: EdgeInsets.only(left: 20, bottom: 10),
+      marginMonth: const EdgeInsets.only(left: 20, bottom: 10),
 
       monthViewBuilder: (DateTime date) {
         return Padding(
@@ -186,9 +186,9 @@ class Calender extends StatelessWidget {
       },
 
       showMonth: true,
-      dayOfWeekStyle: TextStyle(color: Colors.black),
-      todayDateStyle: TextStyle(color: Colors.black),
-      dateStyle: TextStyle(color: Colors.black),
+      dayOfWeekStyle: const TextStyle(color: Colors.black),
+      todayDateStyle: const TextStyle(color: Colors.black),
+      dateStyle: const TextStyle(color: Colors.black),
       pressedDateBackgroundColor: redColor,
 
       backgroundColor: scaffoldBgColor,
@@ -196,10 +196,10 @@ class Calender extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.15,
 
       minDate: DateTime.now().add(
-        Duration(days: -365),
+        const Duration(days: -365),
       ),
       maxDate: DateTime.now().add(
-        Duration(days: 365),
+        const Duration(days: 365),
       ),
       onDatePressed: (DateTime datetime) {
         // Do something

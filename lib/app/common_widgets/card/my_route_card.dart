@@ -25,12 +25,14 @@ class MyRouteCard extends StatelessWidget {
             height: 5,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               svgWidget('assets/svg/location.svg'),
               const SizedBox(
                 width: 5,
               ),
-              greyText(location, 12)
+              Expanded(child: greyText(location, 12))
             ],
           ),
           const SizedBox(
@@ -46,8 +48,7 @@ class MyRouteCard extends StatelessWidget {
               width: 30,
             ),
             svgWidget('assets/svg/pin_drop.svg',
-                size: 20,
-                color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
+                color: const ColorFilter.mode(mapColor, BlendMode.srcIn)),
             TextButton(
                 style: TextButton.styleFrom(
                   minimumSize: Size.zero,

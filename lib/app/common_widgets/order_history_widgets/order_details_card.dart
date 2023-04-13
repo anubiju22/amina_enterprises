@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ class OrderDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizedBox = const SizedBox(
+      height: 5,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,56 +33,82 @@ class OrderDetailsWidget extends StatelessWidget {
             const SizedBox(
               width: 4,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                orderType(type),
-                const SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    blackText(artNo, 18, fontWeight: FontWeight.w500),
-                    Text(
-                      mrp,
-                      style: const TextStyle(
-                          color: redColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
-                    )
-                  ],
-                ),
-                greyText(artType, 12),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
-                  child: Row(children: [
-                    Column(
-                      children: [greyText('Packing', 10), orderQty('7 * 10')],
-                    ),
-                    const VerticalDivider(
-                      thickness: 1,
-                      endIndent: 10,
-                      color: Color(0xFFCAC4C4),
-                    ),
-                    Column(
-                      children: [greyText('Order quantity', 10), orderQty('1')],
-                    ),
-                    const VerticalDivider(
-                      thickness: 1,
-                      endIndent: 10,
-                      color: Color(0xFFCAC4C4),
-                    ),
-                    Column(
-                      children: [
-                        greyText('Delivered quantity', 10),
-                        orderQty('1')
-                      ],
-                    ),
-                  ]),
-                )
-              ],
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  orderType(type),
+                  sizedBox,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      blackText(artNo, 18, fontWeight: FontWeight.w500),
+                      Text(
+                        mrp,
+                        style: const TextStyle(
+                            color: redColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      )
+                    ],
+                  ),
+                  sizedBox,
+                  greyText(artType, 12),
+                  sizedBox,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.08,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Column(
+                            children: [
+                              greyText('Packing', 10),
+                              sizedBox,
+                              borderWidget('7 * 10')
+                            ],
+                          ),
+                          divider(),
+                          Column(
+                            children: [
+                              greyText('Order Qty', 10),
+                              sizedBox,
+                              borderWidget('1')
+                            ],
+                          ),
+                          divider(),
+                          Column(
+                            children: [
+                              greyText('Delivered Qty', 10),
+                              sizedBox,
+                              SizedBox(
+                                width: 40,
+                                height: 40,
+                                child: QuantityTextField(
+                                  inputFormate: true,
+                                  isCenterText: true,
+                                  isDense: true,
+                                  // isEnable:
+                                  //     controller.orderType == 'Customer Order'
+                                  //         ? true
+                                  //         : false,
+                                  textInputType: TextInputType.number,
+                                  maxLengthLimit: 2,
+                                  hintText: '1',
+                                  onChanged: (dynamic value) {
+                                    if (value != null) {
+                                      // controller.updateDeliveryQty(
+                                      //     value.toString(), index, i);
+                                    }
+                                  },
+                                ),
+                              )
+                            ],
+                          ),
+                        ]),
+                  )
+                ],
+              ),
             )
           ],
         )
@@ -99,14 +129,20 @@ Widget orderType(String label) {
   );
 }
 
-Widget orderQty(String qty) {
+SizedBox divider() {
+  return const SizedBox(
+      width: 12,
+      height: 45,
+      child: VerticalDivider(thickness: 1.5, color: Color(0xFFC4C4C4)));
+}
+
+Container borderWidget(String text) {
   return Container(
+    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
     decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        border: Border.all(color: borderColor, width: 1)),
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: greyText(qty, 10),
+      border: Border.all(color: const Color(0xFFC4C4C4), width: .5),
+      borderRadius: BorderRadius.circular(30),
     ),
+    child: Text(text),
   );
 }

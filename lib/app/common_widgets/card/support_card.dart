@@ -26,71 +26,56 @@ class SupportCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 15.0, left: 15, right: 15),
-        child: Column(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                blackText(label, 18, fontWeight: FontWeight.bold),
-                const SizedBox(
-                  height: 5,
+    return Padding(
+      padding: const EdgeInsets.only(top: 15.0, left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              blackText(label, 18, fontWeight: FontWeight.bold),
+              const SizedBox(
+                height: 5,
+              ),
+              Visibility(
+                visible: visible!,
+                child: Row(
+                  children: [
+                    greyText('Mobile No: ', 12),
+                    blackText(
+                      mob,
+                      12,
+                    ),
+                  ],
                 ),
-                Visibility(
-                  visible: visible!,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          greyText('Mobile No: ', 14),
-                          blackText(
-                            mob,
-                            14,
-                          ),
-                        ],
-                      ),
-                      InkWell(
-                          onTap: () {
-                            // onCall!();
-                            PhoneCallUtils.callPhoneNumber(mob);
-                          },
-                          child: svgWidget(
-                            'assets/svg/mob_call.svg',
-                          ))
-                    ],
-                  ),
+              ),
+              TextButton(
+                onPressed: () {
+                  onMailPress!();
+                },
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                TextButton(
-                  onPressed: () {
-                    onMailPress!();
-                  },
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  child:
-                      Text(email, style: const TextStyle(color: Colors.blue)),
-                ),
-              ],
-            ),
-            // Padding(
-            //   padding: EdgeInsets.only(
-            //       left: MediaQuery.of(context).size.width * 0.15, top: 10),
-            //   child: ListView.builder(
-            //       itemCount: items.length,
-            //       shrinkWrap: true,
-            //       physics: const ScrollPhysics(),
-            //       itemBuilder: (context, index) {
-            //         return ListText(
-            //           text: items[index],
-            //         );
-            //       }),
-            // )
-          ],
-        ),
+                child: Text(email,
+                    style: const TextStyle(
+                        color: Colors.blue,
+                        fontFamily: "Manrope",
+                        fontSize: 12)),
+              ),
+            ],
+          ),
+          InkWell(
+              onTap: () {
+                // onCall!();
+                PhoneCallUtils.callPhoneNumber(mob);
+              },
+              child: svgWidget(
+                'assets/svg/mob_call.svg',
+              ))
+        ],
       ),
     );
   }

@@ -99,6 +99,7 @@ class HomeView extends GetView<HomeController> {
               GridView.builder(
                   //  padding: EdgeInsets.zero,
                   shrinkWrap: true,
+                  physics: const ScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,

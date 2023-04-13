@@ -38,22 +38,26 @@ class ShopCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               blackText(shopname, 16, fontWeight: FontWeight.w600),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   svgWidget('assets/svg/location.svg'),
                   const SizedBox(
                     width: 5,
                   ),
-                  greyText(
-                    location,
-                    12,
+                  Expanded(
+                    child: greyText(
+                      location,
+                      12,
+                    ),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(

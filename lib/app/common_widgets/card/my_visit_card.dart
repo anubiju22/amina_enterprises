@@ -21,7 +21,7 @@ class VisitCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.10,
+      height: MediaQuery.of(context).size.height * 0.11,
       child: Row(children: <Widget>[
         header(context, slno),
         verticalDivider(),
@@ -43,7 +43,9 @@ class VisitCardWidget extends StatelessWidget {
                 Row(
                   children: [
                     svgWidget('assets/svg/location.svg', size: 15),
-                    greyText(location, 12, textOverflow: TextOverflow.ellipsis),
+                    Expanded(
+                        child: greyText(location, 12,
+                            textOverflow: TextOverflow.ellipsis)),
                   ],
                 ),
                 const SizedBox(
@@ -64,7 +66,7 @@ class VisitCardWidget extends StatelessWidget {
                       children: [
                         blackText('Remark :', 12),
                         const SizedBox(
-                          width: 3,
+                          width: 2,
                         ),
                         greyText(remark, 12)
                       ],

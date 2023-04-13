@@ -29,8 +29,7 @@ class ProfileView extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Center(child: Image.asset("assets/image/profilecircle.png")),
-                  // const DealerImgWidget(),
+                  const ProfileImgWidget(),
                   const SizedBox(
                     height: 5,
                   ),
@@ -48,6 +47,21 @@ class ProfileView extends StatelessWidget {
             ],
           ),
         ));
+  }
+}
+
+class ProfileImgWidget extends StatelessWidget {
+  const ProfileImgWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Stack(fit: StackFit.loose, clipBehavior: Clip.none, children: [
+        Image.asset("assets/image/profilecircle.png"),
+        Positioned(
+            bottom: 4, right: -4, child: svgWidget('assets/svg/cam_frame.svg'))
+      ]),
+    );
   }
 }
 
