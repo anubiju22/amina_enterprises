@@ -62,53 +62,80 @@ class SelectDivision extends StatelessWidget {
   }
 }
 
-// class SelectDivision extends StatelessWidget {
-//   final List<String> divisions;
-//   final String selectedValue;
-//   final Function act;
-
-//   const SelectDivision(
-//       {super.key,
-//       required this.divisions,
-//       required this.selectedValue,
-//       required this.act});
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-//       child: ListView(
-//         shrinkWrap: true,
-//         children: [
-//           blackText('Choose Your Division', 20, fontWeight: FontWeight.bold),
-//           const SizedBox(height: 20),
-//           GetBuilder<HomeController>(builder: (c) {
-//             return ListView.separated(
-//                 separatorBuilder: (context, index) {
-//                   return divider();
-//                 },
-//                 itemCount: c.divisionItems.length,
-//                 shrinkWrap: true,
-//                 itemBuilder: (context, index) {
-//    return DivisionCardWidget(
-//     label: c.divisionItems[index],
-//     selectItem: c.selectedValue,
-//     act: (value) {
-//       c.onClickDivision(value);
-//     },
-//   );
-// });
-//           }),
-//           CommonButtonWidget(
-//               label: 'SUBMIT',
-//               onClick: () {
-
-//                 Get.back(result: selectedValue);
-//               })
-//         ],
-//       ),
-//     );
-//   }
-// }
+Future<dynamic> openDialog(
+  String title,
+  String subTitle,
+) {
+  return Get.dialog(AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    titlePadding: EdgeInsets.zero,
+    contentPadding: EdgeInsets.zero,
+    title: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Align(
+          alignment: Alignment.topRight,
+          child: IconButton(
+            icon: const Icon(
+              Icons.close,
+              // size: 20,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: blackText(title, 20, fontWeight: FontWeight.w600),
+        ),
+      ],
+    ),
+    content: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+      child: blackText(subTitle, 17),
+    ),
+    actions: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: TextButton(
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          side: const BorderSide(color: Colors.grey)))),
+                  onPressed: () {
+                    Get.back(result: false);
+                  },
+                  child: blackText('Cancel', 17)),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: TextButton(
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          side: const BorderSide(color: redColor)))),
+                  onPressed: () {
+                    Get.back(result: true);
+                  },
+                  child: const Text(
+                    'Ok',
+                    style: TextStyle(
+                        fontFamily: "Manrope", color: redColor, fontSize: 17),
+                  )),
+            )
+          ],
+        ),
+      ),
+    ],
+  ));
+}
 
 RoundedRectangleBorder bottomSheetShape() {
   return const RoundedRectangleBorder(

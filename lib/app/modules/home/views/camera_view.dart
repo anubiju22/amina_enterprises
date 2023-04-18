@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:camera/camera.dart';
@@ -58,7 +59,7 @@ class _CameraViewState extends State<CameraView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
-              //  alignment: AlignmentDirectional.topCenter,
+                //  alignment: AlignmentDirectional.topCenter,
                 fit: StackFit.loose,
                 children: [
                   SizedBox(
@@ -75,11 +76,24 @@ class _CameraViewState extends State<CameraView> {
                       ),
                     ),
                   Positioned(
+                    top: 40,
+                    right: 10,
                     child: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: const BoxDecoration(shape: BoxShape.circle),
-                      child: const Icon(Icons.close),
+                      width: 30,
+                      height: 30,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.white),
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: const Icon(
+                          Icons.close,
+                          color: redColor,
+                        ),
+                      ),
                     ),
                   )
                 ]),
@@ -98,21 +112,37 @@ class _CameraViewState extends State<CameraView> {
                 ),
               ],
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: GestureDetector(
-                  onTap: () {
-                    cameraController.takePicture().then(
-                      (value) {
-                        setState(() {
-                          imagePath = value.path;
-                        });
-                      },
-                    );
-                  },
-                  child: camButton(Icons.camera_alt_outlined)),
+            Visibility(
+              visible: imagePath.isEmpty ? true : false,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: GestureDetector(
+                    onTap: () {
+                      cameraController.takePicture().then(
+                        (value) {
+                          setState(() {
+                            imagePath = value.path;
+                          });
+                        },
+                      );
+                    },
+                    child: camButton(Icons.camera_alt_outlined)),
+              ),
             ),
-            //  CommonButtonWidget(label: 'Submit', onClick: () {})
+            Visibility(
+              visible: imagePath.isNotEmpty ? true : false,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                child: CommonButtonWidget(
+                    label: 'Submit',
+                    onClick: () {
+                      setState(() {
+                        Navigator.pop(context);
+                      });
+                    }),
+              ),
+            )
           ],
         ),
       );
