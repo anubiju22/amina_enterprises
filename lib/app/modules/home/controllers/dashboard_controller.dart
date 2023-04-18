@@ -3,6 +3,7 @@ import 'package:amina_enterprises/app/modules/home/views/home_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/search_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
+import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -42,12 +43,21 @@ class DashboardController extends GetxController {
       //   Get.back();
       // }),
       DrawerItem('assets/svg/call_center.svg', 'Support', () {
-         Get.back();
+        Get.back();
         Get.toNamed(Routes.SUPPORT);
       }),
       DrawerItem('assets/svg/logout.svg', 'Logout', () {
         Get.back();
+        logOut();
       }),
     ]);
+  }
+
+  void logOut() async {
+    dynamic returnResponse =
+        await openDialog('Logout', 'Are you sure you want to Logout ?');
+    if (returnResponse == true) {
+      Get.offAllNamed(Routes.SPLASH);
+    }
   }
 }

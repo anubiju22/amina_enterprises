@@ -13,17 +13,17 @@ class CartView extends GetView<CartController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         label: "Cart",
         visibility: false,
       ),
-      body: CartItemCard(),
+      body: const CartItemCard(),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(15),
         child: CommonButtonWidget(
           label: "CHECKOUT",
           onClick: () {
-            Get.back();
+            controller.checkOut();
           },
         ),
       ),
@@ -43,7 +43,7 @@ class BottomWidgets extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           blackText("Total Amount", 18, fontWeight: FontWeight.w400),
-          Text(
+          const Text(
             "₹5252 ",
             textAlign: TextAlign.right,
             style: TextStyle(
@@ -53,7 +53,7 @@ class BottomWidgets extends StatelessWidget {
           )
         ],
       ),
-      SizedBox(
+      const SizedBox(
         height: 10,
       ),
       CommonButtonWidget(
