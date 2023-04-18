@@ -20,13 +20,19 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 15),
           children: [
-            Image.network(
-              "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
+            Image.asset(
+              'assets/image/slipper.png',
               width: MediaQuery.of(context).size.width * .6,
               height: MediaQuery.of(context).size.width * .6,
               fit: BoxFit.fill,
             ),
-            const Spacer(),
+            // Image.network(
+            //   "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
+            //   width: MediaQuery.of(context).size.width * .6,
+            //   height: MediaQuery.of(context).size.width * .6,
+            //   fit: BoxFit.fill,
+            // ),
+            // const Spacer(),
             Container(
                 decoration: BoxDecoration(
                   color: Colors.white,

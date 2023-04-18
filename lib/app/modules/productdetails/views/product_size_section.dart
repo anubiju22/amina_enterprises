@@ -30,19 +30,43 @@ class ProductSizeCategorySection extends StatelessWidget {
               width: 105,
               child: blackText("SIZE", 16, fontWeight: FontWeight.w500),
             ),
-            Wrap(runSpacing: 5, spacing: 10, children: [
-              TypeWidget(
-                selected: true,
-                onPressed: () {},
-                text: 'CARTOON',
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                children: [
+                  TypeWidget(
+                    selected: true,
+                    onPressed: () {},
+                    text: 'CARTOON',
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  TypeWidget(
+                    selected: false,
+                    onPressed: () {},
+                    text: 'CUT SIZE',
+                  ),
+                ],
               ),
               const SizedBox(
-                width: 10,
+                height: 10,
               ),
-              TypeWidget(
-                selected: false,
-                onPressed: () {},
-                text: 'CUT SIZE',
+              Row(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  TypeWidget(
+                    selected: false,
+                    onPressed: () {},
+                    text: 'SET',
+                  ),
+                  const SizedBox(width: 50),
+                  TypeWidget(
+                    selected: false,
+                    onPressed: () {},
+                    text: 'PAIR',
+                  ),
+                ],
               ),
             ])
           ],

@@ -138,17 +138,12 @@ class alertBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      insetPadding: EdgeInsets.symmetric(horizontal: 12),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30))),
       title: blackText("Mark Visit", 20, fontWeight: FontWeight.w600),
       content: Container(
-        // decoration: BoxDecoration(
-        //   borderRadius: BorderRadius.circular(40),
-        //   color: Colors.white,
-        // ),
         height: 250,
-
-        // height: MediaQuery.of(context).size.height * 0.25,
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
