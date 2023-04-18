@@ -28,7 +28,6 @@ class RetailerLoginView extends GetView<LoginController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    flex: 4,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,9 +37,10 @@ class RetailerLoginView extends GetView<LoginController> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    flex: 3,
+                  SingleChildScrollView(
                     child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(32),
@@ -53,14 +53,15 @@ class RetailerLoginView extends GetView<LoginController> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(
-                              height: 30,
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.015,
                             ),
                             const LoginText(
                               text: "Retailer Customer Login",
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.03,
                             ),
                             LoginTextField(
                               hintText: 'Username',
@@ -72,8 +73,8 @@ class RetailerLoginView extends GetView<LoginController> {
                               ),
                               // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
                             ),
-                            const SizedBox(
-                              height: 20,
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
                             ),
                             LoginTextField(
                               hintText: 'Password',
@@ -85,14 +86,18 @@ class RetailerLoginView extends GetView<LoginController> {
                               ),
                               // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
                             ),
-                            const SizedBox(
-                              height: 30,
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.025,
                             ),
                             CommonButtonWidget(
                               label: "LOGIN",
                               onClick: () {
                                 Get.toNamed(Routes.HOME);
                               },
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.04,
                             ),
                           ],
                         ),
