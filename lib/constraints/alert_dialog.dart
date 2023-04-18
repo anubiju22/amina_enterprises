@@ -72,6 +72,7 @@ Future<dynamic> openDialog(
     contentPadding: EdgeInsets.zero,
     title: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Align(
           alignment: Alignment.topRight,
