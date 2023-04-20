@@ -165,6 +165,25 @@ class CartItemCard extends StatelessWidget {
             thickness: 5,
             color: Color(0xFFF3F3F3),
           ),
+          SizedBox(
+            height: 270,
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                blackText("Total Amount", 18, fontWeight: FontWeight.w400),
+                const Text(
+                  "₹5252 ",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    color: Color(0xFFD80005),
+                    fontSize: 18,
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

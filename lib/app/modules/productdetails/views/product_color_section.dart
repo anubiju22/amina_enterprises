@@ -1,12 +1,3 @@
-///==========================================
-///    Title:
-///    Author: Vaisakh
-///    Date:   18 May 2022
-///===========================================
-///    Modified On:   18 May 2022
-///    Title:
-///    Modified by: vaisakh
-///===========================================
 import 'package:amina_enterprises/app/modules/productdetails/controllers/productdetails_controller.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +74,7 @@ class ColorWidget extends StatelessWidget {
               height: selected ? 40 : 35,
               decoration: BoxDecoration(
                 color: selected ? null : redColor,
-                border: Border.all(color: Colors.black),
+                border: Border.all(color: Colors.red),
                 shape: BoxShape.circle,
               ),
               child: selected

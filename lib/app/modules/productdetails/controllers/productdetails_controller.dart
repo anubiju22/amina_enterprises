@@ -1,11 +1,24 @@
 import 'package:get/get.dart';
 
 class ProductdetailsController extends GetxController {
-  final RxString selectedItem = ''.obs;
+  RxString selectedOption = ''.obs;
+  String selectedLoad = 'CARTOON';
+  List<String> iteams = ['CARTOON', 'CUT SIZE', 'SET', 'PAIR'];
 
   final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+  }
+
+  void onClickLoad(String value) {
+    selectedLoad = value;
+
+    //  print(value);
+    update();
+  }
+
+  void setSelectedOption(String option) {
+    selectedOption.value = option;
   }
 }
