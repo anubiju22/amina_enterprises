@@ -12,23 +12,30 @@ class SupportPageView extends GetView {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            blackText('Order Completed Successfully', 22,
-                fontWeight: FontWeight.w600),
-            TextButton(
-                onPressed: () {
-                  Get.offAllNamed(Routes.HOME);
-                },
-              style: ButtonStyle(
+            blackText('Order Completed \nSuccessfully', 22,
+                textAlign: TextAlign.center, fontWeight: FontWeight.w600),
+            const SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.30,
+              child: TextButton(
+                  onPressed: () {
+                    Get.offAllNamed(Routes.HOME);
+                  },
+                  style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                           side: const BorderSide(color: redColor)))),
-                
                   child: const Text(
                     'Ok',
                     style: TextStyle(
                         fontFamily: "Manrope", color: redColor, fontSize: 17),
-                  ))
+                  )),
+            )
           ],
         ),
       ),

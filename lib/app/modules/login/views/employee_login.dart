@@ -38,9 +38,10 @@ class EmployeeLoginView extends GetView<LoginController> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    flex: 3,
+                  SingleChildScrollView(
                     child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(32),
@@ -49,18 +50,16 @@ class EmployeeLoginView extends GetView<LoginController> {
                         color: scaffoldBgColor,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 20),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.03,
-                            ),
                             const LoginText(
                               text: "Employee Login",
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.03,
+                              height: MediaQuery.of(context).size.height * 0.04,
                             ),
                             LoginTextField(
                               hintText: 'Enter your Phone Number',
@@ -73,7 +72,7 @@ class EmployeeLoginView extends GetView<LoginController> {
                               // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.03,
+                              height: MediaQuery.of(context).size.height * 0.04,
                             ),
                             CommonButtonWidget(
                               label: "GET OTP",

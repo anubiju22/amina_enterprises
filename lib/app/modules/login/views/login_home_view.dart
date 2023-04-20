@@ -60,7 +60,7 @@ class LoginView extends GetView<LoginController> {
                                 fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.02,
+                            height: MediaQuery.of(context).size.height * 0.04,
                           ),
                           LoginTypeContainer(
                             icon: "assets/svg/employee_profile.svg",
