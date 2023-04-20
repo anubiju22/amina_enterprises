@@ -48,18 +48,25 @@ class CommonSearchTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(
+              color: Color(0xfff3f3f3),
+            ),
             borderRadius: BorderRadius.circular(20.0),
           ),
           disabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(
+              color: Color(0xfff3f3f3),
+            ),
             borderRadius: BorderRadius.circular(20.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.red),
+            borderSide: const BorderSide(
+              color: Color(0xfff3f3f3),
+            ),
             borderRadius: BorderRadius.circular(20.0),
           ),
-
+          fillColor: Color(0xfff3f3f3),
+          filled: true,
           // filled: true,
           isDense: true,
           hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),

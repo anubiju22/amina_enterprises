@@ -41,6 +41,7 @@ class PaymenthistoryView extends GetView<PaymenthistoryController> {
                       padding: const EdgeInsets.all(8.0),
                       child: CommonSearchTextField(
                         hintText: 'SELECT SHOP',
+
                         isEnabled: true,
                         autofocus: false,
                         readOnly: true,
