@@ -21,7 +21,7 @@ class VisitCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.11,
+      height: MediaQuery.of(context).size.height /2,
       child: Row(children: <Widget>[
         header(context, slno),
         verticalDivider(),
