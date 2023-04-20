@@ -1,6 +1,8 @@
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PaymentBottomSheet extends StatelessWidget {
   const PaymentBottomSheet({super.key});
@@ -34,10 +36,16 @@ class PaymentBottomSheet extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children: [
                 HomeCardItem(path: 'assets/svg/pay_add.svg', label: 'Add'),
                 HomeCardItem(path: 'assets/svg/pay_view.svg', label: 'View'),
-                HomeCardItem(path: 'assets/svg/pending.svg', label: 'Pending')
+                HomeCardItem(
+                  path: 'assets/svg/pending.svg',
+                  label: 'Pending',
+                  ontap: () {
+                    Get.toNamed(Routes.PENDING_COLLECTION);
+                  },
+                )
               ],
             )
           ],

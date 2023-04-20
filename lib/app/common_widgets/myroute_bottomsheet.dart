@@ -92,9 +92,7 @@ class RouteBottomSheet extends StatelessWidget {
               HomeCardItem(
                 path: "assets/svg/home_profile.svg",
                 label: "Profile",
-                ontap: () {
-                  Get.toNamed(Routes.PENDING_COLLECTION);
-                },
+                ontap: () {},
               ),
               HomeCardItem(
                 path: "assets/svg/payment_history.svg",
