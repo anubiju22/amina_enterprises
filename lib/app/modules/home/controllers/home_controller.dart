@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/common_widgets/payment_bottomsheet.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
 import 'package:amina_enterprises/app/modules/home/model/drawer_model.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
@@ -48,11 +49,15 @@ class HomeController extends GetxController {
       DrawerItem('assets/svg/home_checklist.svg', 'My Order', () {
         Get.toNamed(Routes.ORDER_HISTORY);
       }),
-      // DrawerItem('assets/svg/home_profile.svg', 'Profile', () {
-
-      // }),
       DrawerItem('assets/svg/call_center.svg', 'Support', () {
         Get.toNamed(Routes.SUPPORT);
+      }),
+      DrawerItem('assets/svg/payments.svg', 'Payments', () {
+        Get.bottomSheet(const PaymentBottomSheet(),
+            backgroundColor: Colors.white,
+            enableDrag: false,
+            elevation: 4,
+            shape: bottomSheetShape());
       }),
     ]);
 

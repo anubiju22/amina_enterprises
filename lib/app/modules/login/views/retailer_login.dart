@@ -2,6 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
+import 'package:amina_enterprises/app/modules/home/views/retailer_login/retailer_home.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,7 @@ class RetailerLoginView extends GetView<LoginController> {
                             CommonButtonWidget(
                               label: "LOGIN",
                               onClick: () {
-                                Get.toNamed(Routes.HOME);
+                                Get.to(() => RetailerHome());
                               },
                             ),
                             SizedBox(

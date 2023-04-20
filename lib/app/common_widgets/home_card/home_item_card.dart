@@ -26,12 +26,15 @@ class HomeCardItem extends StatelessWidget {
                     color: homeMenuColor),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 15.0, vertical: 15),
+                      horizontal: 18.0, vertical: 18),
                   child: svgWidget(
                     path,
                     color: const ColorFilter.mode(redColor, BlendMode.srcIn),
                   ),
                 )),
+            const SizedBox(
+              height: 5,
+            ),
             blackText(label, 13,
                 textAlign: TextAlign.center, fontWeight: FontWeight.w500)
           ],
