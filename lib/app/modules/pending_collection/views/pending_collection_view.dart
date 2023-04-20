@@ -14,7 +14,10 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CommonAppBar(label: "Pending Collection"),
+      appBar: const CommonAppBar(
+        label: "Pending Collection",
+        visibility: false,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(

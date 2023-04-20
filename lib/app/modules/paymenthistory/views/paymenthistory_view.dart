@@ -14,7 +14,7 @@ class PaymenthistoryView extends GetView<PaymenthistoryController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CommonAppBar(label: "View"),
+        appBar: const CommonAppBar(label: "View", visibility: false),
         body: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
