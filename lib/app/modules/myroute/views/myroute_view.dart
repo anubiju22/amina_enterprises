@@ -123,7 +123,7 @@ class MyrouteView extends GetView<MyrouteController> {
               ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  itemCount: 3,
+                  itemCount: 2,
                   itemBuilder: (BuildContext context, int index) {
                     return Column(
                       children: [
@@ -171,11 +171,17 @@ class Calender extends StatelessWidget {
   Widget build(BuildContext context) {
     return CalendarWeek(
       // month: [ ],
-      marginMonth: const EdgeInsets.only(left: 20, bottom: 10),
+      marginMonth: const EdgeInsets.only(
+        left: 20,
+        // bottom: 10
+      ),
 
       monthViewBuilder: (DateTime date) {
         return Padding(
-          padding: const EdgeInsets.only(left: 5, bottom: 5),
+          padding: const EdgeInsets.only(
+            left: 5,
+            //  bottom: 5
+          ),
           child: Container(
             alignment: Alignment.topLeft,
             color: scaffoldBgColor,
@@ -193,7 +199,7 @@ class Calender extends StatelessWidget {
 
       backgroundColor: scaffoldBgColor,
       controller: CalendarWeekController(),
-      height: MediaQuery.of(context).size.height * 0.15,
+      height: MediaQuery.of(context).size.height * 0.18,
 
       minDate: DateTime.now().add(
         const Duration(days: -365),

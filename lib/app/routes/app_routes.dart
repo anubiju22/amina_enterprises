@@ -20,6 +20,8 @@ abstract class Routes {
   static const RETAILER_LOGIN = _Paths.RETAILER_LOGIN;
   static const ORDER_HISTORY_DETAILS = _Paths.ORDER_HISTORY_DETAILS;
   static const CART = _Paths.CART;
+  static const PAYMENTHISTORY = _Paths.PAYMENTHISTORY;
+  static const PENDING_COLLECTION = _Paths.PENDING_COLLECTION;
 }
 
 abstract class _Paths {
@@ -41,4 +43,6 @@ abstract class _Paths {
   static const RETAILER_LOGIN = '/retailer_login';
   static const ORDER_HISTORY_DETAILS = '/order_history_details';
   static const CART = '/cart';
+  static const PAYMENTHISTORY = '/paymenthistory';
+  static const PENDING_COLLECTION = '/pending-collection';
 }

@@ -20,6 +20,10 @@ import '../modules/myvisit/views/myvisit_view.dart';
 import '../modules/order_history/bindings/order_history_binding.dart';
 import '../modules/order_history/views/order_history_details_view.dart';
 import '../modules/order_history/views/order_history_view.dart';
+import '../modules/paymenthistory/bindings/paymenthistory_binding.dart';
+import '../modules/paymenthistory/views/paymenthistory_view.dart';
+import '../modules/pending_collection/bindings/pending_collection_binding.dart';
+import '../modules/pending_collection/views/pending_collection_view.dart';
 import '../modules/productdetails/bindings/productdetails_binding.dart';
 import '../modules/productdetails/views/productdetails_view.dart';
 import '../modules/shops/bindings/shops_binding.dart';
@@ -116,6 +120,16 @@ class AppPages {
       name: _Paths.CART,
       page: () => const CartView(),
       binding: CartBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENTHISTORY,
+      page: () => const PaymenthistoryView(),
+      binding: PaymenthistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.PENDING_COLLECTION,
+      page: () => const PendingCollectionView(),
+      binding: PendingCollectionBinding(),
     ),
   ];
 }

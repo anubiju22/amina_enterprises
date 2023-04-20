@@ -25,10 +25,13 @@ class CartItemCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.network(
-                "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
-                width: MediaQuery.of(context).size.width * .3,
+              Image.asset(
+                'assets/image/slipper.png',
               ),
+              // Image.network(
+              //   "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
+              //   width: MediaQuery.of(context).size.width * .3,
+              // ),
               Flexible(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
@@ -165,25 +168,25 @@ class CartItemCard extends StatelessWidget {
             thickness: 5,
             color: Color(0xFFF3F3F3),
           ),
-          SizedBox(
-            height: 270,
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                blackText("Total Amount", 18, fontWeight: FontWeight.w400),
-                const Text(
-                  "₹5252 ",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xFFD80005),
-                    fontSize: 18,
-                  ),
-                )
-              ],
-            ),
-          )
+          // SizedBox(
+          //   height: 270,
+          // ),
+          // Expanded(
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       blackText("Total Amount", 18, fontWeight: FontWeight.w400),
+          //       const Text(
+          //         "₹5252 ",
+          //         textAlign: TextAlign.right,
+          //         style: TextStyle(
+          //           color: Color(0xFFD80005),
+          //           fontSize: 18,
+          //         ),
+          //       )
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
