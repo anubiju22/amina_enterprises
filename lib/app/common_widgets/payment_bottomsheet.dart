@@ -11,11 +11,11 @@ class PaymentBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.width * 0.60,
+      height: MediaQuery.of(context).size.width * 0.66,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(50),
-            topRight: Radius.circular(50),
+            topLeft: Radius.circular(32),
+            topRight: Radius.circular(32),
           ),
           color: Colors.white),
       child: Padding(

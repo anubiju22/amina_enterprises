@@ -101,9 +101,12 @@ class HomeView extends GetView<HomeController> {
                   shrinkWrap: true,
                   physics: const ScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
-                    mainAxisSpacing: 20.0,
+                    mainAxisSpacing: 10.0,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: MediaQuery.of(context).size.width /
+                        (MediaQuery.of(context).size.height / 1.4),
 
                     // number of columns in the grid
                   ),
