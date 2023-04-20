@@ -1,5 +1,4 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
-import 'package:amina_enterprises/app/common_widgets/textfeild/logintextfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/otp_textfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
@@ -27,6 +26,7 @@ class OtpView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
+                  flex: 3,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
