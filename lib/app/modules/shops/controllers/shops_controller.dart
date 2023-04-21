@@ -1,23 +1,17 @@
 import 'package:get/get.dart';
 
 class ShopsController extends GetxController {
-  //TODO: Implement ShopsController
+  final List<String> shopNames = [
+    'PRINCE FOOTWEAR BANDBAHAL',
+    'CHOLAN SHOE MART'
+  ];
+  final List<String> shopAddress = [
+    'Crystal Building, Malad, Rathodi, Mankavu, Calicut',
+    'Crystal Building, Malad, Rathodi, Mankavu, Calicut'
+  ];
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

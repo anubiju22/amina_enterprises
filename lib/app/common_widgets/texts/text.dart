@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 // class BlackText extends StatelessWidget {
@@ -71,6 +72,25 @@ Text blackText(
         fontFamily: 'Manrope',
         overflow: textOverflow,
         color: Colors.black,
+        fontSize: fontSize,
+        fontWeight: fontWeight),
+  );
+}
+
+Text redText(
+  String label,
+  double fontSize, {
+  TextAlign? textAlign,
+  FontWeight? fontWeight = FontWeight.w400,
+  TextOverflow? textOverflow,
+}) {
+  return Text(
+    label,
+    textAlign: textAlign,
+    style: TextStyle(
+        fontFamily: 'Manrope',
+        overflow: textOverflow,
+        color: redColor,
         fontSize: fontSize,
         fontWeight: fontWeight),
   );

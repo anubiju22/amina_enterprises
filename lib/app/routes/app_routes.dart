@@ -22,6 +22,7 @@ abstract class Routes {
   static const CART = _Paths.CART;
   static const PAYMENTHISTORY = _Paths.PAYMENTHISTORY;
   static const PENDING_COLLECTION = _Paths.PENDING_COLLECTION;
+  static const ADD_PAYMENT = _Paths.ADD_PAYMENT;
 }
 
 abstract class _Paths {
@@ -45,4 +46,5 @@ abstract class _Paths {
   static const CART = '/cart';
   static const PAYMENTHISTORY = '/paymenthistory';
   static const PENDING_COLLECTION = '/pending-collection';
+  static const ADD_PAYMENT = '/add-payment';
 }

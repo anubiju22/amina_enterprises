@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 import '../../../common_widgets/app_bar/common_app_bar.dart';
 import '../controllers/paymenthistory_controller.dart';
 
-class PaymenthistoryView extends GetView<PaymenthistoryController> {
-  const PaymenthistoryView({Key? key}) : super(key: key);
+class PaymentHistoryView extends GetView<PaymenthistoryController> {
+  const PaymentHistoryView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +61,7 @@ class PaymenthistoryView extends GetView<PaymenthistoryController> {
                             borderRadius: BorderRadius.all(Radius.circular(15)),
                             shape: BoxShape.rectangle,
                             gradient: primaryColor),
-                        child: Icon(
+                        child: const Icon(
                           Icons.filter_alt,
                           color: Colors.white,
                           size: 25,
@@ -71,11 +71,11 @@ class PaymenthistoryView extends GetView<PaymenthistoryController> {
               ),
               Expanded(
                   child: ListView.builder(
-                physics: ScrollPhysics(),
+                physics: const ScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 2,
                 itemBuilder: ((context, index) {
-                  return ViewPaymentCard(
+                  return const ViewPaymentCard(
                     amount: "  ₹ Amount: 10000",
                     amtVisible: true,
                     balance: "Balance: ₹3000",

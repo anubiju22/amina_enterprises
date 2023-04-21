@@ -37,8 +37,20 @@ class PaymentBottomSheet extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                HomeCardItem(path: 'assets/svg/pay_add.svg', label: 'Add'),
-                HomeCardItem(path: 'assets/svg/pay_view.svg', label: 'View'),
+                HomeCardItem(
+                  path: 'assets/svg/pay_add.svg',
+                  label: 'Add',
+                  ontap: () {
+                    Get.toNamed(Routes.SHOPS);
+                  },
+                ),
+                HomeCardItem(
+                  path: 'assets/svg/pay_view.svg',
+                  label: 'View',
+                  ontap: () {
+                    Get.toNamed(Routes.PAYMENTHISTORY);
+                  },
+                ),
                 HomeCardItem(
                   path: 'assets/svg/pending.svg',
                   label: 'Pending',

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/add_payment/bindings/add_payment_binding.dart';
+import '../modules/add_payment/views/add_payment_view.dart';
 import '../modules/attendance_report/bindings/attendance_report_binding.dart';
 import '../modules/attendance_report/views/attendance_report_view.dart';
 import '../modules/cart/bindings/cart_binding.dart';
@@ -123,13 +125,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PAYMENTHISTORY,
-      page: () => const PaymenthistoryView(),
+      page: () => const PaymentHistoryView(),
       binding: PaymenthistoryBinding(),
     ),
     GetPage(
       name: _Paths.PENDING_COLLECTION,
       page: () => const PendingCollectionView(),
       binding: PendingCollectionBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_PAYMENT,
+      page: () => const AddPaymentView(),
+      binding: AddPaymentBinding(),
     ),
   ];
 }

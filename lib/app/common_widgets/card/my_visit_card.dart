@@ -21,7 +21,7 @@ class VisitCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height /2,
+      height: MediaQuery.of(context).size.height * 0.115,
       child: Row(children: <Widget>[
         header(context, slno),
         verticalDivider(),
@@ -33,6 +33,7 @@ class VisitCardWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 3, left: 5.0, right: 4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 blackText(name, 15,
                     fontWeight: FontWeight.w600,
