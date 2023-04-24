@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class DateButton extends StatelessWidget {
   final Function? onPressed;
   final String label;
-  final IconData? icons;
+  // final IconData? icons;
   final Function? ontapp;
   const DateButton({
     Key? key,
     required this.size,
     required this.ontapp,
-    required this.icons,
+    // required this.icons,
     this.onPressed,
     required this.label,
   }) : super(key: key);
@@ -39,7 +39,8 @@ class DateButton extends StatelessWidget {
                 ontapp!();
               },
               icon: Icon(
-                icons,
+                Icons.calendar_today,
+                size: 20,
               ),
             ),
             Text(label),

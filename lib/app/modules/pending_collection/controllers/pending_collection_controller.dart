@@ -1,23 +1,37 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../constraints/date_formats.dart';
 
 class PendingCollectionController extends GetxController {
   //TODO: Implement PendingCollectionController
 
-  final count = 0.obs;
+  DateTime currentDate = DateTime.now();
+  RxString fromDate = ''.obs;
+  RxString toDate = ''.obs;
+  // String _fromvalue = "From Date";
+  // String _toValue = 'To Date';
   @override
   void onInit() {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void changeFromDate(BuildContext context) async {
+    final pickDate = await selectDate(context);
+
+    if (pickDate != null) {
+      fromDate.value = dateFormat2(pickDate);
+    }
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  void changeToDate(BuildContext context) async {
+    final pickDate = await selectDate(context);
 
-  void increment() => count.value++;
+    if (pickDate != null) {
+      toDate.value = dateFormat2(pickDate);
+    }
+  }
+  // void changeText(String value) {
+  //   _fromvalue = value;
+  // }
 }

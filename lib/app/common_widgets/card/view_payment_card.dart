@@ -154,7 +154,7 @@ class ViewPaymentCard extends StatelessWidget {
                 visible: visible,
                 child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 80),
+                        vertical: 10, horizontal: 90),
                     child: CommonButtonWidget(
                       borderRadius: 8,
                       fontSize: 16,

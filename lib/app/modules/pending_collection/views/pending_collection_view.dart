@@ -6,6 +6,7 @@ import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../controllers/pending_collection_controller.dart';
 
@@ -13,6 +14,8 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
   const PendingCollectionView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var todayfromDate;
+    var todaytoDate;
     return Scaffold(
       appBar: const CommonAppBar(
         label: "Pending Collection",
@@ -22,20 +25,32 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                DateButton(
+            Obx(
+              () => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  DateButton(
                     size: MediaQuery.of(context).size,
                     ontapp: () {},
-                    icons: Icons.calendar_month,
-                    label: "From Date"),
-                DateButton(
+                    label: controller.fromDate.value == ''
+                        ? "From Date"
+                        : controller.fromDate.value,
+                    onPressed: () {
+                      controller.changeFromDate(context);
+                    },
+                  ),
+                  DateButton(
                     size: MediaQuery.of(context).size,
                     ontapp: () {},
-                    icons: Icons.calendar_month,
-                    label: "To Date")
-              ],
+                    label: controller.toDate.value == ''
+                        ? "To Date"
+                        : controller.toDate.value,
+                    onPressed: () {
+                      controller.changeToDate(context);
+                    },
+                  )
+                ],
+              ),
             ),
             Row(
               children: [

@@ -50,7 +50,7 @@ class VisitCardWidget extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 Row(
                   children: [

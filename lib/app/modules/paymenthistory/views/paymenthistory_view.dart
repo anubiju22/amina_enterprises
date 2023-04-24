@@ -19,20 +19,32 @@ class PaymentHistoryView extends GetView<PaymenthistoryController> {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  DateButton(
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DateButton(
                       size: MediaQuery.of(context).size,
                       ontapp: () {},
-                      icons: Icons.calendar_month,
-                      label: "From Date"),
-                  DateButton(
+                      label: controller.fromDate.value == ''
+                          ? "From Date"
+                          : controller.fromDate.value,
+                      onPressed: () {
+                        controller.changeFromDate(context);
+                      },
+                    ),
+                    DateButton(
                       size: MediaQuery.of(context).size,
                       ontapp: () {},
-                      icons: Icons.calendar_month,
-                      label: "To Date")
-                ],
+                      label: controller.toDate.value == ''
+                          ? "To Date"
+                          : controller.toDate.value,
+                      onPressed: () {
+                        controller.changeToDate(context);
+                      },
+                    )
+                  ],
+                ),
               ),
               Row(
                 children: [
