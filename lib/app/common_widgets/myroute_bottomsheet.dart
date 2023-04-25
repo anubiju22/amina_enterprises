@@ -2,7 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/app/modules/myroute/controllers/myroute_controller.dart';
+import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
 import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
@@ -11,11 +11,16 @@ import 'package:get/get.dart';
 
 import '../modules/myroute/views/retailer_profile.dart';
 
-import 'textfeild/logintextfeild.dart';
-
-class RouteBottomSheet extends GetView<MyrouteController> {
+class RouteBottomSheet extends StatelessWidget {
   final String tittle, type;
-  const RouteBottomSheet({super.key, required this.tittle, required this.type});
+  final RouteList items;
+
+  const RouteBottomSheet({
+    super.key,
+    required this.tittle,
+    required this.type,
+    required this.items,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -97,8 +102,7 @@ class RouteBottomSheet extends GetView<MyrouteController> {
                 label: "Profile",
                 ontap: () {
                   // Get.RetailerProfile();
-                  Get.to(() => RetailerProfile(),
-                      arguments: {'items': controller.shopNames});
+                  Get.to(() => RetailerProfile(items: items));
                 },
               ),
               HomeCardItem(

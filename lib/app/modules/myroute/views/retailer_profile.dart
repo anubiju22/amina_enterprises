@@ -1,13 +1,15 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
+import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/myroute_controller.dart';
 
-class RetailerProfile extends GetView<MyrouteController> {
-  const RetailerProfile({super.key});
+class RetailerProfile extends StatelessWidget {
+  final RouteList items;
+  const RetailerProfile({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class RetailerProfile extends GetView<MyrouteController> {
                 const SizedBox(
                   height: 5,
                 ),
-                blackText(controller.shops, 16, fontWeight: FontWeight.w600),
+                blackText(items.title, 16, fontWeight: FontWeight.w600),
                 const SizedBox(
                   height: 5,
                 ),

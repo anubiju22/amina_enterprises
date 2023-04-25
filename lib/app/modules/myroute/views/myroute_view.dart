@@ -125,6 +125,7 @@ class MyrouteView extends GetView<MyrouteController> {
                   shrinkWrap: true,
                   itemCount: 2,
                   itemBuilder: (BuildContext context, int index) {
+                    final items = controller.routeList[index];
                     return Column(
                       children: [
                         const Divider(
@@ -134,8 +135,9 @@ class MyrouteView extends GetView<MyrouteController> {
                           onTap: () {
                             Get.bottomSheet(
                               RouteBottomSheet(
-                                tittle: controller.shopNames[index],
+                                tittle: items.title,
                                 type: "Retailer",
+                                items: items,
                               ),
                               elevation: 20.0,
                               enableDrag: false,
@@ -144,10 +146,9 @@ class MyrouteView extends GetView<MyrouteController> {
                             );
                           },
                           child: MyRouteCard(
-                            shopname: controller.shopNames[index],
-                            location:
-                                "Crystal Building, Malad, Rathodi,Mankavu, Calicut",
-                            number: "9856254147",
+                            shopname: controller.routeList[index].title,
+                            location: controller.routeList[index].location,
+                            number: controller.routeList[index].mobile,
                           ),
                         ),
                       ],
