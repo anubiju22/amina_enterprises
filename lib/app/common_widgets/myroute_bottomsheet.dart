@@ -2,6 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/myroute/controllers/myroute_controller.dart';
 import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
@@ -12,7 +13,7 @@ import '../modules/myroute/views/retailer_profile.dart';
 
 import 'textfeild/logintextfeild.dart';
 
-class RouteBottomSheet extends StatelessWidget {
+class RouteBottomSheet extends GetView<MyrouteController> {
   final String tittle, type;
   const RouteBottomSheet({super.key, required this.tittle, required this.type});
 
@@ -96,7 +97,8 @@ class RouteBottomSheet extends StatelessWidget {
                 label: "Profile",
                 ontap: () {
                   // Get.RetailerProfile();
-                  Get.to(() => RetailerProfile());
+                  Get.to(() => RetailerProfile(),
+                      arguments: {'items': controller.shopNames});
                 },
               ),
               HomeCardItem(

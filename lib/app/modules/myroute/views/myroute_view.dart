@@ -133,8 +133,8 @@ class MyrouteView extends GetView<MyrouteController> {
                         InkWell(
                           onTap: () {
                             Get.bottomSheet(
-                              const RouteBottomSheet(
-                                tittle: "PRINCE FOOTWEAR BANDBAHAL",
+                              RouteBottomSheet(
+                                tittle: controller.shopNames[index],
                                 type: "Retailer",
                               ),
                               elevation: 20.0,
@@ -143,8 +143,8 @@ class MyrouteView extends GetView<MyrouteController> {
                               shape: bootomSheetShape(),
                             );
                           },
-                          child: const MyRouteCard(
-                            shopname: "PRINCE FOOTWEAR BANDBAHAL",
+                          child: MyRouteCard(
+                            shopname: controller.shopNames[index],
                             location:
                                 "Crystal Building, Malad, Rathodi,Mankavu, Calicut",
                             number: "9856254147",

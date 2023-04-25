@@ -3,10 +3,10 @@ import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controllers/myroute_controller.dart';
 
-import '../../../common_widgets/svg_icons/svg_widget.dart';
-
-class RetailerProfile extends StatelessWidget {
+class RetailerProfile extends GetView<MyrouteController> {
   const RetailerProfile({super.key});
 
   @override
@@ -32,8 +32,7 @@ class RetailerProfile extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                blackText("PRINCE FOOTWEAR BANDBAHAL", 16,
-                    fontWeight: FontWeight.w600),
+                blackText(controller.shops, 16, fontWeight: FontWeight.w600),
                 const SizedBox(
                   height: 5,
                 ),

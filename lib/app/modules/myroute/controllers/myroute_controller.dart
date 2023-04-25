@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class MyrouteController extends GetxController {
-  //TODO: Implement MyrouteController
+  final String shops = Get.arguments['items'];
+  final List<String> shopNames = [
+    'PRINCE FOOTWEAR BANDBAHAL',
+    'CHOLAN SHOE MART'
+  ];
 
   var selectedDate = DateTime.now().obs;
   DateTime selectedDates = DateTime.now();
