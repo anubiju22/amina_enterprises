@@ -8,6 +8,8 @@ import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../modules/myroute/views/retailer_profile.dart';
+
 import 'textfeild/logintextfeild.dart';
 
 class RouteBottomSheet extends StatelessWidget {
@@ -92,7 +94,10 @@ class RouteBottomSheet extends StatelessWidget {
               HomeCardItem(
                 path: "assets/svg/home_profile.svg",
                 label: "Profile",
-                ontap: () {},
+                ontap: () {
+                  // Get.RetailerProfile();
+                  Get.to(() => RetailerProfile());
+                },
               ),
               HomeCardItem(
                 path: "assets/svg/payment_history.svg",

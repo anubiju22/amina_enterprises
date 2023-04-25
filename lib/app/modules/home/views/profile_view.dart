@@ -26,6 +26,13 @@ class ProfileView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [svgWidget("assets/svg/edit.svg")],
+                    ),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -43,7 +50,11 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              const EmployeeBottomWidget(),
+              const EmployeeBottomWidget(
+                name: 'Anshad',
+                phone: "+91 8563524047",
+                email: "anshad000@gmail.com",
+              ),
             ],
           ),
         ));
@@ -66,8 +77,13 @@ class ProfileImgWidget extends StatelessWidget {
 }
 
 class EmployeeBottomWidget extends StatelessWidget {
+  final String name, phone, email;
+
   const EmployeeBottomWidget({
     Key? key,
+    required this.name,
+    required this.phone,
+    required this.email,
   }) : super(key: key);
 
   @override
@@ -109,7 +125,7 @@ class EmployeeBottomWidget extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    greyText("Anshad", 16, fontWeight: FontWeight.w500),
+                    greyText(name, 16, fontWeight: FontWeight.w500),
                     const Spacer(),
                   ],
                 ),
@@ -121,7 +137,7 @@ class EmployeeBottomWidget extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    greyText("+91 8563524047", 16, fontWeight: FontWeight.w500),
+                    greyText(phone, 16, fontWeight: FontWeight.w500),
                     const Spacer(),
 
                     // const Spacer(),
@@ -141,8 +157,7 @@ class EmployeeBottomWidget extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    greyText("anshad000@gmail.com", 16,
-                        fontWeight: FontWeight.w500),
+                    greyText(email, 16, fontWeight: FontWeight.w500),
                     const Spacer(),
                   ],
                 ),
