@@ -69,20 +69,20 @@ class ViewPaymentCard extends StatelessWidget {
                   //   ),
                   Text(
                     date,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0xff6c6c6c),
                       fontSize: 12,
                     ),
                   ),
                   // if (!visible)
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Text(
                     shop,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Row(
@@ -98,7 +98,7 @@ class ViewPaymentCard extends StatelessWidget {
             // Spacer(),
           ],
         ),
-        Divider(
+        const Divider(
           thickness: 2,
         ),
         Padding(
@@ -111,19 +111,19 @@ class ViewPaymentCard extends StatelessWidget {
                 children: [
                   Text(
                     invdate,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: Color(0xFF6C6C6C)),
                   ),
                   Text(invamount,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF6C6C6C)))
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Visibility(
@@ -133,14 +133,14 @@ class ViewPaymentCard extends StatelessWidget {
                   children: [
                     Text(
                       balance,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                           color: Color(0xFFE81C25)),
                     ),
                     Text(
                       amount.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 14,
                         fontFamily: "Manrope",
