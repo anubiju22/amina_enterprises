@@ -78,12 +78,14 @@ class ProfileImgWidget extends StatelessWidget {
 
 class EmployeeBottomWidget extends StatelessWidget {
   final String name, phone, email;
+  final bool? visibility;
 
   const EmployeeBottomWidget({
     Key? key,
     required this.name,
     required this.phone,
     required this.email,
+    this.visibility = false,
   }) : super(key: key);
 
   @override
@@ -92,7 +94,7 @@ class EmployeeBottomWidget extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .015,
     );
     return Container(
-      //  height: MediaQuery.of(context).size.height * .7,
+      height: MediaQuery.of(context).size.height * .7,
       width: double.infinity,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -166,6 +168,35 @@ class EmployeeBottomWidget extends StatelessWidget {
                 devider(context),
                 // Profile settings
                 spacer,
+                Visibility(
+                    visible: visibility!,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          blackText("Available Brands", 18,
+                              fontWeight: FontWeight.w600),
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: const Color(0xff868686),
+                                  width: 1,
+                                ),
+                                color: Colors.white),
+                            child: Row(
+                              children: [
+                                svgWidget("assets/svg/edit.svg", size: 10),
+                                greyText("Edit Brands", 12,
+                                    fontWeight: FontWeight.w400)
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ))
               ],
             ),
           ),

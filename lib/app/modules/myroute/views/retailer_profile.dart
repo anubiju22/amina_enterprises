@@ -47,33 +47,8 @@ class RetailerProfile extends StatelessWidget {
               name: 'Anshad',
               phone: "+91 8563524047",
               email: "anshad000@gmail.com",
+              visibility: true,
             ),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  blackText("Available Brands", 18,
-                      fontWeight: FontWeight.w600),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: Color(0xff868686),
-                          width: 1,
-                        ),
-                        color: Colors.white),
-                    child: Row(
-                      children: [
-                        svgWidget("assets/svg/edit.svg", size: 10),
-                        greyText("Edit Brands", 12, fontWeight: FontWeight.w400)
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
           ],
         ),
       ),
