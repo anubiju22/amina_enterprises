@@ -1,11 +1,9 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
-import 'package:amina_enterprises/app/common_widgets/card/add_payment_card.dart';
 import 'package:amina_enterprises/app/common_widgets/card/shop_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/search_feild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
