@@ -1,13 +1,13 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
+import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common_widgets/svg_icons/svg_widget.dart';
-
 class RetailerProfile extends StatelessWidget {
-  const RetailerProfile({super.key});
+  final RouteList items;
+  const RetailerProfile({super.key, required this.items});
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +32,7 @@ class RetailerProfile extends StatelessWidget {
                 const SizedBox(
                   height: 5,
                 ),
-                blackText("PRINCE FOOTWEAR BANDBAHAL", 16,
-                    fontWeight: FontWeight.w600),
+                blackText(items.title, 16, fontWeight: FontWeight.w600),
                 const SizedBox(
                   height: 5,
                 ),
