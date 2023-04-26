@@ -54,6 +54,7 @@ class _CameraViewState extends State<CameraView> {
   Widget build(BuildContext context) {
     if (cameraController.value.isInitialized) {
       return Scaffold(
+        extendBodyBehindAppBar: true,
         backgroundColor: Colors.white,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +77,7 @@ class _CameraViewState extends State<CameraView> {
                       ),
                     ),
                   Positioned(
-                    top: 40,
+                    top: 45,
                     right: 10,
                     child: Container(
                       width: 30,
