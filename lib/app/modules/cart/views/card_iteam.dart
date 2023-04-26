@@ -1,9 +1,6 @@
-import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
-import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../common_widgets/textfeild/numbertextfeild.dart';
 

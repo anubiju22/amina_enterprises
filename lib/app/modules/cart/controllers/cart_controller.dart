@@ -1,13 +1,8 @@
 import 'package:amina_enterprises/app/modules/cart/views/support_page_view.dart';
-import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   void checkOut() async {
     dynamic returnResponse = await openDialog(
