@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      useInheritedMediaQuery: true,
+      // useInheritedMediaQuery: true,
       // locale: DevicePreview.locale(context),
       // builder: DevicePreview.appBuilder,
       title: 'Amina Enterprises',
