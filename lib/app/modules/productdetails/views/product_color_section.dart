@@ -11,37 +11,48 @@ class ProductColorSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ProductdetailsController>(builder: (controller) {
-      return Container(
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 100,
-              child: blackText("COLOR", 16, fontWeight: FontWeight.w500),
-            ),
-            Wrap(runSpacing: 5, spacing: 10, children: [
-              ColorWidget(
-                color: "Blue",
-                onTap: () {
-                  // send to index
-                  // controller.changeSelectedAttribute(attribute);
-                },
-                colorCode: "",
-                selected: true,
+      return Obx(() => controller.isloading.value
+          ? CircularProgressIndicator()
+          : Container(
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 100,
+                    child: blackText("COLOR", 16, fontWeight: FontWeight.w500),
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      runSpacing: 5,
+                      spacing: 10,
+                      children: controller.product!.attributes
+                          .map(
+                            (attribute) => ColorWidget(
+                              color: attribute.color,
+                              onTap: () {
+                                // send to index
+                                // controller.changeSelectedAttribute(attribute);
+                              },
+                              colorCode: attribute.colorCode,
+                              selected: true,
+                            ),
+                          )
+                          .toList(),
+                      // ColorWidget(
+                      //   color: "Blue",
+                      //   onTap: () {
+                      //     // send to index
+                      //     // controller.changeSelectedAttribute(attribute);
+                      //   },
+                      //   colorCode: "",
+                      //   selected: false,
+                      // )
+                    ),
+                  )
+                ],
               ),
-              ColorWidget(
-                color: "Blue",
-                onTap: () {
-                  // send to index
-                  // controller.changeSelectedAttribute(attribute);
-                },
-                colorCode: "",
-                selected: false,
-              )
-            ])
-          ],
-        ),
-      );
+            ));
     });
   }
 }
@@ -74,7 +85,13 @@ class ColorWidget extends StatelessWidget {
               height: selected ? 40 : 35,
               decoration: BoxDecoration(
                 color: selected ? null : redColor,
-                border: Border.all(color: Colors.red),
+                border: Border.all(
+                    color: Color(
+                        int.parse(colorCode.substring(1, 7), radix: 16) +
+                            0xFF000000)),
+//                 Color hexToColor(String code) {
+//   return Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);
+// }
                 shape: BoxShape.circle,
               ),
               child: selected
@@ -82,8 +99,10 @@ class ColorWidget extends StatelessWidget {
                       child: Container(
                         width: 25,
                         height: 25,
-                        decoration: const BoxDecoration(
-                          color: redColor,
+                        decoration: BoxDecoration(
+                          color: Color(
+                              int.parse(colorCode.substring(1, 7), radix: 16) +
+                                  0xFF000000),
                           shape: BoxShape.circle,
                         ),
                       ),

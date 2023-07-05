@@ -15,18 +15,22 @@ class OrderHistoryView extends GetView<OrderHistoryController> {
         appBar: const CommonAppBar(
           label: 'Order History',
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(20),
-          child: ListView.builder(
-              itemCount: 4,
-              physics: const ScrollPhysics(),
-              itemBuilder: (context, index) {
-                return OrderHistoryCardWidget(
-                  onClick: () async {
-                    Get.toNamed(Routes.ORDER_HISTORY_DETAILS);
-                  },
-                );
-              }),
-        ));
+        body: Obx(() => Padding(
+              padding: const EdgeInsets.all(20),
+              child: ListView.builder(
+                  itemCount: controller.myOrdersResponse.length,
+                  physics: const ScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final item = controller.myOrdersResponse[index];
+                    return OrderHistoryCardWidget(
+                      enquryno: item.enquiryNo,
+                      location: item.name,
+                      orderno: item.userId,
+                      onClick: () async {
+                        Get.toNamed(Routes.ORDER_HISTORY_DETAILS);
+                      },
+                    );
+                  }),
+            )));
   }
 }

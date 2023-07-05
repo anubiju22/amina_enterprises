@@ -8,7 +8,12 @@ import 'package:flutter/material.dart';
 
 class CameraView extends StatefulWidget {
   final CameraDescription camera;
-  const CameraView({super.key, required this.camera});
+  final String location;
+  const CameraView({
+    super.key,
+    required this.camera,
+    required this.location,
+  });
 
   @override
   State<CameraView> createState() => _CameraViewState();
@@ -107,8 +112,9 @@ class _CameraViewState extends State<CameraView> {
                 const SizedBox(
                   width: 2,
                 ),
-                const Text(
-                  'Feroke, Calicut, Kerala',
+                Text(
+                  widget.location,
+                  // 'Feroke, Calicut, Kerala',
                   style: TextStyle(fontSize: 15),
                 ),
               ],

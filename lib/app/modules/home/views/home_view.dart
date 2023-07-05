@@ -7,6 +7,7 @@ import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/views/camera_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
+import 'package:amina_enterprises/config/session.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class HomeView extends GetView<HomeController> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          greyText('Hi, Anshad', 14),
+                          greyText('Hi, ${Session.name}', 14),
                           const SizedBox(
                             height: 10,
                           ),
@@ -75,6 +76,11 @@ class HomeView extends GetView<HomeController> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => CameraView(
+                                            location: controller
+                                                        .currentLocation ==
+                                                    null
+                                                ? 'no location found'
+                                                : controller.currentLocation,
                                             camera: controller
                                                 .cameras[direction])));
                               },
@@ -82,7 +88,14 @@ class HomeView extends GetView<HomeController> {
                           )
                         ],
                       ),
-                      svgWidget('assets/svg/profile_circle.svg')
+                      Column(
+                        children: [
+                          svgWidget('assets/svg/profile_circle.svg'),
+                          Text(controller.currentLocation == null
+                              ? 'no location found'
+                              : controller.currentLocation),
+                        ],
+                      )
                     ],
                   ),
                 ),

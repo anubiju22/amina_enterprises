@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/config/session.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -40,7 +41,7 @@ class ProfileView extends StatelessWidget {
                   const SizedBox(
                     height: 5,
                   ),
-                  blackText("Anshad", 16, fontWeight: FontWeight.w600),
+                  blackText(Session.name, 16, fontWeight: FontWeight.w600),
                   const SizedBox(
                     height: 5,
                   ),
@@ -50,10 +51,10 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              const EmployeeBottomWidget(
-                name: 'Anshad',
-                phone: "+91 8563524047",
-                email: "anshad000@gmail.com",
+              EmployeeBottomWidget(
+                name: Session.name,
+                phone: Session.mobile,
+                email: Session.email,
               ),
             ],
           ),

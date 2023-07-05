@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../login/provider/auth_provider.dart';
 import '../controllers/support_controller.dart';
 
 class SupportBinding extends Bindings {
@@ -8,5 +9,6 @@ class SupportBinding extends Bindings {
     Get.lazyPut<SupportController>(
       () => SupportController(),
     );
+    Get.lazyPut<AuthProvider>(() => AuthProvider());
   }
 }

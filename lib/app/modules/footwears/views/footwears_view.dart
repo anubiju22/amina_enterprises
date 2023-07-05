@@ -44,7 +44,7 @@ class FootwearsView extends GetView<FootwearsController> {
                 ],
               ),
             ),
-            const Expanded(
+            Expanded(
               child: TabBarView(
                 children: [
                   ProductView(),

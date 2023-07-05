@@ -39,9 +39,9 @@ class LoginTextField extends StatelessWidget {
         controller: textEditingController,
         enabled: isEnable ?? true,
         style: const TextStyle(fontSize: 17, letterSpacing: 2.0),
-        keyboardType: TextInputType.number,
+        // keyboardType: TextInputType.number,
         inputFormatters: <TextInputFormatter>[
-          FilteringTextInputFormatter.allow(RegExp(r'^[0-9][0-9]*')),
+          // FilteringTextInputFormatter.allow(RegExp(r'^[0-9][0-9]*')),
           LengthLimitingTextInputFormatter(10),
         ],
         decoration: InputDecoration(

@@ -16,13 +16,13 @@ class SupportView extends GetView<SupportController> {
         appBar: const CommonAppBar(
           label: 'Support',
         ),
-        body: ListView.separated(
+        body: Obx(() => ListView.separated(
             itemBuilder: (context, index) {
               return SupportCardWidget(
-                label: 'Technical Support',
-                mob: '9999999999',
+                label: controller.contactList[index].name,
+                mob: controller.contactList[index].mob,
                 items: controller.items,
-                email: 'support@gitmail.in',
+                email: controller.contactList[index].email,
               );
             },
             separatorBuilder: (context, index) {
@@ -31,6 +31,6 @@ class SupportView extends GetView<SupportController> {
                 color: Colors.white,
               );
             },
-            itemCount: 2));
+            itemCount: controller.contactList.length)));
   }
 }

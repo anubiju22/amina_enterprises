@@ -10,11 +10,11 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     Get.put(SplashController());
     return Scaffold(
-        body: Image.asset(
-      'assets/image/splash_image.png',
-      fit: BoxFit.fill,
-      width: double.infinity,
-      height: double.infinity,
-    ));
+        body: Obx(() => Image.asset(
+              controller.image.value,
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
+            )));
   }
 }

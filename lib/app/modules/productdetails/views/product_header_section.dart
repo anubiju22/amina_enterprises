@@ -11,96 +11,104 @@ class ProductHeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return GetBuilder<ProductdetailsController>(builder: (controller) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 5,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "GP4300",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w600,
+      return Obx(() => controller.isloading.value
+          ? CircularProgressIndicator()
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-              Row(
-                children: [
-                  blackText('MRP:  ', 14),
-                  const Text(
-                    "₹ 250",
-                    style: TextStyle(
-                      color: redColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  greyText("VKC Pride", 16),
-                  const SizedBox(
-                    height: 2,
-                  ),
-                  greyText(
-                    "Gents Covering",
-                    16,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-                child: VerticalDivider(
-                  color: Colors.grey,
-                  width: 20,
-                  thickness: 1,
-                ),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              // StockWidget(stock: 12, onClick: () {}),
-              Column(
-                children: [
-                  blackText(
-                    'Stock Availablilty',
-                    13,
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF787878),
-                        borderRadius: BorderRadius.circular(5)),
-                    child: const Center(
-                      child: Text(
-                        "Out of Stock",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      controller.product!.artNo,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          )
-        ],
-      );
+                    Row(
+                      children: [
+                        blackText('MRP:  ', 14),
+                        Text(
+                          "₹ ${controller.product!.mrp}",
+                          style: TextStyle(
+                            color: redColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        greyText(controller.product!.brandname, 16),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        greyText(
+                          controller.product!.name,
+                          16,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 40,
+                      child: VerticalDivider(
+                        color: Colors.grey,
+                        width: 20,
+                        thickness: 1,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+
+                    // StockWidget(stock: 12, onClick: () {}),
+
+                    Column(
+                      children: [
+                        //  if (controller.selectedAttribute!.stock != "0")
+                        blackText(
+                          'Stock Availablilty',
+                          13,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        //  if (controller.selectedAttribute!.stock == 0 ||
+                        // controller.selectedAttribute!.stock.isEmpty)
+                        Container(
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5, horizontal: 15),
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF787878),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: const Center(
+                            child: Text(
+                              "Out of Stock",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ));
     });
   }
 }

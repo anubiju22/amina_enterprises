@@ -1,13 +1,15 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/textfeild/otp_textfeild.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
+import 'package:amina_enterprises/app/modules/home/views/retailer_login/retailer_home.dart';
+import 'package:amina_enterprises/app/modules/login/controllers/login_controller.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 
-class OtpView extends StatelessWidget {
+class OtpView extends GetView<LoginController> {
   const OtpView({super.key});
 
   @override
@@ -103,7 +105,9 @@ class OtpView extends StatelessWidget {
                         CommonButtonWidget(
                           label: "VERIFY OTP",
                           onClick: () {
-                            Get.toNamed(Routes.HOME);
+                            // Get.toNamed(Routes.HOME);
+                            Get.to(() => RetailerHome());
+                            // controller.otpVerify();
                           },
                         ),
                         SizedBox(

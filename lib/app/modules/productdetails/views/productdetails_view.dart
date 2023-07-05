@@ -17,7 +17,7 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(label: "GP4300"),
+      appBar: CommonAppBar(label: controller.productName.toUpperCase()),
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 15),
           children: [
@@ -69,8 +69,9 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
                         children: [
                           blackText("TOTAL AMOUNT:", 16,
                               fontWeight: FontWeight.w400),
-                          const Text(
-                            "₹5252 ",
+                          Text(
+                            "524",
+                            // controller.product!.mrp,
                             textAlign: TextAlign.right,
                             style: TextStyle(
                               color: Color(0xFFD80005),

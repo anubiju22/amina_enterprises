@@ -22,12 +22,16 @@ dependencies:
   flutter_svg: ^2.0.4
   pin_code_fields: ^7.4.0
   flutter_staggered_grid_view: ^0.6.2
-  intl: ^0.17.0
+  intl: 0.17.0
+  # intl: ^0.18.1
   camera: ^0.10.3+2
   flutter_calendar_week: ^3.0.0
   url_launcher: ^6.1.10
-  device_preview: ^1.1.0
+  # device_preview: ^1.1.0
   carousel_slider: ^4.2.1
+  shared_preferences: ^2.1.0
+  geocoding: ^2.0.5
+  geolocator: ^9.0.2
   # calendar_timeline: ^1.1.2
 
 dev_dependencies:

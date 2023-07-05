@@ -15,21 +15,26 @@ class ShopsView extends GetView<ShopsController> {
     return Scaffold(
         backgroundColor: scaffoldBgColor,
         appBar: const CommonAppBar(label: 'Shops'),
-        body: ListView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            itemCount: 2,
-            physics: const ScrollPhysics(),
-            itemBuilder: (context, index) {
-              return ShopCard(
-                // visible: true,
-                shopname: controller.shopNames[index],
-                location: controller.shopAddress[index],
-                number: "9856254147",
-                onClick: () {
-                  Get.toNamed(Routes.ADD_PAYMENT,
-                      arguments: {'type': 'add_payment','items': controller.shopNames[index]});
-                },
-              );
-            }));
+        body: Obx(
+          () => ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              itemCount: controller.addedDealers.length,
+              physics: const ScrollPhysics(),
+              itemBuilder: (context, index) {
+                final item = controller.addedDealers[index];
+                return ShopCard(
+                  // visible: true,
+                  shopname: item.shopName,
+                  location: item.location.toString(),
+                  number: item.mobile,
+                  onClick: () {
+                    Get.toNamed(Routes.ADD_PAYMENT, arguments: {
+                      'type': 'add_payment',
+                      'items': controller.addedDealers[index]
+                    });
+                  },
+                );
+              }),
+        ));
   }
 }
