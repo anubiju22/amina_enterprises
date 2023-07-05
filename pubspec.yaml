@@ -26,7 +26,7 @@ dependencies:
   camera: ^0.10.3+2
   flutter_calendar_week: ^3.0.0
   url_launcher: ^6.1.10
-  device_preview: ^1.1.0
+  # device_preview: ^1.1.0
   carousel_slider: ^4.2.1
   # calendar_timeline: ^1.1.2
 
