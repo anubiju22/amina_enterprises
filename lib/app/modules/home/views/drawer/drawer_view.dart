@@ -17,7 +17,7 @@ class DrawerView extends GetView<DashboardController> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Center(
             child: Image.asset(
-          'assets/logo/drawer_logo.png',
+          'assets/logo/kvn_logo.png',
           fit: BoxFit.fill,
         )).paddingOnly(top: 20),
         const DrawerHeaderCard(),

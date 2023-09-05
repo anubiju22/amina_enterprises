@@ -31,7 +31,7 @@ class OtpView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Center(child: Image.asset("assets/logo/logo.png")),
+                      Center(child: Image.asset("assets/logo/kvn_logo.png")),
                       // ),
                     ],
                   ),

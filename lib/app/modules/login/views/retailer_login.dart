@@ -6,7 +6,6 @@ import 'package:amina_enterprises/app/modules/home/views/retailer_login/retailer
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
@@ -33,7 +32,7 @@ class RetailerLoginView extends GetView<LoginController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Center(child: Image.asset("assets/logo/logo.png")),
+                        Center(child: Image.asset("assets/logo/kvn_logo.png")),
                         // ),
                       ],
                     ),
