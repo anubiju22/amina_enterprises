@@ -93,8 +93,7 @@ class DrawerCard extends StatelessWidget {
                 shape: BoxShape.circle, color: homeMenuColor),
             child: Padding(
               padding: const EdgeInsets.all(9.0),
-              child: svgWidget(path,
-                  color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
+              child: svgWidget(path, color: redColor),
             ),
           ),
           const SizedBox(

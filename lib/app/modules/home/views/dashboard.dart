@@ -27,9 +27,8 @@ class DashboardView extends GetView<DashboardController> {
                     padding: const EdgeInsets.only(bottom: 5.0),
                     child: svgWidget('assets/svg/bottom_home.svg',
                         color: controller.selectedIndex.value == 0
-                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
-                            : const ColorFilter.mode(
-                                Colors.black, BlendMode.srcIn)),
+                            ? redColor
+                            : Colors.black),
                   ),
                   label: 'Home'),
               BottomNavigationBarItem(
@@ -37,9 +36,8 @@ class DashboardView extends GetView<DashboardController> {
                     padding: const EdgeInsets.only(bottom: 5.0),
                     child: svgWidget('assets/svg/bottom_search.svg',
                         color: controller.selectedIndex.value == 1
-                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
-                            : const ColorFilter.mode(
-                                Colors.black, BlendMode.srcIn)),
+                            ? redColor
+                            : Colors.black),
                   ),
                   label: 'Search'),
               BottomNavigationBarItem(
@@ -47,9 +45,8 @@ class DashboardView extends GetView<DashboardController> {
                     padding: const EdgeInsets.only(bottom: 5.0),
                     child: svgWidget('assets/svg/bottom_profile.svg',
                         color: controller.selectedIndex.value == 2
-                            ? const ColorFilter.mode(redColor, BlendMode.srcIn)
-                            : const ColorFilter.mode(
-                                Colors.black, BlendMode.srcIn)),
+                            ? redColor
+                            : Colors.black),
                   ),
                   label: 'Profile')
             ]),

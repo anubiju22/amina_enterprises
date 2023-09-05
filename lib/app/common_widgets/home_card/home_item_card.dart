@@ -29,7 +29,8 @@ class HomeCardItem extends StatelessWidget {
                       horizontal: 18.0, vertical: 18),
                   child: svgWidget(
                     path,
-                    color: const ColorFilter.mode(redColor, BlendMode.srcIn),
+                    color: redColor,
+                    blendMode: BlendMode.srcIn,
                   ),
                 )),
             const SizedBox(
@@ -47,7 +48,7 @@ class HomeCardItem extends StatelessWidget {
 class HomeCategories extends StatelessWidget {
   final String path;
   final String label;
-  final ColorFilter color;
+  final Color color;
   final Function? onClick;
 
   const HomeCategories({

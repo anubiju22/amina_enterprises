@@ -132,9 +132,7 @@ class RouteBottomSheet extends StatelessWidget {
                   ),
                 ),
                 child: svgWidget('assets/svg/Call.svg',
-                    size: 15,
-                    color:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
+                    size: 15, color: Colors.white, blendMode: BlendMode.srcIn),
               )
             ],
           )
@@ -203,7 +201,7 @@ class alertBox extends StatelessWidget {
                   width: 5,
                 ),
                 svgWidget('assets/svg/location.svg',
-                    color: const ColorFilter.mode(redColor, BlendMode.srcIn)),
+                    color: redColor, blendMode: BlendMode.srcIn),
                 const SizedBox(
                   width: 5,
                 ),

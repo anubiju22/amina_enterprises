@@ -121,9 +121,7 @@ class EmployeeBottomWidget extends StatelessWidget {
                 Row(
                   children: [
                     svgWidget("assets/svg/home_profile.svg",
-                        size: 20,
-                        color: const ColorFilter.mode(
-                            Colors.grey, BlendMode.srcIn)),
+                        size: 20, color: Colors.grey),
                     const SizedBox(
                       width: 10,
                     ),

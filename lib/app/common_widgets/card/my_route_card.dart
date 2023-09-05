@@ -48,7 +48,7 @@ class MyRouteCard extends StatelessWidget {
               width: 30,
             ),
             svgWidget('assets/svg/pin_drop.svg',
-                color: const ColorFilter.mode(mapColor, BlendMode.srcIn)),
+                color: mapColor, blendMode: BlendMode.srcIn),
             TextButton(
                 style: TextButton.styleFrom(
                   minimumSize: Size.zero,
