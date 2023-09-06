@@ -39,36 +39,37 @@ class ProductCard extends StatelessWidget {
           child: Column(children: [
             Expanded(
               child: Center(
-                child: Image.network(
+                child: Image.asset(
                   image,
                   fit: BoxFit.cover,
-                  loadingBuilder: (BuildContext context, Widget child,
-                      ImageChunkEvent? loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return Center(
-                      child: CircularProgressIndicator(
-                        color: redColor,
-                        value: loadingProgress.expectedTotalBytes != null
-                            ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes!
-                            : null,
-                      ),
-                    );
-                  },
-                  errorBuilder: (context, exception, stackTrack) =>
-                      const Center(
-                    child: Icon(
-                      Icons.error,
-                      color: redColor,
-                    ),
-                  ),
+
+                  // loadingBuilder: (BuildContext context, Widget child,
+                  //     ImageChunkEvent? loadingProgress) {
+                  //   if (loadingProgress == null) return child;
+                  //   return Center(
+                  //     child: CircularProgressIndicator(
+                  //       color: redColor,
+                  //       value: loadingProgress.expectedTotalBytes != null
+                  //           ? loadingProgress.cumulativeBytesLoaded /
+                  //               loadingProgress.expectedTotalBytes!
+                  //           : null,
+                  //     ),
+                  //   );
+                  // },
+                  // errorBuilder: (context, exception, stackTrack) =>
+                  //     const Center(
+                  //   child: Icon(
+                  //     Icons.error,
+                  //     color: redColor,
+                  //   ),
+                  // ),
                 ),
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                blackText(artNo, 12),
+                blackText(artNo, 12, fontWeight: FontWeight.w600),
                 // Text(
                 //   "₹ $mrp",
                 //   style: const TextStyle(
