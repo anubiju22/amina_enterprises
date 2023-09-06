@@ -7,7 +7,7 @@ class NumberTextfeild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 50,
       height: 25,
       child: TextField(
@@ -18,13 +18,13 @@ class NumberTextfeild extends StatelessWidget {
           hintText: 'Hint Text',
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               width: 2,
               style: BorderStyle.none,
             ),
           ),
           filled: true,
-          contentPadding: EdgeInsets.all(16),
+          contentPadding: const EdgeInsets.all(16),
           fillColor: Colors.white,
         ),
       ),

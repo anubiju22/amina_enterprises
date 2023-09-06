@@ -76,7 +76,7 @@ class CollectPaymentView extends GetView {
                       SizedBox(
                         height: size.height * 0.010,
                       ),
-                      redText("₹ " + "13000", 20, fontWeight: FontWeight.w500),
+                      redText("₹ " "13000", 20, fontWeight: FontWeight.w500),
                     ],
                   )
                 ],

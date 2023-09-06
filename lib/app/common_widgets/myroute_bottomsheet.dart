@@ -150,11 +150,11 @@ class alertBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: 12),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 12),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30))),
       title: blackText("Mark Visit", 20, fontWeight: FontWeight.w600),
-      content: Container(
+      content: SizedBox(
         height: 250,
         width: double.infinity,
         child: Column(
@@ -171,8 +171,8 @@ class alertBox extends StatelessWidget {
               child: TextFormField(
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.expand_more)),
-                  fillColor: Color(0xFFF3F3F3),
+                      onPressed: () {}, icon: const Icon(Icons.expand_more)),
+                  fillColor: const Color(0xFFF3F3F3),
                   filled: true,
                   hintText: "Select Item",
                   hintStyle: const TextStyle(

@@ -38,7 +38,7 @@ class DateButton extends StatelessWidget {
               onPressed: () {
                 ontapp!();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.calendar_today,
                 size: 20,
               ),

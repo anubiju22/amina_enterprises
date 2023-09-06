@@ -1,7 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/payment_bottomsheet.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
 import 'package:amina_enterprises/app/modules/home/model/drawer_model.dart';
-import 'package:amina_enterprises/app/modules/home/views/drawer/drawer_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:camera/camera.dart';

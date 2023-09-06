@@ -74,7 +74,7 @@
 import 'package:flutter/material.dart';
 
 Widget overlapped(Color color, colors) {
-  final overlap = 5;
+  const overlap = 5;
   final items = [
     CircleAvatar(
       backgroundColor: color,

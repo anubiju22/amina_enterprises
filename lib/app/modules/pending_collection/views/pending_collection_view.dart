@@ -6,7 +6,6 @@ import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 
 import '../controllers/pending_collection_controller.dart';
 
@@ -78,7 +77,7 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                           shape: BoxShape.rectangle,
                           gradient: primaryColor),
-                      child: Icon(
+                      child: const Icon(
                         Icons.filter_alt,
                         color: Colors.white,
                         size: 25,
@@ -88,11 +87,11 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
             ),
             Expanded(
                 child: ListView.builder(
-              physics: ScrollPhysics(),
+              physics: const ScrollPhysics(),
               shrinkWrap: true,
               itemCount: 2,
               itemBuilder: ((context, index) {
-                return ViewPaymentCard(
+                return const ViewPaymentCard(
                   amount: "  ₹ Amount: 10000",
                   amtVisible: true,
                   balance: "Balance: ₹3000",
@@ -114,11 +113,11 @@ class PendingCollectionView extends GetView<PendingCollectionController> {
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Container(
           // height: 65,
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-          color: Color(0xfffcf2f2),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          color: const Color(0xfffcf2f2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Total Balance",
                 textAlign: TextAlign.right,

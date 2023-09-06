@@ -30,7 +30,7 @@ class ProductCutSizeDealerBuilder extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text("Normal"),
+                      const Text("Normal"),
                       const Spacer(),
                       blackText("₹ 289", 17, fontWeight: FontWeight.w500),
                       const SizedBox(
@@ -111,7 +111,7 @@ class ProductCutSizeDealerBuilder extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Row(
