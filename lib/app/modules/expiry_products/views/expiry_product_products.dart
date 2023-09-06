@@ -1,4 +1,7 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
+import 'package:amina_enterprises/app/common_widgets/card/expiry_home_product_card.dart';
+import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
+import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +15,49 @@ class ExpiryProductProductsView extends GetView<ExpiryProductsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Container(
-        child: const Text("product"),
+          child: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Obx(() => AttendanceDatePicker(
+                date: controller.date.value,
+                changeDate: () {},
+                decrement: () {
+                  controller.decrementDay();
+                },
+                increment: () {
+                  controller.incrementDay();
+                },
+              )),
+          const SizedBox(
+            height: 5,
+          ),
+          Expanded(
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      ExpiryHomeProductCard(
+                        visible: true,
+                        location: "Turmeric Powder",
+                        ontap: () {
+                          // Get.toNamed(Routes.EXPIRY_PRODUCTS_SHOP_DETAILS);
+                        },
+                        shopname: '#1236',
+                        image: "assets/image/product.png",
+                      ),
+                      const Divider(
+                        color: Color(0xffE2E2E2),
+                        thickness: 1.5,
+                      )
+                    ],
+                  );
+                }),
+          ),
+        ],
       )),
     );
   }

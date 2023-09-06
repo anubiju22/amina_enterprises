@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:amina_enterprises/app/modules/expiry_products/views/shop_details_page.dart';
 import 'package:get/get.dart';
 
 import '../modules/add_payment/bindings/add_payment_binding.dart';
@@ -145,6 +146,11 @@ class AppPages {
     GetPage(
       name: _Paths.EXPIRY_PRODUCTS,
       page: () => const ExpiryProductsView(),
+      binding: ExpiryProductsBinding(),
+    ),
+     GetPage(
+      name: _Paths.EXPIRY_PRODUCTS_SHOP_DETAILS,
+      page: () => const ExpiryProductShopDetailsView(),
       binding: ExpiryProductsBinding(),
     ),
   ];

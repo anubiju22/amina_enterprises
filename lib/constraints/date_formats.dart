@@ -17,6 +17,10 @@ String returnMonth(DateTime date) {
   return DateFormat.MMMM().format(date);
 }
 
+dateToDate(DateTime dateTime) {
+  return DateFormat('dd/MM/yyyy').format(dateTime);
+}
+
 Future<DateTime?> selectDate(BuildContext context) async {
   final DateTime? pickedDate = await showDatePicker(
     context: context,
