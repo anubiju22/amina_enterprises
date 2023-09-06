@@ -6,10 +6,6 @@ class ProductdetailsController extends GetxController {
   List<String> iteams = ['CARTOON', 'CUT SIZE', 'SET', 'PAIR'];
 
   final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   void onClickLoad(String value) {
     selectedLoad = value;

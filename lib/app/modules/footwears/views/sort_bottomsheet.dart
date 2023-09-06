@@ -20,7 +20,7 @@ class SortBottomSheetWidget extends GetView<FootwearsController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("Sort By"),
+            const Text("Sort By"),
             const Divider(color: Colors.black),
             sizedBox1,
             text(

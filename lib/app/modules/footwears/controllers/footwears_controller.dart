@@ -5,8 +5,4 @@ class FootwearsController extends GetxController {
   final List<Color> colors = [Colors.white, Colors.black];
 
   final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

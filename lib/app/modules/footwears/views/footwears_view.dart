@@ -1,5 +1,4 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
-import 'package:amina_enterprises/app/common_widgets/card/product_card.dart';
 import 'package:amina_enterprises/app/modules/footwears/views/sort_bottomsheet.dart';
 import 'package:amina_enterprises/app/modules/footwears/views/staggered_grid_view.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../common_widgets/svg_icons/svg_widget.dart';
 import '../controllers/footwears_controller.dart';
 
 class FootwearsView extends GetView<FootwearsController> {

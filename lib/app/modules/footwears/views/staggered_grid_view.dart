@@ -1,6 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/card/product_card.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -14,8 +13,8 @@ class ProductView extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       child: GridView.custom(
         gridDelegate: SliverWovenGridDelegate.count(pattern: [
-          WovenGridTile(1),
-          WovenGridTile(
+          const WovenGridTile(1),
+          const WovenGridTile(
             8 / 7,
             //  crossAxisRatio: 0.5,
             alignment: AlignmentDirectional.centerEnd,
@@ -44,8 +43,8 @@ class ProductView extends StatelessWidget {
               onTap: () {
                 Get.toNamed(Routes.PRODUCTDETAILS);
               },
-              colors: Color(0xFFCF2812),
-              color: Color(0xFFE45A5A));
+              colors: const Color(0xFFCF2812),
+              color: const Color(0xFFE45A5A));
         }, childCount: 6),
       ),
     );

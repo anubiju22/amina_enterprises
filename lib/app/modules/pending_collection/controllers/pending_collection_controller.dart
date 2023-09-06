@@ -11,10 +11,6 @@ class PendingCollectionController extends GetxController {
   RxString toDate = ''.obs;
   // String _fromvalue = "From Date";
   // String _toValue = 'To Date';
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   void changeFromDate(BuildContext context) async {
     final pickDate = await selectDate(context);

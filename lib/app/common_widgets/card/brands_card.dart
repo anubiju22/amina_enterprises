@@ -1,4 +1,3 @@
-import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:flutter/material.dart';
 
 class BrandCard extends StatelessWidget {

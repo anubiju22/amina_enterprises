@@ -65,21 +65,21 @@ class CommonSearchTextField extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(20.0),
           ),
-          fillColor: Color(0xfff3f3f3),
+          fillColor: const Color(0xfff3f3f3),
           filled: true,
           // filled: true,
           isDense: true,
           hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
           suffixIcon: textEditingController == null
               ? null
-              : textEditingController!.text.length > 0
+              : textEditingController!.text.isNotEmpty
                   ? IconButton(
                       onPressed: onPressed == null
                           ? null
                           : () {
                               onPressed!();
                             },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.cancel,
                         color: Colors.black,
                         size: 25,

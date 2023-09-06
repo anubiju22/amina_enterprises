@@ -10,8 +10,4 @@ class ShopsController extends GetxController {
     'Crystal Building, Malad, Rathodi, Mankavu, Calicut'
   ];
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

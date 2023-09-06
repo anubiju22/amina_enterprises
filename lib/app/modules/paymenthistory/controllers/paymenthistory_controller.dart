@@ -8,10 +8,6 @@ class PaymenthistoryController extends GetxController {
 
   RxString fromDate = ''.obs;
   RxString toDate = ''.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   void changeFromDate(BuildContext context) async {
     final pickDate = await selectDate(context);

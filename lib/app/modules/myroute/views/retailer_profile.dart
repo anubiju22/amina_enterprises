@@ -4,8 +4,6 @@ import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
 import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../controllers/myroute_controller.dart';
 
 class RetailerProfile extends StatelessWidget {
   final RouteList items;

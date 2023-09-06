@@ -134,7 +134,7 @@ class CartItemCard extends StatelessWidget {
               DeleteButton(),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -158,7 +158,7 @@ class CartItemCard extends StatelessWidget {
               DeleteButton(),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           const Divider(
@@ -201,7 +201,7 @@ class DeleteButton extends StatelessWidget {
       height: 32,
       width: 32,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
         border: Border.all(

@@ -17,7 +17,7 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(label: "GP4300"),
+      appBar: const CommonAppBar(label: "GP4300"),
       body: ListView(
           padding: const EdgeInsets.symmetric(vertical: 15),
           children: [
@@ -35,7 +35,7 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
             // ),
             // const Spacer(),
             Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -59,9 +59,9 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
                     children: [
                       const ProductHeaderSection(),
                       const ProductColorSection(),
-                      ProductSizeCategorySection(),
-                      ProductCutSizeDealerBuilder(),
-                      SizedBox(
+                      const ProductSizeCategorySection(),
+                      const ProductCutSizeDealerBuilder(),
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -79,7 +79,7 @@ class ProductdetailsView extends GetView<ProductdetailsController> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CommonButtonWidget(
