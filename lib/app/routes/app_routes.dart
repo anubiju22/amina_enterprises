@@ -26,6 +26,8 @@ abstract class Routes {
   static const PENDING_COLLECTION = _Paths.PENDING_COLLECTION;
   static const ADD_PAYMENT = _Paths.ADD_PAYMENT;
   static const EXPIRY_PRODUCTS = _Paths.EXPIRY_PRODUCTS;
+  static const EXPIRY_PRODUCTS_SHOP_DETAILS =
+      _Paths.EXPIRY_PRODUCTS_SHOP_DETAILS;
 }
 
 abstract class _Paths {
@@ -51,4 +53,5 @@ abstract class _Paths {
   static const PENDING_COLLECTION = '/pending-collection';
   static const ADD_PAYMENT = '/add-payment';
   static const EXPIRY_PRODUCTS = '/expiry-products';
+  static const EXPIRY_PRODUCTS_SHOP_DETAILS = '/expiry-products_shop_details';
 }

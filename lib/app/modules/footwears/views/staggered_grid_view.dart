@@ -37,7 +37,7 @@ class ProductView extends StatelessWidget {
           return ProductCard(
               artNo: 'SAMBAR POWDER',
               brandName: '#6302',
-              image: "assets/image/product.png",
+              image: "assets/image/products.png",
               // "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
               mrp: '350',
               onTap: () {
