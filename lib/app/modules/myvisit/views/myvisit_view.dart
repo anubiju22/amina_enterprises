@@ -3,6 +3,7 @@ import 'package:amina_enterprises/app/common_widgets/card/my_visit_card.dart';
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
@@ -35,20 +36,30 @@ class MyvisitView extends GetView<MyvisitController> {
               color: Colors.white,
             ),
             Expanded(
-              child: ListView.separated(
-                  itemCount: 8,
-                  itemBuilder: (context, index) {
-                    return VisitCardWidget(
-                        slno: num.parse((index + 1).toString()).toString(),
-                        name: 'CHOLAN SHOE MART',
-                        location:
-                            'Crystal Building, Malad, Rathodi,Mankavu, Calicut',
-                        duration: '3:49 PM',
-                        remark: 'Order Booked');
-                  },
-                  separatorBuilder: (c, i) {
-                    return divider();
-                  }),
+              child: AnimationLimiter(
+                child: ListView.separated(
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                      return AnimationConfiguration.staggeredList(
+                          position: index,
+                          child: SlideAnimation(
+                            duration: const Duration(milliseconds: 350),
+                            horizontalOffset: 50.0,
+                            // verticalOffset: 50.0,
+                            child: VisitCardWidget(
+                                slno: num.parse((index + 1).toString())
+                                    .toString(),
+                                name: 'CHOLAN SHOE MART',
+                                location:
+                                    'Crystal Building, Malad, Rathodi,Mankavu, Calicut',
+                                duration: '3:49 PM',
+                                remark: 'Order Booked'),
+                          ));
+                    },
+                    separatorBuilder: (c, i) {
+                      return divider();
+                    }),
+              ),
             ),
           ],
         ));

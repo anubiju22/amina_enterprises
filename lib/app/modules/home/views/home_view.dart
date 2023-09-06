@@ -1,6 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
-import 'package:amina_enterprises/app/common_widgets/card/brands_card.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
@@ -10,6 +9,7 @@ import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -95,28 +95,37 @@ class HomeView extends GetView<HomeController> {
                 fontWeight: FontWeight.w700,
               ),
               sizedBox,
-              GridView.builder(
-                  //  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 1.4),
+              AnimationLimiter(
+                child: GridView.builder(
+                    //  padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const ScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 10.0,
 
-                    // number of columns in the grid
-                  ),
-                  itemCount: controller.menuItems.length,
-                  itemBuilder: (context, index) {
-                    return HomeCardItem(
-                      path: controller.menuItems[index].image,
-                      label: controller.menuItems[index].label,
-                      ontap: controller.menuItems[index].onClick,
-                    );
-                  }),
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 1.4),
+
+                      // number of columns in the grid
+                    ),
+                    itemCount: controller.menuItems.length,
+                    itemBuilder: (context, index) {
+                      return AnimationConfiguration.staggeredList(
+                          position: index,
+                          child: FlipAnimation(
+                            duration: const Duration(milliseconds: 400),
+                            // horizontalOffset: 50.0,
+                            // verticalOffset: 50.0,
+                            child: HomeCardItem(
+                              path: controller.menuItems[index].image,
+                              label: controller.menuItems[index].label,
+                              ontap: controller.menuItems[index].onClick,
+                            ),
+                          ));
+                    }),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -129,45 +138,37 @@ class HomeView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeCategories(
-                    path: 'assets/svg/home_footwear.svg',
-                    label: 'Footwears',
-                    color: homeFootColor,
+                    path: 'assets/image/blend_masala.png',
+                    label: 'BLENDED \nMASALA',
                     onClick: () {
                       Get.toNamed(Routes.FOOTWEARS);
                     },
                   ),
                   HomeCategories(
-                    path: 'assets/svg/home_bag.svg',
-                    label: 'Bags',
-                    color: homeBagColor,
+                    path: 'assets/image/spice_powder.png',
+                    label: 'SPICES \nPOWDER',
                     onClick: () {},
                   ),
-                  HomeCategories(
-                    path: 'assets/svg/home_jacket.svg',
-                    label: 'Apparels',
-                    color: homeAppColor,
-                    onClick: () {},
-                  )
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              blackText('Explore Brands', 22, fontWeight: FontWeight.w700),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.10,
-                child: ListView.builder(
-                    itemCount: 3,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return BrandCard(
-                        path: controller.brands[index],
-                      );
-                    }),
-              )
+              // blackText('Explore Brands', 22, fontWeight: FontWeight.w700),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.10,
+              //   child: ListView.builder(
+              //       itemCount: 3,
+              //       scrollDirection: Axis.horizontal,
+              //       itemBuilder: (context, index) {
+              //         return BrandCard(
+              //           path: controller.brands[index],
+              //         );
+              //       }),
+              // )
             ]),
           ),
         ));

@@ -6,6 +6,7 @@ import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 // import 'package:calendar_timeline/calendar_timeline.dart';
 import 'package:flutter_calendar_week/flutter_calendar_week.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
@@ -120,40 +121,50 @@ class MyrouteView extends GetView<MyrouteController> {
               const SizedBox(
                 height: 15,
               ),
-              ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: 2,
-                  itemBuilder: (BuildContext context, int index) {
-                    final items = controller.routeList[index];
-                    return Column(
-                      children: [
-                        const Divider(
-                          thickness: 2,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.bottomSheet(
-                              RouteBottomSheet(
-                                tittle: items.title,
-                                type: "Retailer",
-                                items: items,
-                              ),
-                              elevation: 20.0,
-                              enableDrag: false,
-                              backgroundColor: Colors.white,
-                              shape: bootomSheetShape(),
-                            );
-                          },
-                          child: MyRouteCard(
-                            shopname: controller.routeList[index].title,
-                            location: controller.routeList[index].location,
-                            number: controller.routeList[index].mobile,
-                          ),
-                        ),
-                      ],
-                    );
-                  }),
+              AnimationLimiter(
+                child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: 2,
+                    itemBuilder: (BuildContext context, int index) {
+                      final items = controller.routeList[index];
+                      return AnimationConfiguration.staggeredList(
+                          position: index,
+                          child: SlideAnimation(
+                            duration: const Duration(milliseconds: 350),
+                            // horizontalOffset: 50.0,
+                            verticalOffset: 50.0,
+                            child: Column(
+                              children: [
+                                const Divider(
+                                  thickness: 2,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Get.bottomSheet(
+                                      RouteBottomSheet(
+                                        tittle: items.title,
+                                        type: "Retailer",
+                                        items: items,
+                                      ),
+                                      elevation: 20.0,
+                                      enableDrag: false,
+                                      backgroundColor: Colors.white,
+                                      shape: bootomSheetShape(),
+                                    );
+                                  },
+                                  child: MyRouteCard(
+                                    shopname: controller.routeList[index].title,
+                                    location:
+                                        controller.routeList[index].location,
+                                    number: controller.routeList[index].mobile,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ));
+                    }),
+              ),
               const Divider(
                 thickness: 2,
               ),

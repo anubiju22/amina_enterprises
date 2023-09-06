@@ -68,25 +68,25 @@ class ProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                blackText(artNo, 18),
-                Text(
-                  "₹ $mrp",
-                  style: const TextStyle(
-                      fontFamily: "Manrope",
-                      color: redColor,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700),
-                ),
+                blackText(artNo, 12),
+                // Text(
+                //   "₹ $mrp",
+                //   style: const TextStyle(
+                //       fontFamily: "Manrope",
+                //       color: redColor,
+                //       fontSize: 18,
+                //       fontWeight: FontWeight.w700),
+                // ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 greyText(brandName, 12),
-                overlapped(
-                  color,
-                  colors,
-                ),
+                // overlapped(
+                //   color,
+                //   colors,
+                // ),
                 //  StackedWidgets(
                 //     direction: TextDirection.rtl,
                 //     items: colors.map((color) => (color)).toList(),
