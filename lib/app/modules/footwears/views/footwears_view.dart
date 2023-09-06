@@ -14,9 +14,9 @@ class FootwearsView extends GetView<FootwearsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: scaffoldBgColor,
-      appBar: const CommonAppBar(label: "FootWears"),
+      appBar: const CommonAppBar(label: "BLENDED MASALA"),
       body: DefaultTabController(
-        length: 3,
+        length: 2,
         child: Column(
           children: [
             Container(
@@ -31,13 +31,10 @@ class FootwearsView extends GetView<FootwearsController> {
                 onTap: (int id) {},
                 tabs: const [
                   Tab(
-                    text: "GENTS",
+                    text: "BLENDED MASALA",
                   ),
                   Tab(
-                    text: "LADIES",
-                  ),
-                  Tab(
-                    text: "KIDS",
+                    text: "SPICES POWDER",
                   ),
                 ],
               ),
@@ -45,7 +42,6 @@ class FootwearsView extends GetView<FootwearsController> {
             const Expanded(
               child: TabBarView(
                 children: [
-                  ProductView(),
                   ProductView(),
                   ProductView(),
                 ],

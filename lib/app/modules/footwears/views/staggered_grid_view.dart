@@ -35,8 +35,8 @@ class ProductView extends StatelessWidget {
         // },
         childrenDelegate: SliverChildBuilderDelegate((context, index) {
           return ProductCard(
-              artNo: 'GP4300',
-              brandName: 'Gents Coverings',
+              artNo: 'SAMBAR POWDER',
+              brandName: '#6302',
               image: "",
               // "https://icon2.cleanpng.com/20180323/eaq/kisspng-slipper-footwear-shoe-sandal-flip-flops-men-shoes-5ab57871171a07.8676672615218422890946.jpg",
               mrp: '350',
