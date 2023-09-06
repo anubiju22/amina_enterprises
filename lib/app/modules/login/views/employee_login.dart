@@ -56,7 +56,7 @@ class EmployeeLoginView extends GetView<LoginController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.02,
+                            height: MediaQuery.of(context).size.height * 0.04,
                           ),
                           const LoginText(
                             text: "Employee Login",
