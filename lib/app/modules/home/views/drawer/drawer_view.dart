@@ -4,6 +4,7 @@ import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 class DrawerView extends GetView<DashboardController> {
@@ -21,21 +22,29 @@ class DrawerView extends GetView<DashboardController> {
           fit: BoxFit.fill,
         )).paddingOnly(top: 20),
         const DrawerHeaderCard(),
-        ListView.builder(
-            shrinkWrap: true,
-            padding: const EdgeInsets.only(top: 10),
-            itemCount: controller.drawerItems.length,
-            itemBuilder: (context, index) {
-              return Obx(
-                () => SingleChildScrollView(
-                  child: DrawerCard(
-                    path: controller.drawerItems[index].image,
-                    label: controller.drawerItems[index].label,
-                    onPressed: controller.drawerItems[index].onClick,
-                  ),
-                ),
-              ).paddingOnly(left: 20);
-            }),
+        AnimationLimiter(
+          child: ListView.builder(
+              shrinkWrap: true,
+              padding: const EdgeInsets.only(top: 10),
+              itemCount: controller.drawerItems.length,
+              itemBuilder: (context, index) {
+                return Obx(() => SingleChildScrollView(
+                      child: AnimationConfiguration.staggeredList(
+                        position: index,
+                        child: SlideAnimation(
+                          duration: const Duration(milliseconds: 350),
+                          horizontalOffset: 50.0,
+                          // verticalOffset: 50.0,
+                          child: DrawerCard(
+                            path: controller.drawerItems[index].image,
+                            label: controller.drawerItems[index].label,
+                            onPressed: controller.drawerItems[index].onClick,
+                          ),
+                        ),
+                      ),
+                    )).paddingOnly(left: 20);
+              }),
+        ),
         const Expanded(child: SizedBox()),
         Align(
           alignment: Alignment.bottomCenter,

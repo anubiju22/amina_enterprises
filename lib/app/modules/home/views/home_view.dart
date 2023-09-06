@@ -10,6 +10,7 @@ import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -95,28 +96,37 @@ class HomeView extends GetView<HomeController> {
                 fontWeight: FontWeight.w700,
               ),
               sizedBox,
-              GridView.builder(
-                  //  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: MediaQuery.of(context).size.width /
-                        (MediaQuery.of(context).size.height / 1.4),
+              AnimationLimiter(
+                child: GridView.builder(
+                    //  padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const ScrollPhysics(),
+                    scrollDirection: Axis.vertical,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 10.0,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: MediaQuery.of(context).size.width /
+                          (MediaQuery.of(context).size.height / 1.4),
 
-                    // number of columns in the grid
-                  ),
-                  itemCount: controller.menuItems.length,
-                  itemBuilder: (context, index) {
-                    return HomeCardItem(
-                      path: controller.menuItems[index].image,
-                      label: controller.menuItems[index].label,
-                      ontap: controller.menuItems[index].onClick,
-                    );
-                  }),
+                      // number of columns in the grid
+                    ),
+                    itemCount: controller.menuItems.length,
+                    itemBuilder: (context, index) {
+                      return AnimationConfiguration.staggeredList(
+                          position: index,
+                          child: FlipAnimation(
+                            duration: const Duration(milliseconds: 400),
+                            // horizontalOffset: 50.0,
+                            // verticalOffset: 50.0,
+                            child: HomeCardItem(
+                              path: controller.menuItems[index].image,
+                              label: controller.menuItems[index].label,
+                              ontap: controller.menuItems[index].onClick,
+                            ),
+                          ));
+                    }),
+              ),
               const SizedBox(
                 height: 20,
               ),
