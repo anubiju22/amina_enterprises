@@ -10,7 +10,6 @@ import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -132,8 +131,7 @@ class HomeView extends GetView<HomeController> {
                   HomeCategories(
                     path: 'assets/svg/home_footwear.svg',
                     label: 'Footwears',
-                    color:
-                        const ColorFilter.mode(homeFootColor, BlendMode.srcIn),
+                    color: homeFootColor,
                     onClick: () {
                       Get.toNamed(Routes.FOOTWEARS);
                     },
@@ -141,15 +139,13 @@ class HomeView extends GetView<HomeController> {
                   HomeCategories(
                     path: 'assets/svg/home_bag.svg',
                     label: 'Bags',
-                    color:
-                        const ColorFilter.mode(homeBagColor, BlendMode.srcIn),
+                    color: homeBagColor,
                     onClick: () {},
                   ),
                   HomeCategories(
                     path: 'assets/svg/home_jacket.svg',
                     label: 'Apparels',
-                    color:
-                        const ColorFilter.mode(homeAppColor, BlendMode.srcIn),
+                    color: homeAppColor,
                     onClick: () {},
                   )
                 ],

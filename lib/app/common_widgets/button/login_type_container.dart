@@ -39,9 +39,7 @@ class LoginTypeContainer extends StatelessWidget {
             Row(
               children: [
                 svgWidget(icon,
-                    size: 20,
-                    color:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
+                    size: 20, blendMode: BlendMode.srcIn, color: Colors.white),
                 const SizedBox(
                   width: 15,
                 ),
