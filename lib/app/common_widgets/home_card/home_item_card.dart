@@ -18,7 +18,7 @@ class HomeCardItem extends StatelessWidget {
       },
       child: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
                 decoration: BoxDecoration(

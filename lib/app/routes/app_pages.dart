@@ -6,6 +6,8 @@ import '../modules/attendance_report/bindings/attendance_report_binding.dart';
 import '../modules/attendance_report/views/attendance_report_view.dart';
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
+import '../modules/expiry_products/bindings/expiry_products_binding.dart';
+import '../modules/expiry_products/views/expiry_products_view.dart';
 import '../modules/footwears/bindings/footwears_binding.dart';
 import '../modules/footwears/views/footwears_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -137,6 +139,11 @@ class AppPages {
       name: _Paths.ADD_PAYMENT,
       page: () => const AddPaymentView(),
       binding: AddPaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.EXPIRY_PRODUCTS,
+      page: () => const ExpiryProductsView(),
+      binding: ExpiryProductsBinding(),
     ),
   ];
 }

@@ -37,9 +37,9 @@ class HomeView extends GetView<HomeController> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const TopWidget(),
+              // const TopWidget(),
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
               Card(
                 elevation: 3,
@@ -87,7 +87,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 25,
               ),
               blackText(
                 'Menu',

@@ -34,31 +34,32 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     menuItems.addAll([
-      DrawerItem('assets/svg/home_user.svg', 'Attendance', () {
-        Get.toNamed(Routes.ATTENDANCE_REPORT);
+      DrawerItem('assets/svg/home_shop.svg', 'Shops', () {
+        Get.toNamed(Routes.SHOPS);
       }),
       DrawerItem('assets/svg/route.svg', 'My Route', () {
         Get.toNamed(Routes.MYROUTE);
       }),
-      DrawerItem('assets/svg/home_shop.svg', 'Shops', () {
-        Get.toNamed(Routes.SHOPS);
+      DrawerItem('assets/svg/home_user.svg', 'Attendance', () {
+        Get.toNamed(Routes.ATTENDANCE_REPORT);
       }),
+
       DrawerItem('assets/svg/home_list.svg', 'My Visit', () {
         Get.toNamed(Routes.MYVISIT);
       }),
       DrawerItem('assets/svg/home_checklist.svg', 'My Order', () {
         Get.toNamed(Routes.ORDER_HISTORY);
       }),
-      DrawerItem('assets/svg/call_center.svg', 'Support', () {
-        Get.toNamed(Routes.SUPPORT);
+      DrawerItem('assets/svg/expiryproduct.svg', 'Expiry Products', () {
+        Get.toNamed(Routes.EXPIRY_PRODUCTS);
       }),
-      DrawerItem('assets/svg/payments.svg', 'Payments', () {
-        Get.bottomSheet(const PaymentBottomSheet(),
-            backgroundColor: Colors.white,
-            enableDrag: false,
-            elevation: 4,
-            shape: bottomSheetShape());
-      }),
+      // DrawerItem('assets/svg/payments.svg', 'Payments', () {
+      //   Get.bottomSheet(const PaymentBottomSheet(),
+      //       backgroundColor: Colors.white,
+      //       enableDrag: false,
+      //       elevation: 4,
+      //       shape: bottomSheetShape());
+      // }),
     ]);
 
     startCamera();
