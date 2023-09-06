@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import '../../../../constraints/date_formats.dart';
 
 class PendingCollectionController extends GetxController {
-  //TODO: Implement PendingCollectionController
-
   DateTime currentDate = DateTime.now();
   RxString fromDate = ''.obs;
   RxString toDate = ''.obs;

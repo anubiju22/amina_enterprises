@@ -199,49 +199,44 @@ class RadioTextwithBorder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
-      child: Container(
-          // width: double.infinity,
-          // height: MediaQuery.of(context).size.height * 0.06,
-          child: InkWell(
-              onTap: () {
-                act(text);
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Row(children: [
-                  Container(
-                    width: 16,
-                    height: 16,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                            width: 1.5,
-                            color:
-                                text == selectItem ? Colors.red : Colors.grey)),
-                    child: Center(
-                        child: Container(
-                      height: 10,
-                      width: 10,
-                      decoration: BoxDecoration(
-                          color: text == selectItem
-                              ? Colors.red
-                              : Colors.transparent,
-                          shape: BoxShape.circle),
-                    )),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    text,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )
-                ]),
-              ))),
+      child: InkWell(
+          onTap: () {
+            act(text);
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Row(children: [
+              Container(
+                width: 16,
+                height: 16,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                        width: 1.5,
+                        color: text == selectItem ? Colors.red : Colors.grey)),
+                child: Center(
+                    child: Container(
+                  height: 10,
+                  width: 10,
+                  decoration: BoxDecoration(
+                      color:
+                          text == selectItem ? Colors.red : Colors.transparent,
+                      shape: BoxShape.circle),
+                )),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ]),
+          )),
     );
   }
 }

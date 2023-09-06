@@ -9,7 +9,6 @@ class ProductHeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return GetBuilder<ProductdetailsController>(builder: (controller) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
