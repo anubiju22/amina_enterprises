@@ -1,6 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/home_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
-import 'package:amina_enterprises/app/common_widgets/card/brands_card.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
@@ -105,7 +104,7 @@ class HomeView extends GetView<HomeController> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
                       mainAxisSpacing: 10.0,
-                      crossAxisSpacing: 10,
+
                       childAspectRatio: MediaQuery.of(context).size.width /
                           (MediaQuery.of(context).size.height / 1.4),
 
@@ -139,45 +138,37 @@ class HomeView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeCategories(
-                    path: 'assets/svg/home_footwear.svg',
-                    label: 'Footwears',
-                    color: homeFootColor,
+                    path: 'assets/image/blend_masala.png',
+                    label: 'BLENDED \nMASALA',
                     onClick: () {
                       Get.toNamed(Routes.FOOTWEARS);
                     },
                   ),
                   HomeCategories(
-                    path: 'assets/svg/home_bag.svg',
-                    label: 'Bags',
-                    color: homeBagColor,
+                    path: 'assets/image/spice_powder.png',
+                    label: 'SPICES \nPOWDER',
                     onClick: () {},
                   ),
-                  HomeCategories(
-                    path: 'assets/svg/home_jacket.svg',
-                    label: 'Apparels',
-                    color: homeAppColor,
-                    onClick: () {},
-                  )
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              blackText('Explore Brands', 22, fontWeight: FontWeight.w700),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.10,
-                child: ListView.builder(
-                    itemCount: 3,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return BrandCard(
-                        path: controller.brands[index],
-                      );
-                    }),
-              )
+              // blackText('Explore Brands', 22, fontWeight: FontWeight.w700),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.10,
+              //   child: ListView.builder(
+              //       itemCount: 3,
+              //       scrollDirection: Axis.horizontal,
+              //       itemBuilder: (context, index) {
+              //         return BrandCard(
+              //           path: controller.brands[index],
+              //         );
+              //       }),
+              // )
             ]),
           ),
         ));
