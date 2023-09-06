@@ -26,20 +26,18 @@ class OtpView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  flex: 3,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Center(child: Image.asset("assets/logo/logo.png")),
+                      Center(child: Image.asset("assets/logo/kvn_logo.png")),
                       // ),
                     ],
                   ),
                 ),
-                SingleChildScrollView(
-                    child: Container(
+                Container(
                   padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).viewInsets.bottom),
+                      bottom: MediaQuery.of(context).viewInsets.bottom * 0.15),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(32),
@@ -48,13 +46,12 @@ class OtpView extends StatelessWidget {
                     color: scaffoldBgColor,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.02,
+                          height: MediaQuery.of(context).size.height * 0.03,
                         ),
                         const LoginText(
                           text: "Enter OTP",
@@ -107,14 +104,14 @@ class OtpView extends StatelessWidget {
                           },
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.025,
+                          height: MediaQuery.of(context).size.height * 0.023,
                         ),
 
                         // )
                       ],
                     ),
                   ),
-                ))
+                )
               ],
             ),
           ),

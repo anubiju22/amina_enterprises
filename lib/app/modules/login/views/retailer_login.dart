@@ -6,7 +6,6 @@ import 'package:amina_enterprises/app/modules/home/views/retailer_login/retailer
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
@@ -33,75 +32,72 @@ class RetailerLoginView extends GetView<LoginController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Center(child: Image.asset("assets/logo/logo.png")),
+                        Center(child: Image.asset("assets/logo/kvn_logo.png")),
                         // ),
                       ],
                     ),
                   ),
-                  SingleChildScrollView(
-                    child: Container(
-                      padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom),
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(32),
-                          topRight: Radius.circular(32),
-                        ),
-                        color: scaffoldBgColor,
+                  Container(
+                    padding: EdgeInsets.only(
+                        bottom:
+                            MediaQuery.of(context).viewInsets.bottom * 0.15),
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(32),
+                        topRight: Radius.circular(32),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.015,
-                            ),
-                            const LoginText(
-                              text: "Retailer Customer Login",
-                            ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.03,
-                            ),
-                            LoginTextField(
-                              hintText: 'Username',
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: svgWidget(
-                                  'assets/svg/Call.svg',
-                                ),
+                      color: scaffoldBgColor,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.015,
+                          ),
+                          const LoginText(
+                            text: "Retailer Customer Login",
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.03,
+                          ),
+                          LoginTextField(
+                            hintText: 'Username',
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: svgWidget(
+                                'assets/svg/Call.svg',
                               ),
-                              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
                             ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.02,
-                            ),
-                            LoginTextField(
-                              hintText: 'Password',
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(15),
-                                child: svgWidget(
-                                  'assets/svg/LockClosed.svg',
-                                ),
+                            // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          LoginTextField(
+                            hintText: 'Password',
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: svgWidget(
+                                'assets/svg/LockClosed.svg',
                               ),
-                              // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
                             ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.025,
-                            ),
-                            CommonButtonWidget(
-                              label: "LOGIN",
-                              onClick: () {
-                                Get.to(() => RetailerHome());
-                              },
-                            ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.04,
-                            ),
-                          ],
-                        ),
+                            // suffixIcon: SvgPicture.asset('assets/svg/call.svg')
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.025,
+                          ),
+                          CommonButtonWidget(
+                            label: "LOGIN",
+                            onClick: () {
+                              Get.to(() => RetailerHome());
+                            },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.04,
+                          ),
+                        ],
                       ),
                     ),
                   )

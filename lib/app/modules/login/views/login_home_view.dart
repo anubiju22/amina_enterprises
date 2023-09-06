@@ -31,7 +31,7 @@ class LoginView extends GetView<LoginController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Center(child: Image.asset("assets/logo/logo.png")),
+                      Center(child: Image.asset("assets/logo/kvn_logo.png")),
                     ],
                   ),
                 ),
