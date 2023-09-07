@@ -93,8 +93,10 @@ class AddSalePopupState extends State<ProductPopup>
                                       .paddingOnly(top: 10),
                                 ],
                               ).paddingAll(5),
-                              const CommonSearchTextField(hintText: "")
-                                  .paddingOnly(top: 5, left: 5, right: 5),
+                              const CommonSearchTextField(
+                                hintText: "",
+                                isEnabled: true,
+                              ).paddingOnly(top: 5, left: 5, right: 5),
                               CommonButtonWidget(
                                 label: "CHECKOUT",
                                 onClick: () {},
