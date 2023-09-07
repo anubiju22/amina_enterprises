@@ -1,10 +1,7 @@
-import 'package:amina_enterprises/app/common_widgets/payment_bottomsheet.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
 import 'package:amina_enterprises/app/modules/home/model/drawer_model.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
-import 'package:amina_enterprises/constraints/alert_dialog.dart';
 import 'package:camera/camera.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -46,7 +43,7 @@ class HomeController extends GetxController {
       DrawerItem('assets/svg/home_list.svg', 'My Visit', () {
         Get.toNamed(Routes.MYVISIT);
       }),
-      DrawerItem('assets/svg/home_checklist.svg', 'My Order', () {
+      DrawerItem('assets/svg/home_checklist.svg', 'My Orders', () {
         Get.toNamed(Routes.ORDER_HISTORY);
       }),
       DrawerItem('assets/svg/expiryproduct.svg', 'Expiry Products', () {
