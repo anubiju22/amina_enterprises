@@ -4,6 +4,7 @@ import 'package:amina_enterprises/app/common_widgets/textfeild/textfield_with_ba
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 class ExpiryProductBottomSheet extends StatelessWidget {
@@ -63,40 +64,46 @@ class ExpiryProductBottomSheet extends StatelessWidget {
             shrinkWrap: true,
             itemCount: length,
             itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
-                  ontap();
-                },
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      blackText(shopname, 15, fontWeight: FontWeight.w500)
-                          .paddingOnly(left: 2),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: [
-                          svgWidget('assets/svg/location.svg'),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          greyText(location, 12, fontWeight: FontWeight.w500),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      const Divider(
-                        color: Color(0xffE2E2E2),
-                        thickness: 1.5,
-                      ),
-                    ],
-                  ).paddingAll(5),
-                ).paddingOnly(left: 15, top: 5, right: 15),
-              );
+              return AnimationConfiguration.staggeredList(
+                  position: index,
+                  child: FlipAnimation(
+                    duration: const Duration(milliseconds: 800),
+                    child: InkWell(
+                      onTap: () {
+                        ontap();
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            blackText(shopname, 15, fontWeight: FontWeight.w500)
+                                .paddingOnly(left: 2),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                svgWidget('assets/svg/location.svg'),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                greyText(location, 12,
+                                    fontWeight: FontWeight.w500),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            const Divider(
+                              color: Color(0xffE2E2E2),
+                              thickness: 1.5,
+                            ),
+                          ],
+                        ).paddingAll(5),
+                      ).paddingOnly(left: 15, top: 5, right: 15),
+                    ),
+                  ));
             },
           ),
         ),

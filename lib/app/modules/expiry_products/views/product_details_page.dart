@@ -6,6 +6,7 @@ import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
@@ -56,39 +57,47 @@ class ExpiryProductsDetailsView extends GetView<ExpiryProductsController> {
             height: 5,
           ),
           Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return ExpiryProductDetailsCard(
-                  visible: true,
-                  qty: "15",
-                  location:
-                      "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
-                  shopname: 'PRINCE AGENCIES',
-                  ontap: () {
-                    Get.bottomSheet(
-                      ExpiryProductBottomSheet(
-                        length: 10,
-                        location:
-                            "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
-                        ontap: () {
-                          Get.back();
-                          Get.toNamed(
-                            Routes.EXPIRY_PRODUCT_TRANSFER_VIEW,
-                          );
-                        },
-                        shopname: 'PRINCE AGENCIES',
-                      ),
-                      elevation: 20.0,
-                      enableDrag: false,
-                      isDismissible: true,
-                      backgroundColor: Colors.white,
-                      shape: bootomSheetShape(),
-                    );
-                  },
-                );
-              },
+            child: AnimationLimiter(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return AnimationConfiguration.staggeredList(
+                      position: index,
+                      child: SlideAnimation(
+                        duration: const Duration(milliseconds: 350),
+                        horizontalOffset: 50.0,
+                        child: ExpiryProductDetailsCard(
+                          visible: true,
+                          qty: "15",
+                          location:
+                              "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
+                          shopname: 'PRINCE AGENCIES',
+                          ontap: () {
+                            Get.bottomSheet(
+                              ExpiryProductBottomSheet(
+                                length: 10,
+                                location:
+                                    "Crystal Building, Malad, Rathodi, Mankavu, Calicut",
+                                ontap: () {
+                                  Get.back();
+                                  Get.toNamed(
+                                    Routes.EXPIRY_PRODUCT_TRANSFER_VIEW,
+                                  );
+                                },
+                                shopname: 'PRINCE AGENCIES',
+                              ),
+                              elevation: 20.0,
+                              enableDrag: false,
+                              isDismissible: true,
+                              backgroundColor: Colors.white,
+                              shape: bootomSheetShape(),
+                            );
+                          },
+                        ),
+                      ));
+                },
+              ),
             ),
           ),
         ],
