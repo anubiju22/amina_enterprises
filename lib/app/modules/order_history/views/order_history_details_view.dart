@@ -11,13 +11,13 @@ class OrderHistoryDetailsView extends GetView {
   const OrderHistoryDetailsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
         //backgroundColor: scaffoldBgColor,
-        appBar: CommonAppBar(label: 'Order History'),
+        appBar: const CommonAppBar(label: 'Order History'),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
                 child: OrderTopWidget(
