@@ -9,6 +9,8 @@ class MyrouteController extends GetxController {
 
   final isLoading = false.obs;
   var color = Colors.blue.obs;
+  RxBool checkIn = false.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -39,7 +41,7 @@ class MyrouteController extends GetxController {
     }
   }
 
-  void changeColor() {
-    color.value = color.value == Colors.blue ? Colors.red : Colors.blue;
-  }
+  // void changeColor() {
+  //   color.value = color.value == Colors.blue ? Colors.red : Colors.blue;
+  // }
 }

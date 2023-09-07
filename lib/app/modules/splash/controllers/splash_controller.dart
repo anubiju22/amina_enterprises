@@ -4,9 +4,8 @@ import 'package:get/get.dart';
 class SplashController extends GetxController {
   @override
   void onInit() {
-    
     Future.delayed(const Duration(seconds: 2), () async {
-      Get.offAllNamed(Routes.LOGIN);
+      Get.offAllNamed(Routes.EMPLOYEE_LOGIN);
     });
     super.onInit();
   }
