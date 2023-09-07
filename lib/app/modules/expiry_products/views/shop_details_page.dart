@@ -4,6 +4,7 @@ import 'package:amina_enterprises/app/common_widgets/card/expiry_shop_card.dart'
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
@@ -69,22 +70,27 @@ class ExpiryProductShopDetailsView extends GetView<ExpiryProductsController> {
                     shrinkWrap: true,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          const ExpiryShopCard(
-                            image: "assets/image/expiryproduct.png",
-                            qty: "15",
-                            name: 'Turmeric Powder',
-                          ),
-                          index == 4
-                              ? const SizedBox()
-                              : CustomPaint(
-                                  size: const Size(350, 1),
-                                  painter: ColoredDottedLine(
-                                      color: const Color(0xffE2E2E2)),
-                                )
-                        ],
-                      );
+                      return AnimationConfiguration.staggeredList(
+                          position: index,
+                          child: FlipAnimation(
+                            duration: const Duration(milliseconds: 800),
+                            child: Column(
+                              children: [
+                                const ExpiryShopCard(
+                                  image: "assets/image/expiryproduct.png",
+                                  qty: "15",
+                                  name: 'Turmeric Powder',
+                                ),
+                                index == 4
+                                    ? const SizedBox()
+                                    : CustomPaint(
+                                        size: const Size(350, 1),
+                                        painter: ColoredDottedLine(
+                                            color: const Color(0xffE2E2E2)),
+                                      )
+                              ],
+                            ),
+                          ));
                     },
                   ),
                 ),

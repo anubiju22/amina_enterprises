@@ -2,6 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/card/expiry_home_product_ca
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
@@ -36,23 +37,29 @@ class ExpiryProductProductsView extends GetView<ExpiryProductsController> {
                 shrinkWrap: true,
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return Column(
-                    children: [
-                      ExpiryHomeProductCard(
-                        visible: true,
-                        location: "Turmeric Powder",
-                        ontap: () {
-                          Get.toNamed(Routes.EXPIRY_PRODUCT_PRODUCTS_DETAILS);
-                        },
-                        shopname: '#1236',
-                        image: "assets/image/product.png",
-                      ),
-                      const Divider(
-                        color: Color(0xffE2E2E2),
-                        thickness: 1.5,
-                      )
-                    ],
-                  );
+                  return AnimationConfiguration.staggeredList(
+                      position: index,
+                      child: FlipAnimation(
+                        duration: const Duration(milliseconds: 1000),
+                        child: Column(
+                          children: [
+                            ExpiryHomeProductCard(
+                              visible: true,
+                              location: "Turmeric Powder",
+                              ontap: () {
+                                Get.toNamed(
+                                    Routes.EXPIRY_PRODUCT_PRODUCTS_DETAILS);
+                              },
+                              shopname: '#1236',
+                              image: "assets/image/product.png",
+                            ),
+                            const Divider(
+                              color: Color(0xffE2E2E2),
+                              thickness: 1.5,
+                            )
+                          ],
+                        ),
+                      ));
                 }),
           ),
         ],

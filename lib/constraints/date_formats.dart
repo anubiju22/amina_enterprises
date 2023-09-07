@@ -17,7 +17,7 @@ String returnMonth(DateTime date) {
   return DateFormat.MMMM().format(date);
 }
 
-dateToDate(DateTime dateTime) {
+dateToFormattedDate(DateTime dateTime) {
   return DateFormat('dd/MM/yyyy').format(dateTime);
 }
 
