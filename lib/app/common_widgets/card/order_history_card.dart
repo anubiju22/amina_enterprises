@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 
 class OrderHistoryCardWidget extends StatelessWidget {
   final Function onClick;
-  const OrderHistoryCardWidget({super.key, required this.onClick});
+  final String location, qnty, ordernmbr;
+  const OrderHistoryCardWidget(
+      {super.key,
+      required this.onClick,
+      required this.location,
+      required this.qnty,
+      required this.ordernmbr});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +28,7 @@ class OrderHistoryCardWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                greyText('Order No : 12', 12),
+                greyText('Item Quantity : $qnty', 12),
                 Row(
                   children: [
                     svgWidget('assets/svg/calendar.svg'),
@@ -37,7 +43,7 @@ class OrderHistoryCardWidget extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            blackText('PAR/ENQ/026536', 16, fontWeight: FontWeight.w600),
+            blackText(ordernmbr, 16, fontWeight: FontWeight.w600),
             const SizedBox(
               height: 8,
             ),
@@ -48,8 +54,7 @@ class OrderHistoryCardWidget extends StatelessWidget {
                   width: 5,
                 ),
                 Expanded(
-                  child: greyText(
-                      'Crystal Building, Malad, Rathodi, Mankavu, Calicut', 12,
+                  child: greyText(location, 12,
                       textOverflow: TextOverflow.ellipsis),
                 )
               ],
