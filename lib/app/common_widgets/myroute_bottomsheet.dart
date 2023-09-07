@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
+import 'package:amina_enterprises/app/common_widgets/order_history_widgets/order_details_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
@@ -25,36 +26,7 @@ class RouteBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        // Align(
-        //   alignment: Alignment.topRight,
-        //   child: Container(
-        //     height: 40,
-        //     decoration: BoxDecoration(
-        //       shape: BoxShape.circle,
-        //       color: Colors.green,
-        //     ),
-        //     child: IconButton(
-        //         onPressed: () {
-        //           Get.back();
-        //         },
-        //         icon: Icon(
-        //           Icons.close,
-        //           size: 25,
-        //         )),
-        //   ),
-        // ),
-        // Positioned(
-        //     right: 0,
-        //     top: 0,
-        //     child: Container(
-        //       height: 40,
-        //       decoration:
-        //           BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-        //       child: Icon(
-        //         Icons.close,
-        //         size: 25,
-        //       ),
-        //     )),
+      
         Container(
       height: MediaQuery.of(context).size.width * 0.80,
       width: double.infinity,
@@ -76,6 +48,7 @@ class RouteBottomSheet extends StatelessWidget {
             height: 20,
           ),
           divider(),
+        
           const SizedBox(
             height: 15,
           ),
@@ -93,7 +66,7 @@ class RouteBottomSheet extends StatelessWidget {
                 ontap: () {
                   // Get.dialog(Visitpopup());
                   Get.dialog(
-                    const alertBox(),
+                    const AlertBox(),
                   );
                 },
               ),
@@ -106,8 +79,8 @@ class RouteBottomSheet extends StatelessWidget {
                 },
               ),
               HomeCardItem(
-                path: "assets/svg/payment_history.svg",
-                label: "Pay History",
+                path: "assets/svg/stock.svg",
+                label: "View Stock",
                 ontap: () {
                   Get.toNamed(Routes.PAYMENTHISTORY);
                 },
@@ -142,8 +115,8 @@ class RouteBottomSheet extends StatelessWidget {
   }
 }
 
-class alertBox extends StatelessWidget {
-  const alertBox({
+class AlertBox extends StatelessWidget {
+  const AlertBox({
     super.key,
   });
 

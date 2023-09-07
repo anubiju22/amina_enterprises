@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 Widget orderButtonFunction(String type) {
   switch (type) {
-    case "visited":
-      return statusButtonWidget(type, const Color(0xFFCFFFC7), Colors.green);
+    case "Visited":
+      return statusButtonWidget(type, const Color(0xFFE4FFE0), Colors.green);
 
     case "Pending":
       return statusButtonWidget(
