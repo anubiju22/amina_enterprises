@@ -72,13 +72,13 @@ class AddSalePopupState extends State<ProductPopup>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Image.asset(widget.image)
-                                      .paddingOnly(left: size.width * 0.24),
+                                      .paddingOnly(left: size.width * 0.27),
                                   InkWell(
                                       onTap: () {
                                         Get.back();
                                       },
                                       child: const Icon(Icons.close)
-                                          .paddingOnly(left: size.width * 0.18))
+                                          .paddingOnly(left: size.width * 0.21))
                                 ],
                               ),
                               blackText(widget.name, 20,
@@ -94,7 +94,7 @@ class AddSalePopupState extends State<ProductPopup>
                                 ],
                               ).paddingAll(5),
                               const CommonSearchTextField(hintText: "")
-                                  .paddingOnly(top: 10, left: 5, right: 5),
+                                  .paddingOnly(top: 5, left: 5, right: 5),
                               CommonButtonWidget(
                                 label: "CHECKOUT",
                                 onClick: () {},

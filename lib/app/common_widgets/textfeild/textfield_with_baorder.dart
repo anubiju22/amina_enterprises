@@ -22,7 +22,7 @@ class BoarderTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: const TextStyle(fontSize: 15, color: Colors.grey),
+      style: const TextStyle(fontSize: 15, color: Colors.black),
       controller: textEditingController,
       autofocus: autofocus,
       enabled: enabled,

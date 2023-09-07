@@ -54,7 +54,10 @@ class ExpiryProductBottomSheet extends StatelessWidget {
         const SizedBox(
           height: 4,
         ),
-        const BoarderTextField(hintText: "Search Shop....").paddingAll(10),
+        BoarderTextField(
+          hintText: "Search Shop....",
+          onChanged: (String value) {},
+        ).paddingAll(10),
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
