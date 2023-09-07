@@ -141,13 +141,15 @@ class HomeView extends GetView<HomeController> {
                     path: 'assets/image/blend_masala.png',
                     label: 'BLENDED \nMASALA',
                     onClick: () {
-                      Get.toNamed(Routes.FOOTWEARS);
+                      Get.toNamed(Routes.PRODUCT);
                     },
                   ),
                   HomeCategories(
                     path: 'assets/image/spice_powder.png',
                     label: 'SPICES \nPOWDER',
-                    onClick: () {},
+                    onClick: () {
+                      Get.toNamed(Routes.PRODUCT);
+                    },
                   ),
                 ],
               ),
