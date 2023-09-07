@@ -31,7 +31,7 @@ class ExpiryProductShopView extends GetView<ExpiryProductsController> {
           Expanded(
             child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 3,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
