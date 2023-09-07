@@ -34,10 +34,10 @@ class ShopsView extends GetView<ShopsController> {
                         location: controller.shopAddress[index],
                         number: "9856254147",
                         onClick: () {
-                          Get.toNamed(Routes.ADD_PAYMENT, arguments: {
-                            'type': 'add_payment',
-                            'items': controller.shopNames[index]
-                          });
+                          // Get.toNamed(Routes.ADD_PAYMENT, arguments: {
+                          //   'type': 'add_payment',
+                          //   'items': controller.shopNames[index]
+                          // });
                         },
                       ),
                     ));

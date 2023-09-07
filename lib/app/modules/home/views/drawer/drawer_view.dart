@@ -20,6 +20,9 @@ class DrawerView extends GetView<DashboardController> {
         padding: EdgeInsets.zero,
         children: [
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const SizedBox(
+              height: 15,
+            ),
             Center(
                 child: Image.asset(
               'assets/logo/kvn_logo.png',
@@ -27,7 +30,9 @@ class DrawerView extends GetView<DashboardController> {
               width: 126,
               height: 126,
             )).paddingOnly(top: 20),
-            const DrawerHeaderCard(),
+            const DrawerHeaderCard(
+              name: 'Anshad',
+            ),
             AnimationLimiter(
               child: ListView.separated(
                 shrinkWrap: true,

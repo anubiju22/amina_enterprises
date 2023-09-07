@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DrawerHeaderCard extends StatelessWidget {
-  const DrawerHeaderCard({super.key});
+  final String name;
+  const DrawerHeaderCard({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +15,15 @@ class DrawerHeaderCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            color: scaffoldBgColor,
-            border: Border.all(color: greyColor, width: 1)),
+            color: const Color(0xFFF8F8F8),
+            border: Border.all(color: const Color(0xFFF8F8F8), width: 1)),
         child: Row(children: [
           svgWidget('assets/svg/profile_circle.svg'),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               blackText('Hi,', 12, fontWeight: FontWeight.w500),
-              blackText('PRINCE FOOTWEAR', 12, fontWeight: FontWeight.w700),
+              blackText(name, 12, fontWeight: FontWeight.w700),
               const SizedBox(
                 height: 5,
               ),
