@@ -65,7 +65,7 @@ class ExpiryProductsDetailsView extends GetView<ExpiryProductsController> {
                   return AnimationConfiguration.staggeredList(
                       position: index,
                       child: SlideAnimation(
-                        duration: const Duration(milliseconds: 350),
+                        duration: const Duration(milliseconds: 500),
                         horizontalOffset: 50.0,
                         child: ExpiryProductDetailsCard(
                           visible: true,

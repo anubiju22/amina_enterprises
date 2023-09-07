@@ -40,7 +40,7 @@ class ExpiryProductProductsView extends GetView<ExpiryProductsController> {
                   return AnimationConfiguration.staggeredList(
                       position: index,
                       child: FlipAnimation(
-                        duration: const Duration(milliseconds: 800),
+                        duration: const Duration(milliseconds: 1000),
                         child: Column(
                           children: [
                             ExpiryHomeProductCard(
