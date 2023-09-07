@@ -88,63 +88,9 @@ class MasalaView extends GetView<MasalaController> {
       //           label: ''),
       //     ]),
 
-      // bottomNavigationBar: SizedBox(
-      //   height: MediaQuery.of(context).size.height * .08,
-      //   child: Padding(
-      //     padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-      //     child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //       children: [
-      //         bottomButton(context, 'Sort', Icons.sort, () {
-      //           Get.bottomSheet(
-      //             const SortBottomSheetWidget(),
-      //             elevation: 20.0,
-      //             enableDrag: false,
-      //             backgroundColor: Colors.white,
-      //             shape: bootomSheetShape(),
-      //           );
-      //         }),
-      //         VerticalDivider(
-      //           width: 1,
-      //           color: Colors.grey.shade300,
-      //         ),
-      //         bottomButton(context, 'Filter', Icons.filter_list, () {}),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+  
     );
   }
 }
 
-InkWell bottomButton(
-    BuildContext context, String label, IconData icon, Function act) {
-  return InkWell(
-    onTap: () {
-      act();
-    },
-    child: SizedBox(
-      width: MediaQuery.of(context).size.width * .4,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon),
-          const SizedBox(
-            width: 8,
-          ),
-          Text(label),
-        ],
-      ),
-    ),
-  );
-}
 
-RoundedRectangleBorder bootomSheetShape() {
-  return const RoundedRectangleBorder(
-    borderRadius: BorderRadius.only(
-      topLeft: Radius.circular(30.0),
-      topRight: Radius.circular(30.0),
-    ),
-  );
-}

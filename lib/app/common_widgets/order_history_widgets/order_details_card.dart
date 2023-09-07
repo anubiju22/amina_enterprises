@@ -1,4 +1,4 @@
-import 'package:amina_enterprises/app/common_widgets/texts/login_text.dart';
+
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +45,7 @@ class OrderDetailsWidget extends StatelessWidget {
                   blackText(name, 14, fontWeight: FontWeight.w600),
                   sizedBox,
                   greyText(code, 12),
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     height: 15,
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/masala_controller.dart';
+import '../../masala/controllers/masala_controller.dart';
 
 class SortBottomSheetWidget extends GetView<MasalaController> {
   const SortBottomSheetWidget({
