@@ -1,5 +1,6 @@
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/modules/home/controllers/dashboard_controller.dart';
+import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,10 @@ class HomeAppBar extends GetView<DashboardController>
       ),
       actions: [
         IconButton(
-            onPressed: () {}, icon: svgWidget('assets/svg/shop_cart.svg')),
+            onPressed: () {
+              Get.toNamed(Routes.CART);
+            },
+            icon: svgWidget('assets/svg/shop_cart.svg')),
         IconButton(onPressed: () {}, icon: svgWidget('assets/svg/search.svg'))
       ],
     );

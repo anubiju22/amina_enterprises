@@ -2,6 +2,7 @@ import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/cart/views/card_iteam.dart';
+import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -17,7 +18,44 @@ class CartView extends GetView<CartController> {
         label: "Cart",
         visibility: false,
       ),
-      body: const CartItemCard(),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.69,
+              child: ListView.separated(
+                  itemCount: 9,
+                  itemBuilder: (context, index) {
+                    return const CartItemCard(
+                      image: 'assets/image/powder.png',
+                      name: "SAMBAR POWDER",
+                      code: "#6302",
+                      qty: '30',
+                    );
+                  },
+                  separatorBuilder: (c, i) {
+                    return divider();
+                  }),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                blackText("TOTAL QUANTITY", 18, fontWeight: FontWeight.w400),
+                const Text(
+                  "80 ",
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    color: Color(0xFFD80005),
+                    fontSize: 18,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(15),
         child: CommonButtonWidget(

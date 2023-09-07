@@ -1,3 +1,4 @@
+import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +31,10 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
         Visibility(
           visible: visibility!,
           child: IconButton(
-              onPressed: () {}, icon: svgWidget('assets/svg/shop_cart.svg')),
+              onPressed: () {
+                Get.toNamed(Routes.CART);
+              },
+              icon: svgWidget('assets/svg/shop_cart.svg')),
         ),
         IconButton(onPressed: () {}, icon: svgWidget('assets/svg/search.svg')),
       ],
