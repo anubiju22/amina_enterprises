@@ -4,16 +4,15 @@ import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailsWidget extends StatelessWidget {
-  final String type;
-  final String artNo;
-  final String artType;
-  final String mrp;
-  const OrderDetailsWidget(
-      {super.key,
-      required this.type,
-      required this.artNo,
-      required this.artType,
-      required this.mrp});
+  final String name, qty;
+  final String code;
+
+  const OrderDetailsWidget({
+    super.key,
+    required this.name,
+    required this.code,
+    required this.qty,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,89 +23,32 @@ class OrderDetailsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         blackText('Order Details', 16, fontWeight: FontWeight.w600),
-        const SizedBox(
-          height: 20,
-        ),
+        // const SizedBox(
+        //   height: 20,
+        // ),
+        sizedBox,
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset('assets/image/slipper.png'),
-            const SizedBox(
-              width: 4,
+            Image.asset(
+              'assets/image/powder.png',
+              height: 86,
+              width: 66,
             ),
-            Flexible(
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  orderType(type),
+                  blackText(name, 14, fontWeight: FontWeight.w600),
                   sizedBox,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      blackText(artNo, 18, fontWeight: FontWeight.w500),
-                      Text(
-                        mrp,
-                        style: const TextStyle(
-                            color: redColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600),
-                      )
-                    ],
-                  ),
-                  sizedBox,
-                  greyText(artType, 12),
-                  sizedBox,
+                  greyText(code, 12),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.08,
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Column(
-                            children: [
-                              greyText('Packing', 10),
-                              sizedBox,
-                              borderWidget('7 * 10')
-                            ],
-                          ),
-                          divider(),
-                          Column(
-                            children: [
-                              greyText('Order Qty', 10),
-                              sizedBox,
-                              borderWidget('1')
-                            ],
-                          ),
-                          divider(),
-                          Column(
-                            children: [
-                              greyText('Delivered Qty', 10),
-                              sizedBox,
-                              SizedBox(
-                                width: 40,
-                                height: 40,
-                                child: QuantityTextField(
-                                  inputFormate: true,
-                                  isCenterText: true,
-                                  isDense: true,
-                                  // isEnable:
-                                  //     controller.orderType == 'Customer Order'
-                                  //         ? true
-                                  //         : false,
-                                  textInputType: TextInputType.number,
-                                  maxLengthLimit: 2,
-                                  hintText: '1',
-                                  onChanged: (dynamic value) {
-                                    if (value != null) {
-                                      // controller.updateDeliveryQty(
-                                      //     value.toString(), index, i);
-                                    }
-                                  },
-                                ),
-                              )
-                            ],
-                          ),
-                        ]),
-                  )
+                    height: 15,
+                  ),
+                  blackText('Qty: ${qty}', 12, fontWeight: FontWeight.w600),
                 ],
               ),
             )

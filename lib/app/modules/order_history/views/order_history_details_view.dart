@@ -11,42 +11,41 @@ class OrderHistoryDetailsView extends GetView {
   const OrderHistoryDetailsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         //backgroundColor: scaffoldBgColor,
-        appBar: const CommonAppBar(label: 'Order History'),
+        appBar: CommonAppBar(label: 'Order History'),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
                 child: OrderTopWidget(
                   no: '12',
-                  orderNo: 'PAR/ENQ/026536',
+                  orderNo: '#KVN/ENQ/026536',
                   type: 'Completed',
                 ),
               ),
               Divider(
-                thickness: 5,
+                thickness: 2,
                 color: scaffoldBgColor,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
                 child: OrderDetailsWidget(
-                  artNo: 'GP4300',
-                  artType: 'Gents Covering',
-                  type: 'CARTON',
-                  mrp: '₹ 289',
+                  name: "SAMBAR POWDER",
+                  code: "#6302",
+                  qty: '30',
                 ),
               ),
               Divider(
-                thickness: 5,
+                thickness: 2,
                 color: scaffoldBgColor,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
                 child: OrderInvoiceDetailsWidget(
-                  invNo: 'PAR/ENQ/026536',
+                  invNo: 'KVN/ENQ/026536',
                   number: '9856254147',
                   place: 'Crystal Building, Malad, Rathodi, Mankavu, Calicut',
                 ),

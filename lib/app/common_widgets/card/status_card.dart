@@ -50,7 +50,7 @@ Container statusButtonWidget(
       child: Text(
         type,
         style: TextStyle(
-            color: textColor, fontWeight: FontWeight.w500, fontSize: 14),
+            color: textColor, fontWeight: FontWeight.w500, fontSize: 12),
       ),
     ),
   );

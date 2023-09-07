@@ -20,7 +20,7 @@ class OrderTopWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            greyText("Order No : $no", 12),
+            greyText("Item Quantity  : $no", 12),
             const SizedBox(
               height: 6,
             ),
@@ -37,12 +37,12 @@ class OrderTopWidget extends StatelessWidget {
                       width: 7,
                       height: 7,
                       decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: redColor),
+                          shape: BoxShape.circle, color: mapColor),
                     ),
                     const SizedBox(
                       width: 4,
                     ),
-                    blackText('Ordered', 12),
+                    blackText('Ordered', 12,fontWeight: FontWeight.w400),
                   ],
                 ),
                 Padding(
