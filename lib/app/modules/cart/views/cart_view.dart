@@ -2,10 +2,8 @@ import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/cart/views/card_iteam.dart';
-import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
 import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/cart_controller.dart';
@@ -24,7 +22,7 @@ class CartView extends GetView<CartController> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.69,
+              height: MediaQuery.of(context).size.height * 0.67,
               child: ListView.separated(
                   itemCount: 9,
                   itemBuilder: (context, index) {
