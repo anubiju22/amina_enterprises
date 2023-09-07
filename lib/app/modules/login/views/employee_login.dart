@@ -42,7 +42,7 @@ class EmployeeLoginView extends GetView<LoginController> {
                   Container(
                     padding: EdgeInsets.only(
                         bottom:
-                            MediaQuery.of(context).viewInsets.bottom * 0.15),
+                            MediaQuery.of(context).viewInsets.bottom * 0.10),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(32),
@@ -82,6 +82,9 @@ class EmployeeLoginView extends GetView<LoginController> {
                             onClick: () {
                               Get.toNamed(Routes.OTP);
                             },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.04,
                           ),
 
                           // )

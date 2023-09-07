@@ -37,7 +37,7 @@ class OtpView extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).viewInsets.bottom * 0.15),
+                      bottom: MediaQuery.of(context).viewInsets.bottom * 0.10),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(32),
@@ -104,7 +104,7 @@ class OtpView extends StatelessWidget {
                           },
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.023,
+                          height: MediaQuery.of(context).size.height * 0.03,
                         ),
 
                         // )
