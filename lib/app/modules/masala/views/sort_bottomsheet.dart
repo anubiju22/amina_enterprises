@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controllers/footwears_controller.dart';
+import '../controllers/masala_controller.dart';
 
-class SortBottomSheetWidget extends GetView<FootwearsController> {
+class SortBottomSheetWidget extends GetView<MasalaController> {
   const SortBottomSheetWidget({
     Key? key,
   }) : super(key: key);

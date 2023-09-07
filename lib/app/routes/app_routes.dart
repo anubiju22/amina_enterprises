@@ -12,7 +12,7 @@ abstract class Routes {
   static const SHOPS = _Paths.SHOPS;
   static const MYVISIT = _Paths.MYVISIT;
   static const MYROUTE = _Paths.MYROUTE;
-  static const FOOTWEARS = _Paths.FOOTWEARS;
+  static const PRODUCT = _Paths.PRODUCT;
   static const ATTENDANCE_REPORT = _Paths.ATTENDANCE_REPORT;
   static const PRODUCTDETAILS = _Paths.PRODUCTDETAILS;
   static const CAMERA_PICTURE = _Paths.CAMERA_PICTURE;
@@ -43,7 +43,7 @@ abstract class _Paths {
   static const SHOPS = '/shops';
   static const MYVISIT = '/myvisit';
   static const MYROUTE = '/myroute';
-  static const FOOTWEARS = '/footwears';
+  static const PRODUCT = '/product';
   static const ATTENDANCE_REPORT = '/attendance-report';
   static const PRODUCTDETAILS = '/productdetails';
   static const CAMERA_PICTURE = '/camera-picture';

@@ -13,8 +13,8 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/expiry_products/bindings/expiry_products_binding.dart';
 import '../modules/expiry_products/views/expiry_products_view.dart';
-import '../modules/footwears/bindings/footwears_binding.dart';
-import '../modules/footwears/views/footwears_view.dart';
+import '../modules/masala/bindings/masala_binding.dart';
+import '../modules/masala/views/masala_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/dashboard.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -86,9 +86,9 @@ class AppPages {
       binding: MyrouteBinding(),
     ),
     GetPage(
-      name: _Paths.FOOTWEARS,
-      page: () => const FootwearsView(),
-      binding: FootwearsBinding(),
+      name: _Paths.PRODUCT,
+      page: () => const MasalaView(),
+      binding: MasalaBinding(),
     ),
     GetPage(
       name: _Paths.ATTENDANCE_REPORT,
@@ -150,7 +150,7 @@ class AppPages {
       page: () => const ExpiryProductsView(),
       binding: ExpiryProductsBinding(),
     ),
-     GetPage(
+    GetPage(
       name: _Paths.EXPIRY_PRODUCTS_SHOP_DETAILS,
       page: () => const ExpiryProductShopDetailsView(),
       binding: ExpiryProductsBinding(),

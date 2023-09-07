@@ -1,27 +1,25 @@
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/app/modules/footwears/views/stackcolor.dart';
 
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  final String artNo;
+  final String iteam;
   final String image;
-  final String mrp;
+  
   final Function onTap;
-  final String brandName;
+  final String code;
   final Function? act;
-  final Color colors, color;
+  // final Color colors, color;
   const ProductCard({
     Key? key,
-    required this.artNo,
-    required this.colors,
+    required this.iteam,
+    // required this.colors,
     required this.image,
     required this.onTap,
-    required this.mrp,
-    required this.brandName,
+    
+    required this.code,
     this.act,
-    required this.color,
+    // required this.color,
   }) : super(key: key);
 
   @override
@@ -69,31 +67,15 @@ class ProductCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                blackText(artNo, 12, fontWeight: FontWeight.w600),
-                // Text(
-                //   "₹ $mrp",
-                //   style: const TextStyle(
-                //       fontFamily: "Manrope",
-                //       color: redColor,
-                //       fontSize: 18,
-                //       fontWeight: FontWeight.w700),
-                // ),
+                blackText(iteam, 12, fontWeight: FontWeight.w600),
+               
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                greyText(brandName, 12),
-                // overlapped(
-                //   color,
-                //   colors,
-                // ),
-                //  StackedWidgets(
-                //     direction: TextDirection.rtl,
-                //     items: colors.map((color) => (color)).toList(),
-                //     size: 20,
-                //     xShift: 10,
-                //   )
+                greyText(code, 12),
+              
               ],
             ),
           ]),

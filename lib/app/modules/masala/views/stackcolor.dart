@@ -71,27 +71,27 @@
 // //         ),
 // //       ],
 // //     )
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-Widget overlapped(Color color, colors) {
-  const overlap = 5;
-  final items = [
-    CircleAvatar(
-      backgroundColor: color,
-      radius: 5,
-    ),
-    CircleAvatar(
-      backgroundColor: colors,
-      radius: 5,
-    ),
-  ];
+// Widget overlapped(Color color, colors) {
+//   const overlap = 5;
+//   final items = [
+//     CircleAvatar(
+//       backgroundColor: color,
+//       radius: 5,
+//     ),
+//     CircleAvatar(
+//       backgroundColor: colors,
+//       radius: 5,
+//     ),
+//   ];
 
-  List<Widget> stackLayers = List<Widget>.generate(items.length, (index) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(index.toDouble() * overlap, 0, 0, 0),
-      child: items[index],
-    );
-  });
+//   List<Widget> stackLayers = List<Widget>.generate(items.length, (index) {
+//     return Padding(
+//       padding: EdgeInsets.fromLTRB(index.toDouble() * overlap, 0, 0, 0),
+//       child: items[index],
+//     );
+//   });
 
-  return Stack(children: stackLayers);
-}
+//   return Stack(children: stackLayers);
+// }
