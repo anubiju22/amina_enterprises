@@ -3,6 +3,7 @@ import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/cart/views/card_iteam.dart';
 import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
+import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -35,7 +36,7 @@ class CartView extends GetView<CartController> {
                     );
                   },
                   separatorBuilder: (c, i) {
-                    return divider();
+                    return divider1();
                   }),
             ),
             const Spacer(),
