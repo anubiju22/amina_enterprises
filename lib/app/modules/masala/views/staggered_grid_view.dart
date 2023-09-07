@@ -1,4 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/card/product_card.dart';
+import 'package:amina_enterprises/app/common_widgets/popup/product_popup.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -39,7 +40,14 @@ class ProductView extends StatelessWidget {
             code: '#6302',
             image: "assets/image/powder.png",
             onTap: () {
-              Get.toNamed(Routes.PRODUCTDETAILS);
+              showDialog(
+                context: context,
+                builder: (_) => const ProductPopup(
+                  image: "assets/image/largeproduct.png",
+                  code: '#6302',
+                  name: "TURMERIC POWDER",
+                ),
+              );
             },
           );
         }, childCount: 6),

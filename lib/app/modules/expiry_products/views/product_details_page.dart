@@ -1,5 +1,5 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
-import 'package:amina_enterprises/app/common_widgets/bottomsheet/expiry_product_bottom_sheet.dart';
+import 'package:amina_enterprises/app/common_widgets/popup/expiry_product_bottom_sheet.dart';
 import 'package:amina_enterprises/app/common_widgets/card/expiry_home_product_card.dart';
 import 'package:amina_enterprises/app/common_widgets/card/expiry_product_details_card.dart';
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';

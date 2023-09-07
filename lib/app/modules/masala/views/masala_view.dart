@@ -14,7 +14,7 @@ class MasalaView extends GetView<MasalaController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: scaffoldBgColor,
-      appBar: CommonAppBar(
+      appBar: const CommonAppBar(
         label: "Products"
       ),
       body: DefaultTabController(

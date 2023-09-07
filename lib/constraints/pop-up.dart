@@ -100,39 +100,42 @@ Future<dynamic> openDialog(
     actions: [
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: TextButton(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: const BorderSide(color: Colors.grey)))),
-                  onPressed: () {
-                    Get.back(result: false);
-                  },
-                  child: blackText('Cancel', 17)),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: TextButton(
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          side: const BorderSide(color: redColor)))),
-                  onPressed: () {
-                    Get.back(result: true);
-                  },
-                  child: const Text(
-                    'Ok',
-                    style: TextStyle(
-                        fontFamily: "Manrope", color: redColor, fontSize: 17),
-                  )),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: TextButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: Colors.grey)))),
+                    onPressed: () {
+                      Get.back(result: false);
+                    },
+                    child: blackText('Cancel', 17)),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: TextButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            side: const BorderSide(color: redColor)))),
+                    onPressed: () {
+                      Get.back(result: true);
+                    },
+                    child: const Text(
+                      'Ok',
+                      style: TextStyle(
+                          fontFamily: "Manrope", color: redColor, fontSize: 17),
+                    )),
+              )
+            ],
+          ),
         ),
       ),
     ],
@@ -141,7 +144,7 @@ Future<dynamic> openDialog(
 
 Future<dynamic> routeDialog() {
   return Get.dialog(AlertDialog(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
     titlePadding: EdgeInsets.zero,
     contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
     content: Column(mainAxisSize: MainAxisSize.min, children: [
