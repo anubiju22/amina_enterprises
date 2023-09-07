@@ -38,7 +38,7 @@ class DrawerView extends GetView<DashboardController> {
                   return Obx(() => AnimationConfiguration.staggeredList(
                         position: index,
                         child: SlideAnimation(
-                          duration: const Duration(milliseconds: 350),
+                          duration: const Duration(milliseconds: 500),
                           horizontalOffset: 50.0,
                           // verticalOffset: 50.0,
                           child: DrawerCard(
