@@ -3,7 +3,7 @@ import 'package:amina_enterprises/app/modules/home/views/home_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/profile_view.dart';
 import 'package:amina_enterprises/app/modules/home/views/search_view.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
-import 'package:amina_enterprises/constraints/alert_dialog.dart';
+import 'package:amina_enterprises/constraints/pop-up.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 

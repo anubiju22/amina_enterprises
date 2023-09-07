@@ -1,5 +1,5 @@
 import 'package:amina_enterprises/app/modules/cart/views/support_page_view.dart';
-import 'package:amina_enterprises/constraints/alert_dialog.dart';
+import 'package:amina_enterprises/constraints/pop-up.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
