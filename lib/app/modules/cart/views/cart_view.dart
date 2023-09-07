@@ -24,7 +24,7 @@ class CartView extends GetView<CartController> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.67,
               child: ListView.separated(
-                  itemCount: 9,
+                  itemCount: 3,
                   itemBuilder: (context, index) {
                     return const CartItemCard(
                       image: 'assets/image/powder.png',
@@ -56,7 +56,7 @@ class CartView extends GetView<CartController> {
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
         child: CommonButtonWidget(
           label: "CHECKOUT",
           onClick: () {
