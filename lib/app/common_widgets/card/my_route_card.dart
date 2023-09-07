@@ -63,7 +63,7 @@ class MyRouteCard extends StatelessWidget {
             const SizedBox(
               width: 40,
             ),
-            orderButtonFunction('visited')
+            orderButtonFunction('Visited')
           ]),
         ]));
   }

@@ -28,6 +28,10 @@ abstract class Routes {
   static const EXPIRY_PRODUCTS = _Paths.EXPIRY_PRODUCTS;
   static const EXPIRY_PRODUCTS_SHOP_DETAILS =
       _Paths.EXPIRY_PRODUCTS_SHOP_DETAILS;
+  static const EXPIRY_PRODUCT_PRODUCTS_DETAILS =
+      _Paths.EXPIRY_PRODUCT_PRODUCTS_DETAILS;
+  static const EXPIRY_PRODUCT_TRANSFER_VIEW =
+      _Paths.EXPIRY_PRODUCT_TRANSFER_VIEW;
 }
 
 abstract class _Paths {
@@ -54,4 +58,7 @@ abstract class _Paths {
   static const ADD_PAYMENT = '/add-payment';
   static const EXPIRY_PRODUCTS = '/expiry-products';
   static const EXPIRY_PRODUCTS_SHOP_DETAILS = '/expiry-products_shop_details';
+  static const EXPIRY_PRODUCT_PRODUCTS_DETAILS =
+      '/expiry-product_products_details';
+  static const EXPIRY_PRODUCT_TRANSFER_VIEW = '/expiry-product_transfer_view';
 }

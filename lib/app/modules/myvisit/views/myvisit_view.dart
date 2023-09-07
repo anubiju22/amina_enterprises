@@ -4,7 +4,6 @@ import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/myvisit_controller.dart';
@@ -57,7 +56,7 @@ class MyvisitView extends GetView<MyvisitController> {
                           ));
                     },
                     separatorBuilder: (c, i) {
-                      return divider();
+                      return visitDivider();
                     }),
               ),
             ),
@@ -66,7 +65,7 @@ class MyvisitView extends GetView<MyvisitController> {
   }
 }
 
-Container divider() {
+Container visitDivider() {
   return Container(
     height: 1.5,
     color: const Color(0xFFE2E2E2),

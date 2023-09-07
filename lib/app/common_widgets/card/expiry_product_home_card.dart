@@ -44,7 +44,7 @@ class ExpiryHomeCard extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
-                    blackText(location, 12),
+                    greyText(location, 12),
                   ],
                 ),
               ],

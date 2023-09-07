@@ -20,3 +20,4 @@ const dateArrowColor = Color(0xFFAEAEAE);
 const greyColor = Color(0xFF7B7B7B);
 const borderColor = Color(0xFF969696);
 const drawerLineColor = Color(0xFFE2E2E2);
+const popupLineColor = Color(0xFFDEDEDE);

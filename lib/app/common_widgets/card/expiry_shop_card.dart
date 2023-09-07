@@ -32,10 +32,7 @@ class ExpiryShopCard extends StatelessWidget {
             ),
           ],
         ).paddingAll(12),
-        CustomPaint(
-          size: const Size(550, 1),
-          painter: ColoredDottedLine(color: const Color(0xffE2E2E2)),
-        )
+       
       ],
     );
   }

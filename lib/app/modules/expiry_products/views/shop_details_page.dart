@@ -3,8 +3,6 @@ import 'package:amina_enterprises/app/common_widgets/card/expiry_product_home_ca
 import 'package:amina_enterprises/app/common_widgets/card/expiry_shop_card.dart';
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/app/routes/app_pages.dart';
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -52,13 +50,18 @@ class ExpiryProductShopDetailsView extends GetView<ExpiryProductsController> {
                 ],
               ).paddingOnly(left: 20, top: 10),
               const SizedBox(
-                height: 5,
+                height: 15,
               ),
-              Card(
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
+              Container(
+                decoration: BoxDecoration(
+                    color: const Color(0xffffffff),
+                    borderRadius: BorderRadius.circular(18),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Color.fromARGB(255, 235, 233, 233),
+                          blurRadius: 3.0,
+                          spreadRadius: 3),
+                    ]),
                 child: Container(
                   width: 350,
                   padding: const EdgeInsets.all(0.0),
@@ -66,10 +69,21 @@ class ExpiryProductShopDetailsView extends GetView<ExpiryProductsController> {
                     shrinkWrap: true,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return const ExpiryShopCard(
-                        image: "assets/image/expiryproduct.png",
-                        qty: "15",
-                        name: 'Turmeric Powder',
+                      return Column(
+                        children: [
+                          const ExpiryShopCard(
+                            image: "assets/image/expiryproduct.png",
+                            qty: "15",
+                            name: 'Turmeric Powder',
+                          ),
+                          index == 4
+                              ? const SizedBox()
+                              : CustomPaint(
+                                  size: const Size(350, 1),
+                                  painter: ColoredDottedLine(
+                                      color: const Color(0xffE2E2E2)),
+                                )
+                        ],
                       );
                     },
                   ),

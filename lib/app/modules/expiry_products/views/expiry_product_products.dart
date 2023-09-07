@@ -1,8 +1,6 @@
-import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/card/expiry_home_product_card.dart';
 import 'package:amina_enterprises/app/common_widgets/date_picker/attendance_date_picker.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
-import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -44,7 +42,7 @@ class ExpiryProductProductsView extends GetView<ExpiryProductsController> {
                         visible: true,
                         location: "Turmeric Powder",
                         ontap: () {
-                          // Get.toNamed(Routes.EXPIRY_PRODUCTS_SHOP_DETAILS);
+                          Get.toNamed(Routes.EXPIRY_PRODUCT_PRODUCTS_DETAILS);
                         },
                         shopname: '#1236',
                         image: "assets/image/product.png",

@@ -8,3 +8,20 @@ Container divider() {
     width: double.maxFinite,
   );
 }
+
+Container divider1() {
+  return Container(
+    height: 1,
+    color: popupLineColor,
+    width: double.infinity,
+  );
+}
+
+Widget rectangleRedBg(Widget childWidget) {
+  return Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: homeMenuColor.withOpacity(0.5)),
+    child: childWidget,
+  );
+}

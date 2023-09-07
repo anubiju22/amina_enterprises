@@ -1,7 +1,8 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
-import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
+import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -127,6 +128,65 @@ Future<dynamic> openDialog(
                   },
                   child: const Text(
                     'Ok',
+                    style: TextStyle(
+                        fontFamily: "Manrope", color: redColor, fontSize: 17),
+                  )),
+            )
+          ],
+        ),
+      ),
+    ],
+  ));
+}
+
+Future<dynamic> routeDialog() {
+  return Get.dialog(AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    titlePadding: EdgeInsets.zero,
+    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
+    content: Column(mainAxisSize: MainAxisSize.min, children: [
+      svgWidget('assets/svg/geo_location.svg'),
+      const SizedBox(
+        height: 25,
+      ),
+      blackText('You’re Out Of Shop Premises', 18, fontWeight: FontWeight.w700),
+      const SizedBox(
+        height: 6,
+      ),
+      greyText('Do you want to continue?', 16, fontWeight: FontWeight.w500),
+      divider1(),
+    ]),
+    actions: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: TextButton(
+                  // style: ButtonStyle(
+                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(15),
+                  //         side: const BorderSide(color: Colors.grey)))),
+                  onPressed: () {
+                    Get.back(result: false);
+                  },
+                  child: blackText('Cancel', 17)),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: TextButton(
+                  // style: ButtonStyle(
+                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(15),
+                  //         side: const BorderSide(color: redColor)))),
+                  onPressed: () {
+                    Get.back(result: true);
+                  },
+                  child: const Text(
+                    'Yes',
                     style: TextStyle(
                         fontFamily: "Manrope", color: redColor, fontSize: 17),
                   )),
