@@ -91,13 +91,14 @@ class MyrouteView extends GetView<MyrouteController> {
                                   thickness: 2,
                                 ),
                                 InkWell(
-                                  onTap: () {
-                                    dynamic status = routeDialog();
+                                  onTap: () async {
+                                    dynamic status = await routeDialog();
                                     if (status == true) {
                                       Get.bottomSheet(
                                         RouteBottomSheet(
                                           tittle: items.title,
-                                          type: "Retailer",
+                                          // type: "Retailer",
+                                          location: items.location,
                                           items: items,
                                         ),
                                         elevation: 20.0,

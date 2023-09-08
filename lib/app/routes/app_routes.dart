@@ -32,6 +32,8 @@ abstract class Routes {
       _Paths.EXPIRY_PRODUCT_PRODUCTS_DETAILS;
   static const EXPIRY_PRODUCT_TRANSFER_VIEW =
       _Paths.EXPIRY_PRODUCT_TRANSFER_VIEW;
+  static const STOCKS = _Paths.STOCKS;
+  static const STOCK_DETAILS = _Paths.STOCKS_DETAILS;
 }
 
 abstract class _Paths {
@@ -61,4 +63,6 @@ abstract class _Paths {
   static const EXPIRY_PRODUCT_PRODUCTS_DETAILS =
       '/expiry-product_products_details';
   static const EXPIRY_PRODUCT_TRANSFER_VIEW = '/expiry-product_transfer_view';
+  static const STOCKS = '/stocks';
+  static const STOCKS_DETAILS = '/stock-details';
 }

@@ -1,34 +1,34 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
 import 'package:amina_enterprises/app/common_widgets/home_card/home_item_card.dart';
-import 'package:amina_enterprises/app/common_widgets/order_history_widgets/order_details_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
+import 'package:amina_enterprises/app/modules/myroute/controllers/myroute_controller.dart';
 import 'package:amina_enterprises/app/modules/myroute/model/route_list.dart';
-import 'package:amina_enterprises/app/modules/myvisit/views/myvisit_view.dart';
+import 'package:amina_enterprises/app/modules/myroute/views/custom_switch.dart';
 import 'package:amina_enterprises/app/routes/app_pages.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../constraints/common_widgets.dart';
 import '../modules/myroute/views/retailer_profile.dart';
 
-class RouteBottomSheet extends StatelessWidget {
-  final String tittle, type;
+class RouteBottomSheet extends GetView<MyrouteController> {
+  final String tittle, location;
   final RouteList items;
 
   const RouteBottomSheet({
     super.key,
     required this.tittle,
-    required this.type,
+    //  required this.type,
     required this.items,
+    required this.location,
   });
 
   @override
   Widget build(BuildContext context) {
-    return
-      
-        Container(
-      height: MediaQuery.of(context).size.width * 0.80,
+    return Container(
+      height: MediaQuery.of(context).size.width * 0.90,
       width: double.infinity,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -39,21 +39,53 @@ class RouteBottomSheet extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          blackText(tittle, 16, fontWeight: FontWeight.w600),
-          const SizedBox(
-            height: 10,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.65,
+                    child: blackText(tittle, 16, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.65,
+                      child: greyText(location, 12,
+                          textOverflow: TextOverflow.ellipsis)),
+                ],
+              ),
+              Column(
+                children: [
+                  Obx(
+                    () => blackText(
+                        controller.checkIn.value ? 'Check Out' : 'Check In',
+                        14),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Obx(
+                    () => CustomSwitch(
+                        value: controller.checkIn.value,
+                        onChanged: (bool val) {}),
+                  )
+                ],
+              )
+            ],
           ),
-          greyText(type, 12),
           const SizedBox(
             height: 20,
           ),
           divider(),
-        
           const SizedBox(
             height: 15,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               HomeCardItem(
                 path: "assets/svg/order.svg",
@@ -82,7 +114,7 @@ class RouteBottomSheet extends StatelessWidget {
                 path: "assets/svg/stock.svg",
                 label: "View Stock",
                 ontap: () {
-                  Get.toNamed(Routes.PAYMENTHISTORY);
+                  Get.toNamed(Routes.STOCKS);
                 },
               )
             ],
@@ -128,73 +160,102 @@ class AlertBox extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(30))),
       title: blackText("Mark Visit", 20, fontWeight: FontWeight.w600),
       content: SizedBox(
-        height: 250,
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            blackText('Remarks', 18, fontWeight: FontWeight.w400),
-            const SizedBox(
-              height: 15,
-            ),
-            // const LoginTextField(
-            //   hintText: 'select',
-            // ),
-            SizedBox(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.expand_more)),
-                  fillColor: const Color(0xFFF3F3F3),
-                  filled: true,
-                  hintText: "Select Item",
-                  hintStyle: const TextStyle(
-                    color: Color(0xff7b7b7b),
-                    fontSize: 16,
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.w500,
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
-                    borderRadius: BorderRadius.circular(12.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.expand_more)),
+                    fillColor: const Color(0xFFF3F3F3),
+                    filled: true,
+                    hintText: "Select Item",
+                    hintStyle: const TextStyle(
+                      color: Color(0xff7b7b7b),
+                      fontSize: 16,
+                      fontFamily: "Manrope",
+                      fontWeight: FontWeight.w500,
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              children: [
-                const SizedBox(
-                  width: 5,
+              const SizedBox(
+                height: 15,
+              ),
+              blackText('Remarks', 18, fontWeight: FontWeight.w400),
+              const SizedBox(
+                height: 6,
+              ),
+              SizedBox(
+                height: 100,
+                child: TextFormField(
+                  maxLines: null,
+                  expands: true,
+                  autofocus: false,
+                  decoration: InputDecoration(
+                    fillColor: const Color(0xFFF3F3F3),
+                    filled: true,
+                    hintText: " ",
+                    hintStyle: const TextStyle(
+                      color: Color(0xff7b7b7b),
+                      fontSize: 16,
+                      fontFamily: "Manrope",
+                      fontWeight: FontWeight.w500,
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFFFFFFFF)),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                  ),
                 ),
-                svgWidget('assets/svg/location.svg',
-                    color: redColor, blendMode: BlendMode.srcIn),
-                const SizedBox(
-                  width: 5,
-                ),
-                greyText(
-                  fontWeight: FontWeight.w400,
-                  "Palayam, Kozhikode",
-                  12,
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            CommonButtonWidget(
-              label: "UPDATE",
-              onClick: () {
-                Get.back();
-              },
-            ),
-          ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  svgWidget('assets/svg/location.svg',
+                      color: redColor, blendMode: BlendMode.srcIn),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  greyText(
+                    fontWeight: FontWeight.w400,
+                    "Palayam, Kozhikode",
+                    12,
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              CommonButtonWidget(
+                label: "UPDATE",
+                onClick: () {
+                  Get.back();
+                },
+              ),
+            ],
+          ),
         ),
       ),
       // actions: [

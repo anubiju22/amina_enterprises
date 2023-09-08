@@ -146,20 +146,24 @@ Future<dynamic> routeDialog() {
   return Get.dialog(AlertDialog(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
     titlePadding: EdgeInsets.zero,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
+    contentPadding: EdgeInsets.zero,
     content: Column(mainAxisSize: MainAxisSize.min, children: [
+      const SizedBox(
+        height: 15,
+      ),
       svgWidget('assets/svg/geo_location.svg'),
       const SizedBox(
-        height: 25,
+        height: 45,
       ),
       blackText('You’re Out Of Shop Premises', 18, fontWeight: FontWeight.w700),
       const SizedBox(
         height: 6,
       ),
       greyText('Do you want to continue?', 16, fontWeight: FontWeight.w500),
+      const SizedBox(
+        height: 12,
+      ),
       divider1(),
-    ]),
-    actions: [
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Row(
@@ -167,24 +171,21 @@ Future<dynamic> routeDialog() {
           children: [
             Expanded(
               child: TextButton(
-                  // style: ButtonStyle(
-                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(15),
-                  //         side: const BorderSide(color: Colors.grey)))),
                   onPressed: () {
                     Get.back(result: false);
                   },
                   child: blackText('Cancel', 17)),
             ),
             const SizedBox(
-              width: 10,
+              height: 50,
+              child: VerticalDivider(
+                color: popupLineColor,
+                width: 20,
+                thickness: 1,
+              ),
             ),
             Expanded(
               child: TextButton(
-                  // style: ButtonStyle(
-                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(15),
-                  //         side: const BorderSide(color: redColor)))),
                   onPressed: () {
                     Get.back(result: true);
                   },
@@ -197,7 +198,10 @@ Future<dynamic> routeDialog() {
           ],
         ),
       ),
-    ],
+    ]),
+    // actions: [
+
+    // ],
   ));
 }
 

@@ -23,7 +23,7 @@ class HomeCardItem extends StatelessWidget {
             Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    color: homeMenuColor),
+                    color: homeMenuColor.withOpacity(0.50)),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 18.0, vertical: 18),

@@ -1,8 +1,4 @@
-// ignore_for_file: constant_identifier_names
-
-import 'package:amina_enterprises/app/modules/expiry_products/views/product_details_page.dart';
-import 'package:amina_enterprises/app/modules/expiry_products/views/product_transfer_view.dart';
-import 'package:amina_enterprises/app/modules/expiry_products/views/shop_details_page.dart';
+import 'package:amina_enterprises/app/modules/stocks/views/stock_details_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/add_payment/bindings/add_payment_binding.dart';
@@ -13,8 +9,9 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/expiry_products/bindings/expiry_products_binding.dart';
 import '../modules/expiry_products/views/expiry_products_view.dart';
-import '../modules/masala/bindings/masala_binding.dart';
-import '../modules/masala/views/masala_view.dart';
+import '../modules/expiry_products/views/product_details_page.dart';
+import '../modules/expiry_products/views/product_transfer_view.dart';
+import '../modules/expiry_products/views/shop_details_page.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/dashboard.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -22,6 +19,8 @@ import '../modules/login/views/employee_login.dart';
 import '../modules/login/views/login_home_view.dart';
 import '../modules/login/views/otp_view.dart';
 import '../modules/login/views/retailer_login.dart';
+import '../modules/masala/bindings/masala_binding.dart';
+import '../modules/masala/views/masala_view.dart';
 import '../modules/myroute/bindings/myroute_binding.dart';
 import '../modules/myroute/views/myroute_view.dart';
 import '../modules/myvisit/bindings/myvisit_binding.dart';
@@ -39,8 +38,12 @@ import '../modules/shops/bindings/shops_binding.dart';
 import '../modules/shops/views/shops_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/stocks/bindings/stocks_binding.dart';
+import '../modules/stocks/views/stocks_view.dart';
 import '../modules/support/bindings/support_binding.dart';
 import '../modules/support/views/support_view.dart';
+
+// ignore_for_file: constant_identifier_names
 
 part 'app_routes.dart';
 
@@ -164,6 +167,16 @@ class AppPages {
       name: _Paths.EXPIRY_PRODUCT_TRANSFER_VIEW,
       page: () => const ExpiryProductsTransferView(),
       binding: ExpiryProductsBinding(),
+    ),
+    GetPage(
+      name: _Paths.STOCKS,
+      page: () => const StocksView(),
+      binding: StocksBinding(),
+    ),
+    GetPage(
+      name: _Paths.STOCKS_DETAILS,
+      page: () => const StockDetailsView(),
+      binding: StocksBinding(),
     ),
   ];
 }
