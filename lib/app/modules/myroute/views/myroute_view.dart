@@ -3,7 +3,6 @@ import 'package:amina_enterprises/app/common_widgets/card/my_route_card.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
-import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:amina_enterprises/constraints/pop-up.dart';
 import 'package:flutter/material.dart';
 // import 'package:calendar_timeline/calendar_timeline.dart';
@@ -13,7 +12,6 @@ import 'package:get/get.dart';
 
 import '../../../../constraints/date_formats.dart';
 import '../../../common_widgets/myroute_bottomsheet.dart';
-
 import '../../order_history/views/order_history_view.dart';
 import '../controllers/myroute_controller.dart';
 
@@ -126,6 +124,15 @@ class MyrouteView extends GetView<MyrouteController> {
             ],
           ),
         ));
+  }
+
+  Widget rectangleRedBg(Widget childWidget) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: homeMenuColor.withOpacity(0.5)),
+      child: childWidget,
+    );
   }
 }
 

@@ -1,8 +1,8 @@
 import 'package:amina_enterprises/app/common_widgets/app_bar/common_app_bar.dart';
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/dividers/common_dividers.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/app/modules/cart/views/card_iteam.dart';
-import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

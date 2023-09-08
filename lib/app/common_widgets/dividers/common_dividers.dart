@@ -16,12 +16,3 @@ Container divider1() {
     width: double.infinity,
   );
 }
-
-Widget rectangleRedBg(Widget childWidget) {
-  return Container(
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: homeMenuColor.withOpacity(0.5)),
-    child: childWidget,
-  );
-}

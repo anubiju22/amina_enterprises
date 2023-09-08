@@ -1,8 +1,8 @@
 import 'package:amina_enterprises/app/common_widgets/button/loginbutton.dart';
+import 'package:amina_enterprises/app/common_widgets/dividers/common_dividers.dart';
 import 'package:amina_enterprises/app/common_widgets/svg_icons/svg_widget.dart';
 import 'package:amina_enterprises/app/common_widgets/texts/text.dart';
 import 'package:amina_enterprises/constraints/app_colors.dart';
-import 'package:amina_enterprises/constraints/common_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
