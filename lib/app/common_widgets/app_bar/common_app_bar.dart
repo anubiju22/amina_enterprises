@@ -25,7 +25,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: svgWidget('assets/svg/back_arrow.svg')),
       title: Text(
         label,
-        style: const TextStyle(fontSize: 20, color: Colors.white),
+        style: const TextStyle(fontSize: 18, color: Colors.white),
       ),
       actions: [
         Visibility(
